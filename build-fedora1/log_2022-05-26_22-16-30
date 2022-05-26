@@ -1,0 +1,49 @@
+2022-05-26 22:16:30.118687 +0000 > starting log
+2022-05-26 22:16:30.119038 +0000 build-fedora1: > starting build with log
+2022-05-26 22:16:30.119049 +0000 build-fedora1: >> args: -t fedora-35 template publish upload
+2022-05-26 22:16:30.119055 +0000 build-fedora1: >> COMPONENTS=
+2022-05-26 22:16:30.119061 +0000 build-fedora1: >> DISTRIBUTIONS=
+2022-05-26 22:16:30.119066 +0000 build-fedora1: >> TEMPLATES=fedora-35
+2022-05-26 22:16:30.119071 +0000 build-fedora1: > running qb
+2022-05-26 22:16:30.119077 +0000 build-fedora1: Running template stage: publish
+2022-05-26 22:16:30.119097 +0000 build-fedora1: .[38;5;246m22:16:29,696 .[96m[executor:local] .[0mExecuting 'bash -c sudo mkdir -p /builder&&sudo chown -R user /builder&&/home/user/builder-r4.2/qubesbuilder/plugins/publish_rpm/scripts/create-skeleton r4.2 vm fc35 /home/user/builder-r4.2/artifacts/repository-publish/rpm /home/user/builder-r4.2/qubesbuilder/plugins/publish_rpm/comps/comps-vm.xml'..[0m
+2022-05-26 22:16:30.134268 +0000 build-fedora1: .[38;5;246m22:16:29,747 .[96m[template] .[0mfedora-35: Verifying signatures..[0m
+2022-05-26 22:16:30.134761 +0000 build-fedora1: .[38;5;246m22:16:29,747 .[96m[executor:local] .[0mExecuting 'bash -c sudo mkdir -p /builder&&sudo chown -R user /builder&&/home/user/builder-r4.2/qubesbuilder/plugins/sign_rpm/scripts/sign-rpm --sign-key 27AA91350BD1600002D89B549F00A0C9784D8153 --db-path /home/user/builder-r4.2/artifacts/templates/rpmdb --rpm /home/user/builder-r4.2/artifacts/templates/rpm/qubes-template-fedora-35-4.1.0-202205262140Z.noarch.rpm --check-only'..[0m
+2022-05-26 22:16:35.750872 +0000 build-fedora1: .[38;5;246m22:16:35,363 .[96m[template] .[0mfedora-35: Publishing template..[0m
+2022-05-26 22:16:35.750917 +0000 build-fedora1: .[38;5;246m22:16:35,363 .[96m[template] .[0mfedora-35: Updating metadata..[0m
+2022-05-26 22:16:35.753085 +0000 build-fedora1: .[38;5;246m22:16:35,365 .[96m[executor:local] .[0mExecuting 'bash -c sudo mkdir -p /builder&&sudo chown -R user /builder&&cd /home/user/builder-r4.2/artifacts/repository-publish/rpm/r4.2/templates-itl-testing&&createrepo_c .'..[0m
+2022-05-26 22:16:37.227135 +0000 build-fedora1: .[38;5;246m22:16:36,839 .[96m[executor:local] .[0moutput: Directory walk started.[0m
+2022-05-26 22:16:37.227210 +0000 build-fedora1: .[38;5;246m22:16:36,839 .[96m[executor:local] .[0moutput: Directory walk done - 1 packages.[0m
+2022-05-26 22:16:37.227236 +0000 build-fedora1: .[38;5;246m22:16:36,839 .[96m[executor:local] .[0moutput: Temporary output repo path: ./.repodata/.[0m
+2022-05-26 22:16:37.227257 +0000 build-fedora1: .[38;5;246m22:16:36,839 .[96m[executor:local] .[0moutput: Preparing sqlite DBs.[0m
+2022-05-26 22:16:37.227278 +0000 build-fedora1: .[38;5;246m22:16:36,839 .[96m[executor:local] .[0moutput: Pool started (with 5 workers).[0m
+2022-05-26 22:16:37.227298 +0000 build-fedora1: .[38;5;246m22:16:36,839 .[96m[executor:local] .[0moutput: Pool finished.[0m
+2022-05-26 22:16:37.228128 +0000 build-fedora1: .[38;5;246m22:16:36,840 .[96m[template] .[0mfedora-35: Signing metadata..[0m
+2022-05-26 22:16:37.228213 +0000 build-fedora1: .[38;5;246m22:16:36,840 .[96m[executor:local] .[0mExecuting 'bash -c sudo mkdir -p /builder&&sudo chown -R user /builder&&qubes-gpg-client-wrapper --batch --no-tty --yes --detach-sign --armor -u 27AA91350BD1600002D89B549F00A0C9784D8153 /home/user/builder-r4.2/artifacts/repository-publish/rpm/r4.2/templates-itl-testing/repodata/repomd.xml > /home/user/builder-r4.2/artifacts/repository-publish/rpm/r4.2/templates-itl-testing/repodata/repomd.xml.asc'..[0m
+2022-05-26 22:16:37.355347 +0000 build-fedora1: Running template stage: upload
+2022-05-26 22:16:37.355413 +0000 build-fedora1: Error: This plugin only supports local executor for 'upload' stage.
+2022-05-26 22:16:37.356627 +0000 build-fedora1: Traceback (most recent call last):
+2022-05-26 22:16:37.356846 +0000 build-fedora1:   File "/home/user/builder-r4.2/qubesbuilder/cli/cli_base.py", line 58, in __call__
+2022-05-26 22:16:37.356863 +0000 build-fedora1:     return self.main(*args, **kwargs)
+2022-05-26 22:16:37.356880 +0000 build-fedora1:   File "/usr/lib/python3.10/site-packages/click/core.py", line 1062, in main
+2022-05-26 22:16:37.356910 +0000 build-fedora1:     rv = self.invoke(ctx)
+2022-05-26 22:16:37.356937 +0000 build-fedora1:   File "/usr/lib/python3.10/site-packages/click/core.py", line 1668, in invoke
+2022-05-26 22:16:37.356956 +0000 build-fedora1:     return _process_result(sub_ctx.command.invoke(sub_ctx))
+2022-05-26 22:16:37.356976 +0000 build-fedora1:   File "/usr/lib/python3.10/site-packages/click/core.py", line 1699, in invoke
+2022-05-26 22:16:37.356989 +0000 build-fedora1:     rv.append(sub_ctx.command.invoke(sub_ctx))
+2022-05-26 22:16:37.357005 +0000 build-fedora1:   File "/usr/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+2022-05-26 22:16:37.357019 +0000 build-fedora1:     return ctx.invoke(self.callback, **ctx.params)
+2022-05-26 22:16:37.357036 +0000 build-fedora1:   File "/usr/lib/python3.10/site-packages/click/core.py", line 763, in invoke
+2022-05-26 22:16:37.357048 +0000 build-fedora1:     return __callback(*args, **kwargs)
+2022-05-26 22:16:37.357184 +0000 build-fedora1:   File "/usr/lib/python3.10/site-packages/click/decorators.py", line 38, in new_func
+2022-05-26 22:16:37.357200 +0000 build-fedora1:     return f(get_current_context().obj, *args, **kwargs)
+2022-05-26 22:16:37.357217 +0000 build-fedora1:   File "/home/user/builder-r4.2/qubesbuilder/cli/cli_template.py", line 95, in upload
+2022-05-26 22:16:37.357230 +0000 build-fedora1:     _template_stage(obj=obj, stage_name="upload")
+2022-05-26 22:16:37.357248 +0000 build-fedora1:   File "/home/user/builder-r4.2/qubesbuilder/cli/cli_template.py", line 40, in _template_stage
+2022-05-26 22:16:37.357275 +0000 build-fedora1:     template_plugin.run(stage=stage_name)
+2022-05-26 22:16:37.357324 +0000 build-fedora1:   File "/home/user/builder-r4.2/qubesbuilder/plugins/template_rpm/__init__.py", line 80, in run
+2022-05-26 22:16:37.357336 +0000 build-fedora1:     super().run(
+2022-05-26 22:16:37.357354 +0000 build-fedora1:   File "/home/user/builder-r4.2/qubesbuilder/plugins/template/__init__.py", line 436, in run
+2022-05-26 22:16:37.357365 +0000 build-fedora1:     raise TemplateError(
+2022-05-26 22:16:37.357592 +0000 build-fedora1: qubesbuilder.plugins.template.TemplateError: This plugin only supports local executor for 'upload' stage.
+2022-05-26 22:16:37.367527 +0000 > closing log

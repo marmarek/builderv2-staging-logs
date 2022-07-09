@@ -1,0 +1,276 @@
+2022-07-09 00:44:29.235408 +0000 > starting log
+2022-07-09 00:44:29.235728 +0000 build-fedora1: > starting build with log
+2022-07-09 00:44:29.235738 +0000 build-fedora1: >> args:
+2022-07-09 00:44:29.235752 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent python-panflute>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-07-09 00:44:29.235758 +0000 build-fedora1: >> component:
+2022-07-09 00:44:29.235764 +0000 build-fedora1: >>   python-panflute
+2022-07-09 00:44:29.235769 +0000 build-fedora1: >> distributions:
+2022-07-09 00:44:29.235779 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-07-09 00:44:37.639306 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9492 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-09 00:44:37.844284 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9492 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-09 00:44:38.075972 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9492 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-09 00:44:38.278315 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp9492 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component python-panflute --git-branch master --git-url https://github.com/QubesOS/qubes-python-panflute --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-07-09 00:44:38.498421 +0000 build-fedora1: output: + unset CLEAN
+2022-07-09 00:44:38.498471 +0000 build-fedora1: output: + CLEAN=0
+2022-07-09 00:44:38.498675 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component python-panflute --git-branch master --git-url https://github.com/QubesOS/qubes-python-panflute --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-07-09 00:44:38.501749 +0000 build-fedora1: output: + OPTS=' --component '\''python-panflute'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-python-panflute'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-09 00:44:38.502155 +0000 build-fedora1: output: + eval set -- ' --component '\''python-panflute'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-python-panflute'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-09 00:44:38.502200 +0000 build-fedora1: output: ++ set -- --component python-panflute --git-branch master --git-url https://github.com/QubesOS/qubes-python-panflute --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-07-09 00:44:38.502209 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-09 00:44:38.502215 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:38.502222 +0000 build-fedora1: output: + COMPONENT=python-panflute
+2022-07-09 00:44:38.502227 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502232 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502238 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-09 00:44:38.502248 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:38.502253 +0000 build-fedora1: output: + BRANCH=master
+2022-07-09 00:44:38.502258 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502386 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502398 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-09 00:44:38.502404 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:38.502432 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-python-panflute
+2022-07-09 00:44:38.502438 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502451 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502457 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-09 00:44:38.502465 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:38.502472 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-07-09 00:44:38.502477 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502595 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502615 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-09 00:44:38.502623 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:38.502630 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-07-09 00:44:38.502635 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502722 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502733 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-09 00:44:38.502739 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:38.502745 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:38.502750 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-09 00:44:38.502837 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-09 00:44:38.502848 +0000 build-fedora1: output: -]*$ ]]
+2022-07-09 00:44:38.502860 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-09 00:44:38.502865 +0000 build-fedora1: output: -]*$ ]]
+2022-07-09 00:44:38.503045 +0000 build-fedora1: output: + '[' -z python-panflute ']'
+2022-07-09 00:44:38.503062 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 00:44:38.503070 +0000 build-fedora1: output: + REPO=python-panflute
+2022-07-09 00:44:38.504132 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-07-09 00:44:38.504151 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 00:44:38.504159 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-07-09 00:44:38.504165 +0000 build-fedora1: output: + '[' -z master ']'
+2022-07-09 00:44:38.504170 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 00:44:38.504178 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-python-panflute ']'
+2022-07-09 00:44:38.504184 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 00:44:38.504189 +0000 build-fedora1: output: + : 0
+2022-07-09 00:44:38.504194 +0000 build-fedora1: output: + : 0
+2022-07-09 00:44:38.504199 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-07-09 00:44:38.504205 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-07-09 00:44:38.504211 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-07-09 00:44:38.504217 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-07-09 00:44:38.504224 +0000 build-fedora1: output: + [[ python-panflute =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-07-09 00:44:38.504230 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 00:44:38.504236 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-07-09 00:44:38.504241 +0000 build-fedora1: output: + fresh_clone=false
+2022-07-09 00:44:38.504247 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-07-09 00:44:38.504253 +0000 build-fedora1: output: + [[ -d python-panflute ]]
+2022-07-09 00:44:38.504258 +0000 build-fedora1: output: + rm -f -- python-panflute
+2022-07-09 00:44:38.504264 +0000 build-fedora1: output: + print_headers
+2022-07-09 00:44:38.504269 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 00:44:38.504277 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-python-panflute master'
+2022-07-09 00:44:38.504284 +0000 build-fedora1: output: + echo '-> Updating sources for python-panflute...'
+2022-07-09 00:44:38.504292 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-python-panflute master...'
+2022-07-09 00:44:38.504301 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-python-panflute python-panflute
+2022-07-09 00:44:38.504321 +0000 build-fedora1: output: -> Updating sources for python-panflute...
+2022-07-09 00:44:38.504342 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-python-panflute master...
+2022-07-09 00:44:39.122868 +0000 build-fedora1: output: + VERIFY_REF=HEAD
+2022-07-09 00:44:39.122912 +0000 build-fedora1: output: + fresh_clone=:
+2022-07-09 00:44:39.122920 +0000 build-fedora1: output: + export CHECK=signed-tag
+2022-07-09 00:44:39.122932 +0000 build-fedora1: output: + CHECK=signed-tag
+2022-07-09 00:44:39.122937 +0000 build-fedora1: output: + verify=true
+2022-07-09 00:44:39.122943 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 00:44:39.122948 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 00:44:39.122955 +0000 build-fedora1: output: ++ git -C python-panflute rev-parse -q --verify HEAD
+2022-07-09 00:44:39.123667 +0000 build-fedora1: output: --> Verifying tags...
+2022-07-09 00:44:39.123699 +0000 build-fedora1: output: + VERIFY_REF=727de1e6ccd5ff970df0229864f2a672105ae6cb
+2022-07-09 00:44:39.123709 +0000 build-fedora1: output: + '[' true = false ']'
+2022-07-09 00:44:39.123717 +0000 build-fedora1: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-07-09 00:44:39.123724 +0000 build-fedora1: output: + echo '--> Verifying tags...'
+2022-07-09 00:44:39.124180 +0000 build-fedora1: output: ++ readlink -m /builder/keyring
+2022-07-09 00:44:39.125337 +0000 build-fedora1: output: + GNUPGHOME=/builder/keyring
+2022-07-09 00:44:39.125658 +0000 build-fedora1: output: + export GNUPGHOME
+2022-07-09 00:44:39.125676 +0000 build-fedora1: output: + '[' '!' -d /builder/keyring ']'
+2022-07-09 00:44:39.125683 +0000 build-fedora1: output: + mkdir -p /builder/keyring
+2022-07-09 00:44:39.126434 +0000 build-fedora1: output: + chmod 700 /builder/keyring
+2022-07-09 00:44:39.127301 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-07-09 00:44:39.135926 +0000 build-fedora1: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-07-09 00:44:39.138882 +0000 build-fedora1: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-07-09 00:44:39.138916 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-07-09 00:44:39.155345 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-07-09 00:44:39.156301 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-07-09 00:44:39.156330 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-07-09 00:44:39.156338 +0000 build-fedora1: output: gpg:               imported: 3
+2022-07-09 00:44:39.156345 +0000 build-fedora1: output: gpg: no ultimately trusted keys found
+2022-07-09 00:44:39.158795 +0000 build-fedora1: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-07-09 00:44:39.160361 +0000 build-fedora1: output: + gpg --import-ownertrust
+2022-07-09 00:44:39.160381 +0000 build-fedora1: output: gpg: inserting ownertrust of 6
+2022-07-09 00:44:39.163251 +0000 build-fedora1: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-07-09 00:44:39.163284 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-07-09 00:44:39.163316 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-07-09 00:44:39.163330 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-07-09 00:44:39.163764 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-07-09 00:44:39.163805 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-07-09 00:44:39.163813 +0000 build-fedora1: output: gpg:              unchanged: 3
+2022-07-09 00:44:39.164195 +0000 build-fedora1: output: + touch /builder/keyring/pubring.gpg
+2022-07-09 00:44:39.165679 +0000 build-fedora1: output: + gpgconf --kill gpg-agent
+2022-07-09 00:44:39.171273 +0000 build-fedora1: output: + pushd python-panflute
+2022-07-09 00:44:39.171318 +0000 build-fedora1: output: + expected_hash=727de1e6ccd5ff970df0229864f2a672105ae6cb
+2022-07-09 00:44:39.171326 +0000 build-fedora1: output: + hash_len=40
+2022-07-09 00:44:39.171332 +0000 build-fedora1: output: + '[' 40 -ne 40 ']'
+2022-07-09 00:44:39.171340 +0000 build-fedora1: output: + [[ 727de1e6ccd5ff970df0229864f2a672105ae6cb =~ ^[a-f0-9]+$ ]]
+2022-07-09 00:44:39.171354 +0000 build-fedora1: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-07-09 00:44:39.171365 +0000 build-fedora1: output: ++ git tag --points-at=727de1e6ccd5ff970df0229864f2a672105ae6cb '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-07-09 00:44:39.171372 +0000 build-fedora1: output: ++ head -c 500
+2022-07-09 00:44:39.173111 +0000 build-fedora1: output: + tags=e34ee5d2dd0fcb4e941bb39cdc9c841657a143d4:727de1e6ccd5ff970df0229864f2a672105ae6cb:
+2022-07-09 00:44:39.173145 +0000 build-fedora1: output: + for tag in $tags
+2022-07-09 00:44:39.173153 +0000 build-fedora1: output: + (( 82 != hash_len * 2 + 2 ))
+2022-07-09 00:44:39.173164 +0000 build-fedora1: output: + [[ :727de1e6ccd5ff970df0229864f2a672105ae6cb: == \:\7\2\7\d\e\1\e\6\c\c\d\5\f\f\9\7\0\d\f\0\2\2\9\8\6\4\f\2\a\6\7\2\1\0\5\a\e\6\c\b\: ]]
+2022-07-09 00:44:39.173175 +0000 build-fedora1: output: + tag=e34ee5d2dd0fcb4e941bb39cdc9c841657a143d4
+2022-07-09 00:44:39.173183 +0000 build-fedora1: output: + verify_git_obj tag e34ee5d2dd0fcb4e941bb39cdc9c841657a143d4
+2022-07-09 00:44:39.173189 +0000 build-fedora1: output: + local content newsig_number
+2022-07-09 00:44:39.173784 +0000 build-fedora1: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- e34ee5d2dd0fcb4e941bb39cdc9c841657a143d4
+2022-07-09 00:44:39.178866 +0000 build-fedora1: output: + content='[GNUPG:] NEWSIG
+2022-07-09 00:44:39.178899 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 00:44:39.178909 +0000 build-fedora1: output: [GNUPG:] SIG_ID T56pJYLQN2MVF4aWz3XXLISba1Q 2022-07-09 1657327459
+2022-07-09 00:44:39.178922 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 00:44:39.178929 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.178937 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.178944 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.178954 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 00:44:39.178965 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657327459 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 00:44:39.178972 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 00:44:39.179912 +0000 build-fedora1: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-07-09 00:44:39.179939 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 00:44:39.179947 +0000 build-fedora1: output: [GNUPG:] SIG_ID T56pJYLQN2MVF4aWz3XXLISba1Q 2022-07-09 1657327459
+2022-07-09 00:44:39.180096 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 00:44:39.180111 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.180134 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.180142 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.180152 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 00:44:39.180165 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657327459 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 00:44:39.180172 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 00:44:39.180513 +0000 build-fedora1: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-07-09 00:44:39.181675 +0000 build-fedora1: output: + newsig_number=1
+2022-07-09 00:44:39.181691 +0000 build-fedora1: output: + '[' 1 = 1 ']'
+2022-07-09 00:44:39.182109 +0000 build-fedora1: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp$'
+2022-07-09 00:44:39.182127 +0000 build-fedora1: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-07-09 00:44:39.182138 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 00:44:39.182224 +0000 build-fedora1: output: [GNUPG:] SIG_ID T56pJYLQN2MVF4aWz3XXLISba1Q 2022-07-09 1657327459
+2022-07-09 00:44:39.182237 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 00:44:39.182247 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.182263 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.182271 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 00:44:39.182280 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 00:44:39.182345 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657327459 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 00:44:39.182367 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 00:44:39.183637 +0000 build-fedora1: output: ---> Good tag e34ee5d2dd0fcb4e941bb39cdc9c841657a143d4
+2022-07-09 00:44:39.183659 +0000 build-fedora1: output: + echo '---> Good tag e34ee5d2dd0fcb4e941bb39cdc9c841657a143d4'
+2022-07-09 00:44:39.183872 +0000 build-fedora1: output: + '[' -z x ']'
+2022-07-09 00:44:39.183888 +0000 build-fedora1: output: + popd
+2022-07-09 00:44:39.184144 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 00:44:39.184161 +0000 build-fedora1: output: + pushd python-panflute
+2022-07-09 00:44:39.184408 +0000 build-fedora1: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-07-09 00:44:39.188220 +0000 build-fedora1: output: + CURRENT_BRANCH=master
+2022-07-09 00:44:39.188250 +0000 build-fedora1: output: + '[' master '!=' master ']'
+2022-07-09 00:44:39.188257 +0000 build-fedora1: output: + :
+2022-07-09 00:44:39.188263 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 00:44:39.188268 +0000 build-fedora1: output: + red='.[1;31m'
+2022-07-09 00:44:39.188277 +0000 build-fedora1: output: + green='.[1;32m'
+2022-07-09 00:44:39.188283 +0000 build-fedora1: output: + normal='.[0;0m'
+2022-07-09 00:44:39.189585 +0000 build-fedora1: output: ++ git name-rev --name-only master
+2022-07-09 00:44:39.195494 +0000 build-fedora1: output: --> Switching branch from master branch to .[1;32mmaster.[0;0m
+2022-07-09 00:44:39.195728 +0000 build-fedora1: output: + '[' -n 'tags/mm_727de1e6^0' ']'
+2022-07-09 00:44:39.195753 +0000 build-fedora1: output: + echo '--> Switching branch from master branch to .[1;32mmaster.[0;0m'
+2022-07-09 00:44:39.195763 +0000 build-fedora1: output: + git merge-base --is-ancestor -- master 727de1e6ccd5ff970df0229864f2a672105ae6cb
+2022-07-09 00:44:39.201417 +0000 build-fedora1: output: Your branch is up to date with 'origin/master'.
+2022-07-09 00:44:39.212811 +0000 build-fedora1: output: + git checkout -B master 727de1e6ccd5ff970df0229864f2a672105ae6cb
+2022-07-09 00:44:39.212853 +0000 build-fedora1: output: Reset branch 'master'
+2022-07-09 00:44:39.212861 +0000 build-fedora1: output: + '[' -e .gitmodules ']'
+2022-07-09 00:44:39.212867 +0000 build-fedora1: output: + :
+2022-07-09 00:44:39.212872 +0000 build-fedora1: output: + popd
+2022-07-09 00:44:39.212877 +0000 build-fedora1: output: + exit_clean
+2022-07-09 00:44:39.212883 +0000 build-fedora1: output: + local exit_code=0
+2022-07-09 00:44:39.212888 +0000 build-fedora1: output: + '[' 0 -gt 0 ']'
+2022-07-09 00:44:39.212894 +0000 build-fedora1: output: + exit 0
+2022-07-09 00:44:39.214890 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9492 qubesbuilder.FileCopyOut+__builder__python-panflute /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/sources
+2022-07-09 00:44:51.002807 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6292 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-09 00:44:51.197494 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6292 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-09 00:44:51.415272 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6292 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-09 00:44:51.637980 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6292 bash -c 'rm -rf /builder/incoming/python-panflute /builder/python-panflute'
+2022-07-09 00:44:51.807707 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6292 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/python-panflute
+2022-07-09 00:44:51.997084 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6292 bash -c 'mkdir -p /builder && mv /builder/incoming/python-panflute /builder'
+2022-07-09 00:44:52.199572 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp6292 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/python-panflute && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/python-panflute --file-name panflute-1.12.5.tar.gz --file-url https://files.pythonhosted.org/packages/source/p/panflute/panflute-1.12.5.tar.gz --checksum-cmd sha256sum --checksum-file /builder/python-panflute/panflute-1.12.5.tar.gz.sha256''.
+2022-07-09 00:44:52.321156 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/python-panflute --file-name panflute-1.12.5.tar.gz --file-url https://files.pythonhosted.org/packages/source/p/panflute/panflute-1.12.5.tar.gz --checksum-cmd sha256sum --checksum-file /builder/python-panflute/panflute-1.12.5.tar.gz.sha256
+2022-07-09 00:44:52.325162 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/python-panflute'\'' --file-name '\''panflute-1.12.5.tar.gz'\'' --file-url '\''https://files.pythonhosted.org/packages/source/p/panflute/panflute-1.12.5.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/python-panflute/panflute-1.12.5.tar.gz.sha256'\'' --'
+2022-07-09 00:44:52.325213 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/python-panflute'\'' --file-name '\''panflute-1.12.5.tar.gz'\'' --file-url '\''https://files.pythonhosted.org/packages/source/p/panflute/panflute-1.12.5.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/python-panflute/panflute-1.12.5.tar.gz.sha256'\'' --'
+2022-07-09 00:44:52.325234 +0000 build-fedora1: output: ++ set -- --output-dir /builder/python-panflute --file-name panflute-1.12.5.tar.gz --file-url https://files.pythonhosted.org/packages/source/p/panflute/panflute-1.12.5.tar.gz --checksum-cmd sha256sum --checksum-file /builder/python-panflute/panflute-1.12.5.tar.gz.sha256 --
+2022-07-09 00:44:52.325256 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-07-09 00:44:52.325262 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-09 00:44:52.325268 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:52.325275 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/python-panflute
+2022-07-09 00:44:52.325280 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325286 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325291 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-09 00:44:52.325296 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:52.325302 +0000 build-fedora1: output: + FILE_NAME=panflute-1.12.5.tar.gz
+2022-07-09 00:44:52.325308 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325313 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325318 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-09 00:44:52.325323 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:52.325332 +0000 build-fedora1: output: + FILE_URL=https://files.pythonhosted.org/packages/source/p/panflute/panflute-1.12.5.tar.gz
+2022-07-09 00:44:52.325338 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325343 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325348 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-09 00:44:52.325354 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:52.325359 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-07-09 00:44:52.325364 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325369 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325375 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-09 00:44:52.325380 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:52.325388 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/python-panflute/panflute-1.12.5.tar.gz.sha256
+2022-07-09 00:44:52.325393 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325398 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325403 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-09 00:44:52.325408 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 00:44:52.325413 +0000 build-fedora1: output: + shift
+2022-07-09 00:44:52.325419 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-09 00:44:52.325427 +0000 build-fedora1: output: + '[' -z https://files.pythonhosted.org/packages/source/p/panflute/panflute-1.12.5.tar.gz ']'
+2022-07-09 00:44:52.325436 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-07-09 00:44:52.325442 +0000 build-fedora1: output: + '[' -z panflute-1.12.5.tar.gz ']'
+2022-07-09 00:44:52.325450 +0000 build-fedora1: output: + '[' -z /builder/python-panflute/panflute-1.12.5.tar.gz.sha256 ']'
+2022-07-09 00:44:52.325457 +0000 build-fedora1: output: + '[' -n /builder/python-panflute/panflute-1.12.5.tar.gz.sha256 ']'
+2022-07-09 00:44:52.325465 +0000 build-fedora1: output: + '[' -e /builder/python-panflute/panflute-1.12.5.tar.gz.sha256 ']'
+2022-07-09 00:44:52.325474 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 00:44:52.325480 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 00:44:52.325485 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 00:44:52.325490 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 00:44:52.325497 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_panflute-1.12.5.tar.gz
+2022-07-09 00:44:52.325510 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_panflute-1.12.5.tar.gz https://files.pythonhosted.org/packages/source/p/panflute/panflute-1.12.5.tar.gz
+2022-07-09 00:44:52.530512 +0000 build-fedora1: output: + '[' -n /builder/python-panflute/panflute-1.12.5.tar.gz.sha256 ']'
+2022-07-09 00:44:52.530571 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-07-09 00:44:52.530579 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 00:44:52.530586 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-07-09 00:44:52.530593 +0000 build-fedora1: output: +++ cat /builder/python-panflute/panflute-1.12.5.tar.gz.sha256
+2022-07-09 00:44:52.533263 +0000 build-fedora1: output: ++ printf '%s  -\n' 8b89507c02fde97650441d50169958b50cb13000edcc7f061390ea6fc313775c
+2022-07-09 00:44:52.534601 +0000 build-fedora1: output: + '[' -n /builder/python-panflute ']'
+2022-07-09 00:44:52.534661 +0000 build-fedora1: output: + mkdir -p /builder/python-panflute
+2022-07-09 00:44:52.535566 +0000 build-fedora1: output: + mv untrusted_panflute-1.12.5.tar.gz /builder/python-panflute/panflute-1.12.5.tar.gz
+2022-07-09 00:44:52.542270 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6292 qubesbuilder.FileCopyOut+__builder__python-panflute__panflute-1.12.5.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-07-09 00:45:04.083515 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp465 bash -c 'rm -rf /builder/incoming/python-panflute /builder/python-panflute'
+2022-07-09 00:45:04.279225 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp465 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/python-panflute
+2022-07-09 00:45:04.462730 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp465 bash -c 'mkdir -p /builder && mv /builder/incoming/python-panflute /builder'
+2022-07-09 00:45:04.647576 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp465 env VERBOSE='1' DEBUG='1' bash -c 'rm -f /builder/python-panflute/hash /builder/python-panflute/vtags && cd /builder && git -C /builder/python-panflute rev-parse 'HEAD^{}' >> /builder/python-panflute/hash && git -C /builder/python-panflute tag --points-at HEAD --list 'v*' >> /builder/python-panflute/vtags''.
+2022-07-09 00:45:04.950591 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp465 qubesbuilder.FileCopyOut+__builder__python-panflute__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/python-panflute/1.12.5-2/nodist/fetch
+2022-07-09 00:45:05.111191 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp465 qubesbuilder.FileCopyOut+__builder__python-panflute__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/python-panflute/1.12.5-2/nodist/fetch
+2022-07-09 00:45:07.595645 +0000 build-fedora1: python-panflute:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 00:45:07.595716 +0000 build-fedora1: python-panflute:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 00:45:07.595736 +0000 build-fedora1: python-panflute:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 00:45:07.619517 +0000 build-fedora1: > done
+2022-07-09 00:45:07.619551 +0000 > closing log

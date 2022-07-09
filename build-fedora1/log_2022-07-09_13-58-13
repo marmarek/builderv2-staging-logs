@@ -1,0 +1,279 @@
+2022-07-09 13:58:13.024097 +0000 > starting log
+2022-07-09 13:58:13.024465 +0000 build-fedora1: > starting build with log
+2022-07-09 13:58:13.024474 +0000 build-fedora1: >> args:
+2022-07-09 13:58:13.024489 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent xorg-x11-drv-intel>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-07-09 13:58:13.024497 +0000 build-fedora1: >> component:
+2022-07-09 13:58:13.024503 +0000 build-fedora1: >>   xorg-x11-drv-intel
+2022-07-09 13:58:13.024508 +0000 build-fedora1: >> distributions:
+2022-07-09 13:58:13.024518 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-07-09 13:58:22.272767 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2673 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-09 13:58:22.511082 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2673 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-09 13:58:22.826891 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2673 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-09 13:58:23.052948 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp2673 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component xorg-x11-drv-intel --git-branch master --git-url https://github.com/QubesOS/qubes-xorg-x11-drv-intel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-07-09 13:58:23.348798 +0000 build-fedora1: output: + unset CLEAN
+2022-07-09 13:58:23.348840 +0000 build-fedora1: output: + CLEAN=0
+2022-07-09 13:58:23.348871 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component xorg-x11-drv-intel --git-branch master --git-url https://github.com/QubesOS/qubes-xorg-x11-drv-intel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-07-09 13:58:23.381745 +0000 build-fedora1: output: + OPTS=' --component '\''xorg-x11-drv-intel'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-xorg-x11-drv-intel'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-09 13:58:23.382152 +0000 build-fedora1: output: + eval set -- ' --component '\''xorg-x11-drv-intel'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-xorg-x11-drv-intel'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-09 13:58:23.382189 +0000 build-fedora1: output: ++ set -- --component xorg-x11-drv-intel --git-branch master --git-url https://github.com/QubesOS/qubes-xorg-x11-drv-intel --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-07-09 13:58:23.382202 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-09 13:58:23.382213 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:23.382230 +0000 build-fedora1: output: + COMPONENT=xorg-x11-drv-intel
+2022-07-09 13:58:23.382240 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.382249 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.382896 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-09 13:58:23.383008 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:23.383030 +0000 build-fedora1: output: + BRANCH=master
+2022-07-09 13:58:23.383049 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383064 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383079 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-09 13:58:23.383093 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:23.383152 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-xorg-x11-drv-intel
+2022-07-09 13:58:23.383167 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383181 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383196 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-09 13:58:23.383210 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:23.383227 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-07-09 13:58:23.383241 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383255 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383270 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-09 13:58:23.383285 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:23.383441 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-07-09 13:58:23.383462 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383474 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383481 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-09 13:58:23.383486 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:23.383491 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:23.383497 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-09 13:58:23.383503 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-09 13:58:23.383508 +0000 build-fedora1: output: -]*$ ]]
+2022-07-09 13:58:23.383513 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-09 13:58:23.383518 +0000 build-fedora1: output: -]*$ ]]
+2022-07-09 13:58:23.383525 +0000 build-fedora1: output: + '[' -z xorg-x11-drv-intel ']'
+2022-07-09 13:58:23.383530 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:58:23.383536 +0000 build-fedora1: output: + REPO=xorg-x11-drv-intel
+2022-07-09 13:58:23.383542 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-07-09 13:58:23.383548 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:58:23.383553 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-07-09 13:58:23.383559 +0000 build-fedora1: output: + '[' -z master ']'
+2022-07-09 13:58:23.383564 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:58:23.383571 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-xorg-x11-drv-intel ']'
+2022-07-09 13:58:23.383577 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:58:23.383582 +0000 build-fedora1: output: + : 0
+2022-07-09 13:58:23.383587 +0000 build-fedora1: output: + : 0
+2022-07-09 13:58:23.383592 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-07-09 13:58:23.383597 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-07-09 13:58:23.383603 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-07-09 13:58:23.383610 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-07-09 13:58:23.383620 +0000 build-fedora1: output: + [[ xorg-x11-drv-intel =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-07-09 13:58:23.383771 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:58:23.383783 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-07-09 13:58:23.383948 +0000 build-fedora1: output: + fresh_clone=false
+2022-07-09 13:58:23.384067 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-07-09 13:58:23.384233 +0000 build-fedora1: output: + [[ -d xorg-x11-drv-intel ]]
+2022-07-09 13:58:23.384282 +0000 build-fedora1: output: + rm -f -- xorg-x11-drv-intel
+2022-07-09 13:58:23.385389 +0000 build-fedora1: output: + print_headers
+2022-07-09 13:58:23.385424 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:58:23.385453 +0000 build-fedora1: output: -> Updating sources for xorg-x11-drv-intel...
+2022-07-09 13:58:23.385476 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-xorg-x11-drv-intel master...
+2022-07-09 13:58:23.385499 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-xorg-x11-drv-intel master'
+2022-07-09 13:58:23.385518 +0000 build-fedora1: output: + echo '-> Updating sources for xorg-x11-drv-intel...'
+2022-07-09 13:58:23.385540 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-xorg-x11-drv-intel master...'
+2022-07-09 13:58:23.385582 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-xorg-x11-drv-intel xorg-x11-drv-intel
+2022-07-09 13:58:24.351164 +0000 build-fedora1: output: + VERIFY_REF=HEAD
+2022-07-09 13:58:24.351265 +0000 build-fedora1: output: + fresh_clone=:
+2022-07-09 13:58:24.351307 +0000 build-fedora1: output: + export CHECK=signed-tag
+2022-07-09 13:58:24.351326 +0000 build-fedora1: output: + CHECK=signed-tag
+2022-07-09 13:58:24.351342 +0000 build-fedora1: output: + verify=true
+2022-07-09 13:58:24.351713 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:58:24.351776 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:58:24.351812 +0000 build-fedora1: output: ++ git -C xorg-x11-drv-intel rev-parse -q --verify HEAD
+2022-07-09 13:58:24.354424 +0000 build-fedora1: output: + VERIFY_REF=6e1c59da11b7cb5e00716aef8e6eca18a10f0248
+2022-07-09 13:58:24.354444 +0000 build-fedora1: output: + '[' true = false ']'
+2022-07-09 13:58:24.354542 +0000 build-fedora1: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-07-09 13:58:24.354554 +0000 build-fedora1: output: + echo '--> Verifying tags...'
+2022-07-09 13:58:24.354724 +0000 build-fedora1: output: --> Verifying tags...
+2022-07-09 13:58:24.355128 +0000 build-fedora1: output: ++ readlink -m /builder/keyring
+2022-07-09 13:58:24.357609 +0000 build-fedora1: output: + GNUPGHOME=/builder/keyring
+2022-07-09 13:58:24.357623 +0000 build-fedora1: output: + export GNUPGHOME
+2022-07-09 13:58:24.357630 +0000 build-fedora1: output: + '[' '!' -d /builder/keyring ']'
+2022-07-09 13:58:24.357823 +0000 build-fedora1: output: + mkdir -p /builder/keyring
+2022-07-09 13:58:24.360321 +0000 build-fedora1: output: + chmod 700 /builder/keyring
+2022-07-09 13:58:24.361875 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-07-09 13:58:24.370793 +0000 build-fedora1: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-07-09 13:58:24.373631 +0000 build-fedora1: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-07-09 13:58:24.373674 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-07-09 13:58:24.387339 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-07-09 13:58:24.389348 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-07-09 13:58:24.389389 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-07-09 13:58:24.389648 +0000 build-fedora1: output: gpg:               imported: 3
+2022-07-09 13:58:24.390681 +0000 build-fedora1: output: gpg: no ultimately trusted keys found
+2022-07-09 13:58:24.390986 +0000 build-fedora1: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-07-09 13:58:24.391620 +0000 build-fedora1: output: + gpg --import-ownertrust
+2022-07-09 13:58:24.395600 +0000 build-fedora1: output: gpg: inserting ownertrust of 6
+2022-07-09 13:58:24.396474 +0000 build-fedora1: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-07-09 13:58:24.396533 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-07-09 13:58:24.401367 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-07-09 13:58:24.402958 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-07-09 13:58:24.404067 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-07-09 13:58:24.404087 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-07-09 13:58:24.404326 +0000 build-fedora1: output: gpg:              unchanged: 3
+2022-07-09 13:58:24.404375 +0000 build-fedora1: output: + touch /builder/keyring/pubring.gpg
+2022-07-09 13:58:24.406377 +0000 build-fedora1: output: + gpgconf --kill gpg-agent
+2022-07-09 13:58:24.414017 +0000 build-fedora1: output: + pushd xorg-x11-drv-intel
+2022-07-09 13:58:24.414231 +0000 build-fedora1: output: + expected_hash=6e1c59da11b7cb5e00716aef8e6eca18a10f0248
+2022-07-09 13:58:24.414284 +0000 build-fedora1: output: + hash_len=40
+2022-07-09 13:58:24.414468 +0000 build-fedora1: output: + '[' 40 -ne 40 ']'
+2022-07-09 13:58:24.414518 +0000 build-fedora1: output: + [[ 6e1c59da11b7cb5e00716aef8e6eca18a10f0248 =~ ^[a-f0-9]+$ ]]
+2022-07-09 13:58:24.415006 +0000 build-fedora1: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-07-09 13:58:24.415528 +0000 build-fedora1: output: ++ head -c 500
+2022-07-09 13:58:24.415778 +0000 build-fedora1: output: ++ git tag --points-at=6e1c59da11b7cb5e00716aef8e6eca18a10f0248 '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-07-09 13:58:24.420701 +0000 build-fedora1: output: + tags=f9f8bc3f7b721837ada724a86d46baf1a8e77aab:6e1c59da11b7cb5e00716aef8e6eca18a10f0248:
+2022-07-09 13:58:24.420747 +0000 build-fedora1: output: + for tag in $tags
+2022-07-09 13:58:24.420769 +0000 build-fedora1: output: + (( 82 != hash_len * 2 + 2 ))
+2022-07-09 13:58:24.421209 +0000 build-fedora1: output: + [[ :6e1c59da11b7cb5e00716aef8e6eca18a10f0248: == \:\6\e\1\c\5\9\d\a\1\1\b\7\c\b\5\e\0\0\7\1\6\a\e\f\8\e\6\e\c\a\1\8\a\1\0\f\0\2\4\8\: ]]
+2022-07-09 13:58:24.421231 +0000 build-fedora1: output: + tag=f9f8bc3f7b721837ada724a86d46baf1a8e77aab
+2022-07-09 13:58:24.421306 +0000 build-fedora1: output: + verify_git_obj tag f9f8bc3f7b721837ada724a86d46baf1a8e77aab
+2022-07-09 13:58:24.421323 +0000 build-fedora1: output: + local content newsig_number
+2022-07-09 13:58:24.421730 +0000 build-fedora1: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- f9f8bc3f7b721837ada724a86d46baf1a8e77aab
+2022-07-09 13:58:24.428122 +0000 build-fedora1: output: + content='[GNUPG:] NEWSIG
+2022-07-09 13:58:24.428144 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:58:24.428155 +0000 build-fedora1: output: [GNUPG:] SIG_ID yibBTQyVbEQ6b4YBxAPAGD0L8Bs 2022-07-09 1657374598
+2022-07-09 13:58:24.428239 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:58:24.428254 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.428262 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.428270 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.428279 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:58:24.428290 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374598 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:58:24.428299 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:58:24.429771 +0000 build-fedora1: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-07-09 13:58:24.429790 +0000 build-fedora1: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-07-09 13:58:24.429799 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:58:24.429807 +0000 build-fedora1: output: [GNUPG:] SIG_ID yibBTQyVbEQ6b4YBxAPAGD0L8Bs 2022-07-09 1657374598
+2022-07-09 13:58:24.429964 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:58:24.430176 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.430266 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.430298 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.430528 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:58:24.430596 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374598 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:58:24.430702 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:58:24.431210 +0000 build-fedora1: output: + newsig_number=1
+2022-07-09 13:58:24.431470 +0000 build-fedora1: output: + '[' 1 = 1 ']'
+2022-07-09 13:58:24.431507 +0000 build-fedora1: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp$'
+2022-07-09 13:58:24.431537 +0000 build-fedora1: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-07-09 13:58:24.431554 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:58:24.431574 +0000 build-fedora1: output: [GNUPG:] SIG_ID yibBTQyVbEQ6b4YBxAPAGD0L8Bs 2022-07-09 1657374598
+2022-07-09 13:58:24.431690 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:58:24.431806 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.432164 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.432207 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:58:24.432261 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:58:24.432297 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374598 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:58:24.432426 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:58:24.432451 +0000 build-fedora1: output: + echo '---> Good tag f9f8bc3f7b721837ada724a86d46baf1a8e77aab'
+2022-07-09 13:58:24.432589 +0000 build-fedora1: output: + '[' -z x ']'
+2022-07-09 13:58:24.432601 +0000 build-fedora1: output: + popd
+2022-07-09 13:58:24.432725 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:58:24.432737 +0000 build-fedora1: output: + pushd xorg-x11-drv-intel
+2022-07-09 13:58:24.432855 +0000 build-fedora1: output: ---> Good tag f9f8bc3f7b721837ada724a86d46baf1a8e77aab
+2022-07-09 13:58:24.432951 +0000 build-fedora1: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-07-09 13:58:24.433856 +0000 build-fedora1: output: + CURRENT_BRANCH=master
+2022-07-09 13:58:24.433875 +0000 build-fedora1: output: + '[' master '!=' master ']'
+2022-07-09 13:58:24.433981 +0000 build-fedora1: output: + :
+2022-07-09 13:58:24.434042 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:58:24.434111 +0000 build-fedora1: output: + red='.[1;31m'
+2022-07-09 13:58:24.434234 +0000 build-fedora1: output: + green='.[1;32m'
+2022-07-09 13:58:24.434438 +0000 build-fedora1: output: + normal='.[0;0m'
+2022-07-09 13:58:24.434507 +0000 build-fedora1: output: ++ git name-rev --name-only master
+2022-07-09 13:58:24.436927 +0000 build-fedora1: output: + '[' -n 'tags/mm_6e1c59da^0' ']'
+2022-07-09 13:58:24.436957 +0000 build-fedora1: output: + echo '--> Switching branch from master branch to .[1;32mmaster.[0;0m'
+2022-07-09 13:58:24.437070 +0000 build-fedora1: output: --> Switching branch from master branch to .[1;32mmaster.[0;0m
+2022-07-09 13:58:24.437085 +0000 build-fedora1: output: + git merge-base --is-ancestor -- master 6e1c59da11b7cb5e00716aef8e6eca18a10f0248
+2022-07-09 13:58:24.438065 +0000 build-fedora1: output: + git checkout -B master 6e1c59da11b7cb5e00716aef8e6eca18a10f0248
+2022-07-09 13:58:24.440055 +0000 build-fedora1: output: Reset branch 'master'
+2022-07-09 13:58:24.440219 +0000 build-fedora1: output: Your branch is up to date with 'origin/master'.
+2022-07-09 13:58:24.440951 +0000 build-fedora1: output: + '[' -e .gitmodules ']'
+2022-07-09 13:58:24.440971 +0000 build-fedora1: output: + :
+2022-07-09 13:58:24.440977 +0000 build-fedora1: output: + popd
+2022-07-09 13:58:24.440984 +0000 build-fedora1: output: + exit_clean
+2022-07-09 13:58:24.440990 +0000 build-fedora1: output: + local exit_code=0
+2022-07-09 13:58:24.440995 +0000 build-fedora1: output: + '[' 0 -gt 0 ']'
+2022-07-09 13:58:24.441000 +0000 build-fedora1: output: + exit 0
+2022-07-09 13:58:24.448841 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2673 qubesbuilder.FileCopyOut+__builder__xorg-x11-drv-intel /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/sources
+2022-07-09 13:58:36.357656 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6489 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-09 13:58:36.557666 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6489 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-09 13:58:36.763222 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6489 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-09 13:58:36.961284 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6489 bash -c 'rm -rf /builder/incoming/xorg-x11-drv-intel /builder/xorg-x11-drv-intel'
+2022-07-09 13:58:37.236274 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6489 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/xorg-x11-drv-intel
+2022-07-09 13:58:37.547198 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6489 bash -c 'mkdir -p /builder && mv /builder/incoming/xorg-x11-drv-intel /builder'
+2022-07-09 13:58:37.680623 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp6489 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/xorg-x11-drv-intel && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/xorg-x11-drv-intel --file-name xf86-video-intel-20210126.tar.bz2 --file-url https://ftp.qubes-os.org/distfiles/xf86-video-intel-20210126.tar.bz2 --checksum-cmd sha512sum --checksum-file /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512''.
+2022-07-09 13:58:37.848444 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/xorg-x11-drv-intel --file-name xf86-video-intel-20210126.tar.bz2 --file-url https://ftp.qubes-os.org/distfiles/xf86-video-intel-20210126.tar.bz2 --checksum-cmd sha512sum --checksum-file /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512
+2022-07-09 13:58:37.850338 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/xorg-x11-drv-intel'\'' --file-name '\''xf86-video-intel-20210126.tar.bz2'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/xf86-video-intel-20210126.tar.bz2'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512'\'' --'
+2022-07-09 13:58:37.850381 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/xorg-x11-drv-intel'\'' --file-name '\''xf86-video-intel-20210126.tar.bz2'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/xf86-video-intel-20210126.tar.bz2'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512'\'' --'
+2022-07-09 13:58:37.850994 +0000 build-fedora1: output: ++ set -- --output-dir /builder/xorg-x11-drv-intel --file-name xf86-video-intel-20210126.tar.bz2 --file-url https://ftp.qubes-os.org/distfiles/xf86-video-intel-20210126.tar.bz2 --checksum-cmd sha512sum --checksum-file /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512 --
+2022-07-09 13:58:37.851028 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-07-09 13:58:37.852407 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-09 13:58:37.852424 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:37.852432 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/xorg-x11-drv-intel
+2022-07-09 13:58:37.852438 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852444 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852449 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-09 13:58:37.852454 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:37.852465 +0000 build-fedora1: output: + FILE_NAME=xf86-video-intel-20210126.tar.bz2
+2022-07-09 13:58:37.852470 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852475 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852480 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-09 13:58:37.852486 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:37.852494 +0000 build-fedora1: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/xf86-video-intel-20210126.tar.bz2
+2022-07-09 13:58:37.852499 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852508 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852513 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-09 13:58:37.852518 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:37.852524 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-07-09 13:58:37.852529 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852538 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852543 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-09 13:58:37.852555 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:37.852567 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512
+2022-07-09 13:58:37.852572 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852581 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852586 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-09 13:58:37.852591 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:58:37.852596 +0000 build-fedora1: output: + shift
+2022-07-09 13:58:37.852602 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-09 13:58:37.852615 +0000 build-fedora1: output: + '[' -z https://ftp.qubes-os.org/distfiles/xf86-video-intel-20210126.tar.bz2 ']'
+2022-07-09 13:58:37.852625 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-07-09 13:58:37.852762 +0000 build-fedora1: output: + '[' -z xf86-video-intel-20210126.tar.bz2 ']'
+2022-07-09 13:58:37.853592 +0000 build-fedora1: output: + '[' -z /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512 ']'
+2022-07-09 13:58:37.853612 +0000 build-fedora1: output: + '[' -n /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512 ']'
+2022-07-09 13:58:37.853747 +0000 build-fedora1: output: + '[' -e /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512 ']'
+2022-07-09 13:58:37.853759 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:58:37.853765 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:58:37.853772 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:58:37.853778 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:58:37.853785 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xf86-video-intel-20210126.tar.bz2
+2022-07-09 13:58:37.853799 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xf86-video-intel-20210126.tar.bz2 https://ftp.qubes-os.org/distfiles/xf86-video-intel-20210126.tar.bz2
+2022-07-09 13:58:38.173961 +0000 build-fedora1: output: + '[' -n /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512 ']'
+2022-07-09 13:58:38.174084 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-07-09 13:58:38.174110 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:58:38.174131 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-07-09 13:58:38.174429 +0000 build-fedora1: output: +++ cat /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2.sha512
+2022-07-09 13:58:38.175056 +0000 build-fedora1: output: ++ printf '%s  -\n' e9b0c20e2fdac34a48509cb5c5baa3523be58aa9554f6486f147fa516ac0b799db6536db59a057be6971ec1a29ffdcc60e97b0837ea449f3ac086157ff7463de
+2022-07-09 13:58:38.178187 +0000 build-fedora1: output: + '[' -n /builder/xorg-x11-drv-intel ']'
+2022-07-09 13:58:38.178208 +0000 build-fedora1: output: + mkdir -p /builder/xorg-x11-drv-intel
+2022-07-09 13:58:38.179269 +0000 build-fedora1: output: + mv untrusted_xf86-video-intel-20210126.tar.bz2 /builder/xorg-x11-drv-intel/xf86-video-intel-20210126.tar.bz2
+2022-07-09 13:58:38.187064 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6489 qubesbuilder.FileCopyOut+__builder__xorg-x11-drv-intel__xf86-video-intel-20210126.tar.bz2 /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-07-09 13:58:49.882799 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp7030 bash -c 'rm -rf /builder/incoming/xorg-x11-drv-intel /builder/xorg-x11-drv-intel'
+2022-07-09 13:58:50.043792 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp7030 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/xorg-x11-drv-intel
+2022-07-09 13:58:50.572144 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp7030 bash -c 'mkdir -p /builder && mv /builder/incoming/xorg-x11-drv-intel /builder'
+2022-07-09 13:58:50.793702 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp7030 env VERBOSE='1' DEBUG='1' bash -c 'rm -f /builder/xorg-x11-drv-intel/hash /builder/xorg-x11-drv-intel/vtags && cd /builder && git -C /builder/xorg-x11-drv-intel rev-parse 'HEAD^{}' >> /builder/xorg-x11-drv-intel/hash && git -C /builder/xorg-x11-drv-intel tag --points-at HEAD --list 'v*' >> /builder/xorg-x11-drv-intel/vtags''.
+2022-07-09 13:58:51.042460 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7030 qubesbuilder.FileCopyOut+__builder__xorg-x11-drv-intel__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/xorg-x11-drv-intel/2.99.917-49.20210126/nodist/fetch
+2022-07-09 13:58:51.224005 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp7030 qubesbuilder.FileCopyOut+__builder__xorg-x11-drv-intel__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/xorg-x11-drv-intel/2.99.917-49.20210126/nodist/fetch
+2022-07-09 13:58:53.781390 +0000 build-fedora1: xorg-x11-drv-intel:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:58:53.781451 +0000 build-fedora1: xorg-x11-drv-intel:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:58:53.781471 +0000 build-fedora1: xorg-x11-drv-intel:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:58:53.801569 +0000 build-fedora1: xorg-x11-drv-intel:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:58:53.801626 +0000 build-fedora1: xorg-x11-drv-intel:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:58:53.801648 +0000 build-fedora1: xorg-x11-drv-intel:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:58:53.801669 +0000 build-fedora1: > done
+2022-07-09 13:58:53.801683 +0000 > closing log

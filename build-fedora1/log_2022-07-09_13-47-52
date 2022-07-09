@@ -1,0 +1,279 @@
+2022-07-09 13:47:52.724394 +0000 > starting log
+2022-07-09 13:47:52.724701 +0000 build-fedora1: > starting build with log
+2022-07-09 13:47:52.724709 +0000 build-fedora1: >> args:
+2022-07-09 13:47:52.724724 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent lorax>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-07-09 13:47:52.724730 +0000 build-fedora1: >> component:
+2022-07-09 13:47:52.724735 +0000 build-fedora1: >>   lorax
+2022-07-09 13:47:52.724740 +0000 build-fedora1: >> distributions:
+2022-07-09 13:47:52.724750 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-07-09 13:48:02.074661 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2862 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-09 13:48:02.289788 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2862 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-09 13:48:02.459866 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2862 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-09 13:48:02.652869 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp2862 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component lorax --git-branch master --git-url https://github.com/QubesOS/qubes-lorax --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-07-09 13:48:02.829788 +0000 build-fedora1: output: + unset CLEAN
+2022-07-09 13:48:02.829830 +0000 build-fedora1: output: + CLEAN=0
+2022-07-09 13:48:02.830109 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component lorax --git-branch master --git-url https://github.com/QubesOS/qubes-lorax --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-07-09 13:48:02.832965 +0000 build-fedora1: output: + OPTS=' --component '\''lorax'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-lorax'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-09 13:48:02.833001 +0000 build-fedora1: output: + eval set -- ' --component '\''lorax'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-lorax'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-09 13:48:02.833014 +0000 build-fedora1: output: ++ set -- --component lorax --git-branch master --git-url https://github.com/QubesOS/qubes-lorax --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-07-09 13:48:02.833021 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-09 13:48:02.833027 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:02.833032 +0000 build-fedora1: output: + COMPONENT=lorax
+2022-07-09 13:48:02.833040 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833045 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833050 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-09 13:48:02.833056 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:02.833061 +0000 build-fedora1: output: + BRANCH=master
+2022-07-09 13:48:02.833066 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833071 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833076 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-09 13:48:02.833082 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:02.833089 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-lorax
+2022-07-09 13:48:02.833094 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833112 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833118 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-09 13:48:02.833123 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:02.833129 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-07-09 13:48:02.833134 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833139 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833145 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-09 13:48:02.833150 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:02.833156 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-07-09 13:48:02.833161 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833166 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833171 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-09 13:48:02.833176 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:02.833181 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:02.833187 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-09 13:48:02.833192 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-09 13:48:02.833197 +0000 build-fedora1: output: -]*$ ]]
+2022-07-09 13:48:02.833203 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-09 13:48:02.833208 +0000 build-fedora1: output: -]*$ ]]
+2022-07-09 13:48:02.833213 +0000 build-fedora1: output: + '[' -z lorax ']'
+2022-07-09 13:48:02.833219 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:48:02.833224 +0000 build-fedora1: output: + REPO=lorax
+2022-07-09 13:48:02.833230 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-07-09 13:48:02.833235 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:48:02.833240 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-07-09 13:48:02.833249 +0000 build-fedora1: output: + '[' -z master ']'
+2022-07-09 13:48:02.833671 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:48:02.833721 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-lorax ']'
+2022-07-09 13:48:02.833745 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:48:02.833761 +0000 build-fedora1: output: + : 0
+2022-07-09 13:48:02.833775 +0000 build-fedora1: output: + : 0
+2022-07-09 13:48:02.834135 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-07-09 13:48:02.834168 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-07-09 13:48:02.834190 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-07-09 13:48:02.834210 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-07-09 13:48:02.834228 +0000 build-fedora1: output: + [[ lorax =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-07-09 13:48:02.834315 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:48:02.834336 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-07-09 13:48:02.834719 +0000 build-fedora1: output: + fresh_clone=false
+2022-07-09 13:48:02.834738 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-07-09 13:48:02.834746 +0000 build-fedora1: output: + [[ -d lorax ]]
+2022-07-09 13:48:02.834752 +0000 build-fedora1: output: + rm -f -- lorax
+2022-07-09 13:48:02.834758 +0000 build-fedora1: output: -> Updating sources for lorax...
+2022-07-09 13:48:02.834766 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-lorax master...
+2022-07-09 13:48:02.835079 +0000 build-fedora1: output: + print_headers
+2022-07-09 13:48:02.835096 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:48:02.835104 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-lorax master'
+2022-07-09 13:48:02.835111 +0000 build-fedora1: output: + echo '-> Updating sources for lorax...'
+2022-07-09 13:48:02.835119 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-lorax master...'
+2022-07-09 13:48:02.835130 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-lorax lorax
+2022-07-09 13:48:04.507201 +0000 build-fedora1: output: + VERIFY_REF=HEAD
+2022-07-09 13:48:04.507307 +0000 build-fedora1: output: + fresh_clone=:
+2022-07-09 13:48:04.507329 +0000 build-fedora1: output: + export CHECK=signed-tag
+2022-07-09 13:48:04.507556 +0000 build-fedora1: output: + CHECK=signed-tag
+2022-07-09 13:48:04.507576 +0000 build-fedora1: output: + verify=true
+2022-07-09 13:48:04.507593 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:48:04.507609 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:48:04.507629 +0000 build-fedora1: output: ++ git -C lorax rev-parse -q --verify HEAD
+2022-07-09 13:48:04.509605 +0000 build-fedora1: output: + VERIFY_REF=f00326855a4222d4652c7d36f1f254607c3f23b0
+2022-07-09 13:48:04.509669 +0000 build-fedora1: output: + '[' true = false ']'
+2022-07-09 13:48:04.509733 +0000 build-fedora1: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-07-09 13:48:04.509755 +0000 build-fedora1: output: + echo '--> Verifying tags...'
+2022-07-09 13:48:04.509773 +0000 build-fedora1: output: --> Verifying tags...
+2022-07-09 13:48:04.511549 +0000 build-fedora1: output: ++ readlink -m /builder/keyring
+2022-07-09 13:48:04.514824 +0000 build-fedora1: output: + GNUPGHOME=/builder/keyring
+2022-07-09 13:48:04.515033 +0000 build-fedora1: output: + export GNUPGHOME
+2022-07-09 13:48:04.515069 +0000 build-fedora1: output: + '[' '!' -d /builder/keyring ']'
+2022-07-09 13:48:04.515092 +0000 build-fedora1: output: + mkdir -p /builder/keyring
+2022-07-09 13:48:04.517336 +0000 build-fedora1: output: + chmod 700 /builder/keyring
+2022-07-09 13:48:04.518814 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-07-09 13:48:04.527052 +0000 build-fedora1: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-07-09 13:48:04.529721 +0000 build-fedora1: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-07-09 13:48:04.529743 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-07-09 13:48:04.539816 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-07-09 13:48:04.540341 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-07-09 13:48:04.540427 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-07-09 13:48:04.540437 +0000 build-fedora1: output: gpg:               imported: 3
+2022-07-09 13:48:04.540443 +0000 build-fedora1: output: gpg: no ultimately trusted keys found
+2022-07-09 13:48:04.540922 +0000 build-fedora1: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-07-09 13:48:04.540946 +0000 build-fedora1: output: + gpg --import-ownertrust
+2022-07-09 13:48:04.544541 +0000 build-fedora1: output: gpg: inserting ownertrust of 6
+2022-07-09 13:48:04.545210 +0000 build-fedora1: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-07-09 13:48:04.545262 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-07-09 13:48:04.550267 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-07-09 13:48:04.551723 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-07-09 13:48:04.553311 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-07-09 13:48:04.553361 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-07-09 13:48:04.553390 +0000 build-fedora1: output: gpg:              unchanged: 3
+2022-07-09 13:48:04.553707 +0000 build-fedora1: output: + touch /builder/keyring/pubring.gpg
+2022-07-09 13:48:04.555579 +0000 build-fedora1: output: + gpgconf --kill gpg-agent
+2022-07-09 13:48:04.565087 +0000 build-fedora1: output: + pushd lorax
+2022-07-09 13:48:04.565194 +0000 build-fedora1: output: + expected_hash=f00326855a4222d4652c7d36f1f254607c3f23b0
+2022-07-09 13:48:04.565223 +0000 build-fedora1: output: + hash_len=40
+2022-07-09 13:48:04.565240 +0000 build-fedora1: output: + '[' 40 -ne 40 ']'
+2022-07-09 13:48:04.565262 +0000 build-fedora1: output: + [[ f00326855a4222d4652c7d36f1f254607c3f23b0 =~ ^[a-f0-9]+$ ]]
+2022-07-09 13:48:04.565284 +0000 build-fedora1: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-07-09 13:48:04.566283 +0000 build-fedora1: output: ++ head -c 500
+2022-07-09 13:48:04.567034 +0000 build-fedora1: output: ++ git tag --points-at=f00326855a4222d4652c7d36f1f254607c3f23b0 '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-07-09 13:48:04.572309 +0000 build-fedora1: output: + tags=c4931339c775a2c7dfb66eb4597eb22712cac48f:f00326855a4222d4652c7d36f1f254607c3f23b0:
+2022-07-09 13:48:04.572362 +0000 build-fedora1: output: + for tag in $tags
+2022-07-09 13:48:04.572724 +0000 build-fedora1: output: + (( 82 != hash_len * 2 + 2 ))
+2022-07-09 13:48:04.572832 +0000 build-fedora1: output: + [[ :f00326855a4222d4652c7d36f1f254607c3f23b0: == \:\f\0\0\3\2\6\8\5\5\a\4\2\2\2\d\4\6\5\2\c\7\d\3\6\f\1\f\2\5\4\6\0\7\c\3\f\2\3\b\0\: ]]
+2022-07-09 13:48:04.572862 +0000 build-fedora1: output: + tag=c4931339c775a2c7dfb66eb4597eb22712cac48f
+2022-07-09 13:48:04.572892 +0000 build-fedora1: output: + verify_git_obj tag c4931339c775a2c7dfb66eb4597eb22712cac48f
+2022-07-09 13:48:04.572912 +0000 build-fedora1: output: + local content newsig_number
+2022-07-09 13:48:04.572973 +0000 build-fedora1: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- c4931339c775a2c7dfb66eb4597eb22712cac48f
+2022-07-09 13:48:04.582715 +0000 build-fedora1: output: + content='[GNUPG:] NEWSIG
+2022-07-09 13:48:04.582761 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:48:04.582783 +0000 build-fedora1: output: [GNUPG:] SIG_ID EhX6b/3qWo38BLsr/OHivz6OlHs 2022-07-09 1657374329
+2022-07-09 13:48:04.583049 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:48:04.583085 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.583106 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.583346 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.583387 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:48:04.583416 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374329 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:48:04.583688 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:48:04.583861 +0000 build-fedora1: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-07-09 13:48:04.583986 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:48:04.584209 +0000 build-fedora1: output: [GNUPG:] SIG_ID EhX6b/3qWo38BLsr/OHivz6OlHs 2022-07-09 1657374329
+2022-07-09 13:48:04.584332 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:48:04.584360 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.584387 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.584408 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.584434 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:48:04.584699 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374329 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:48:04.584754 +0000 build-fedora1: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-07-09 13:48:04.584776 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:48:04.585516 +0000 build-fedora1: output: + newsig_number=1
+2022-07-09 13:48:04.585561 +0000 build-fedora1: output: + '[' 1 = 1 ']'
+2022-07-09 13:48:04.585583 +0000 build-fedora1: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp$'
+2022-07-09 13:48:04.586055 +0000 build-fedora1: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-07-09 13:48:04.586344 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:48:04.586597 +0000 build-fedora1: output: [GNUPG:] SIG_ID EhX6b/3qWo38BLsr/OHivz6OlHs 2022-07-09 1657374329
+2022-07-09 13:48:04.586633 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:48:04.586655 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.586961 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.587006 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:48:04.587035 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:48:04.587072 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374329 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:48:04.587240 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:48:04.587351 +0000 build-fedora1: output: ---> Good tag c4931339c775a2c7dfb66eb4597eb22712cac48f
+2022-07-09 13:48:04.587365 +0000 build-fedora1: output: + echo '---> Good tag c4931339c775a2c7dfb66eb4597eb22712cac48f'
+2022-07-09 13:48:04.587444 +0000 build-fedora1: output: + '[' -z x ']'
+2022-07-09 13:48:04.587525 +0000 build-fedora1: output: + popd
+2022-07-09 13:48:04.587806 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:48:04.587821 +0000 build-fedora1: output: + pushd lorax
+2022-07-09 13:48:04.587829 +0000 build-fedora1: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-07-09 13:48:04.587835 +0000 build-fedora1: output: + CURRENT_BRANCH=master
+2022-07-09 13:48:04.588020 +0000 build-fedora1: output: + '[' master '!=' master ']'
+2022-07-09 13:48:04.588259 +0000 build-fedora1: output: + :
+2022-07-09 13:48:04.588347 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:48:04.588368 +0000 build-fedora1: output: + red='.[1;31m'
+2022-07-09 13:48:04.588383 +0000 build-fedora1: output: + green='.[1;32m'
+2022-07-09 13:48:04.588405 +0000 build-fedora1: output: + normal='.[0;0m'
+2022-07-09 13:48:04.588556 +0000 build-fedora1: output: ++ git name-rev --name-only master
+2022-07-09 13:48:04.593314 +0000 build-fedora1: output: + '[' -n 'tags/mm_f0032685^0' ']'
+2022-07-09 13:48:04.593366 +0000 build-fedora1: output: + echo '--> Switching branch from master branch to .[1;32mmaster.[0;0m'
+2022-07-09 13:48:04.593400 +0000 build-fedora1: output: + git merge-base --is-ancestor -- master f00326855a4222d4652c7d36f1f254607c3f23b0
+2022-07-09 13:48:04.593422 +0000 build-fedora1: output: --> Switching branch from master branch to .[1;32mmaster.[0;0m
+2022-07-09 13:48:04.594577 +0000 build-fedora1: output: + git checkout -B master f00326855a4222d4652c7d36f1f254607c3f23b0
+2022-07-09 13:48:04.596596 +0000 build-fedora1: output: Reset branch 'master'
+2022-07-09 13:48:04.596617 +0000 build-fedora1: output: Your branch is up to date with 'origin/master'.
+2022-07-09 13:48:04.597246 +0000 build-fedora1: output: + '[' -e .gitmodules ']'
+2022-07-09 13:48:04.597313 +0000 build-fedora1: output: + :
+2022-07-09 13:48:04.597332 +0000 build-fedora1: output: + popd
+2022-07-09 13:48:04.597348 +0000 build-fedora1: output: + exit_clean
+2022-07-09 13:48:04.597428 +0000 build-fedora1: output: + local exit_code=0
+2022-07-09 13:48:04.597446 +0000 build-fedora1: output: + '[' 0 -gt 0 ']'
+2022-07-09 13:48:04.597460 +0000 build-fedora1: output: + exit 0
+2022-07-09 13:48:04.604017 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2862 qubesbuilder.FileCopyOut+__builder__lorax /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/sources
+2022-07-09 13:48:16.513579 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2915 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-09 13:48:16.740789 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2915 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-09 13:48:16.928101 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2915 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-09 13:48:17.103034 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2915 bash -c 'rm -rf /builder/incoming/lorax /builder/lorax'
+2022-07-09 13:48:17.347062 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2915 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/lorax
+2022-07-09 13:48:17.730040 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2915 bash -c 'mkdir -p /builder && mv /builder/incoming/lorax /builder'
+2022-07-09 13:48:17.935814 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp2915 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/lorax && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/lorax --file-name lorax-32.9.tar.gz --file-url https://ftp.qubes-os.org/distfiles/lorax-32.9.tar.gz --checksum-cmd sha512sum --checksum-file /builder/lorax/lorax-32.9.tar.gz.sha512''.
+2022-07-09 13:48:18.055422 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/lorax --file-name lorax-32.9.tar.gz --file-url https://ftp.qubes-os.org/distfiles/lorax-32.9.tar.gz --checksum-cmd sha512sum --checksum-file /builder/lorax/lorax-32.9.tar.gz.sha512
+2022-07-09 13:48:18.056627 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/lorax'\'' --file-name '\''lorax-32.9.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/lorax-32.9.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/builder/lorax/lorax-32.9.tar.gz.sha512'\'' --'
+2022-07-09 13:48:18.056670 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/lorax'\'' --file-name '\''lorax-32.9.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/lorax-32.9.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/builder/lorax/lorax-32.9.tar.gz.sha512'\'' --'
+2022-07-09 13:48:18.056785 +0000 build-fedora1: output: ++ set -- --output-dir /builder/lorax --file-name lorax-32.9.tar.gz --file-url https://ftp.qubes-os.org/distfiles/lorax-32.9.tar.gz --checksum-cmd sha512sum --checksum-file /builder/lorax/lorax-32.9.tar.gz.sha512 --
+2022-07-09 13:48:18.057017 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-07-09 13:48:18.057080 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-09 13:48:18.057088 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:18.057855 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/lorax
+2022-07-09 13:48:18.058018 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.058522 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.058657 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-09 13:48:18.058769 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:18.059058 +0000 build-fedora1: output: + FILE_NAME=lorax-32.9.tar.gz
+2022-07-09 13:48:18.059083 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.059098 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.059595 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-09 13:48:18.059670 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:18.059965 +0000 build-fedora1: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/lorax-32.9.tar.gz
+2022-07-09 13:48:18.059987 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.059997 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.060076 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-09 13:48:18.060089 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:18.060270 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-07-09 13:48:18.060376 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.060433 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.060491 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-09 13:48:18.060549 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:18.060581 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/lorax/lorax-32.9.tar.gz.sha512
+2022-07-09 13:48:18.060679 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.060692 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.060742 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-09 13:48:18.060750 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:48:18.060806 +0000 build-fedora1: output: + shift
+2022-07-09 13:48:18.060850 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-09 13:48:18.060906 +0000 build-fedora1: output: + '[' -z https://ftp.qubes-os.org/distfiles/lorax-32.9.tar.gz ']'
+2022-07-09 13:48:18.060958 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-07-09 13:48:18.060994 +0000 build-fedora1: output: + '[' -z lorax-32.9.tar.gz ']'
+2022-07-09 13:48:18.061036 +0000 build-fedora1: output: + '[' -z /builder/lorax/lorax-32.9.tar.gz.sha512 ']'
+2022-07-09 13:48:18.061099 +0000 build-fedora1: output: + '[' -n /builder/lorax/lorax-32.9.tar.gz.sha512 ']'
+2022-07-09 13:48:18.061157 +0000 build-fedora1: output: + '[' -e /builder/lorax/lorax-32.9.tar.gz.sha512 ']'
+2022-07-09 13:48:18.061223 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:48:18.061556 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:48:18.061777 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:48:18.061794 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:48:18.062037 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_lorax-32.9.tar.gz
+2022-07-09 13:48:18.062113 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_lorax-32.9.tar.gz https://ftp.qubes-os.org/distfiles/lorax-32.9.tar.gz
+2022-07-09 13:48:18.622505 +0000 build-fedora1: output: + '[' -n /builder/lorax/lorax-32.9.tar.gz.sha512 ']'
+2022-07-09 13:48:18.622652 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-07-09 13:48:18.622679 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:48:18.622697 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-07-09 13:48:18.624272 +0000 build-fedora1: output: +++ cat /builder/lorax/lorax-32.9.tar.gz.sha512
+2022-07-09 13:48:18.625667 +0000 build-fedora1: output: ++ printf '%s  -\n' 314836ce9bd56be19289c34794a69a568ae357a5f5b4c66d84c844eea7be3f368c45b1cee620a47cab4dcdfb68d84352abc372cb5d83fd3b358104e42cf12a1e
+2022-07-09 13:48:18.665631 +0000 build-fedora1: output: + '[' -n /builder/lorax ']'
+2022-07-09 13:48:18.665686 +0000 build-fedora1: output: + mkdir -p /builder/lorax
+2022-07-09 13:48:18.667666 +0000 build-fedora1: output: + mv untrusted_lorax-32.9.tar.gz /builder/lorax/lorax-32.9.tar.gz
+2022-07-09 13:48:18.676978 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2915 qubesbuilder.FileCopyOut+__builder__lorax__lorax-32.9.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-07-09 13:48:30.554615 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9835 bash -c 'rm -rf /builder/incoming/lorax /builder/lorax'
+2022-07-09 13:48:30.735955 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9835 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/lorax
+2022-07-09 13:48:31.078594 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9835 bash -c 'mkdir -p /builder && mv /builder/incoming/lorax /builder'
+2022-07-09 13:48:31.309200 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp9835 env VERBOSE='1' DEBUG='1' bash -c 'rm -f /builder/lorax/hash /builder/lorax/vtags && cd /builder && git -C /builder/lorax rev-parse 'HEAD^{}' >> /builder/lorax/hash && git -C /builder/lorax tag --points-at HEAD --list 'v*' >> /builder/lorax/vtags''.
+2022-07-09 13:48:31.528846 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9835 qubesbuilder.FileCopyOut+__builder__lorax__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/lorax/32.9-1/nodist/fetch
+2022-07-09 13:48:31.672942 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9835 qubesbuilder.FileCopyOut+__builder__lorax__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/lorax/32.9-1/nodist/fetch
+2022-07-09 13:48:34.153248 +0000 build-fedora1: lorax:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:48:34.153289 +0000 build-fedora1: lorax:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:48:34.153297 +0000 build-fedora1: lorax:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:48:34.156958 +0000 build-fedora1: lorax:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:48:34.157027 +0000 build-fedora1: lorax:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:48:34.157036 +0000 build-fedora1: lorax:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:48:34.157045 +0000 build-fedora1: > done
+2022-07-09 13:48:34.157050 +0000 > closing log

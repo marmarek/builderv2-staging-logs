@@ -1,0 +1,279 @@
+2022-07-09 13:50:04.485381 +0000 > starting log
+2022-07-09 13:50:04.485702 +0000 build-fedora1: > starting build with log
+2022-07-09 13:50:04.485710 +0000 build-fedora1: >> args:
+2022-07-09 13:50:04.485725 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent pykickstart>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-07-09 13:50:04.485730 +0000 build-fedora1: >> component:
+2022-07-09 13:50:04.485736 +0000 build-fedora1: >>   pykickstart
+2022-07-09 13:50:04.485741 +0000 build-fedora1: >> distributions:
+2022-07-09 13:50:04.485751 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-07-09 13:50:12.592832 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5718 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-09 13:50:12.793798 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5718 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-09 13:50:13.019925 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5718 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-09 13:50:13.215456 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5718 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component pykickstart --git-branch master --git-url https://github.com/QubesOS/qubes-pykickstart --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-07-09 13:50:13.404379 +0000 build-fedora1: output: + unset CLEAN
+2022-07-09 13:50:13.404421 +0000 build-fedora1: output: + CLEAN=0
+2022-07-09 13:50:13.404451 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component pykickstart --git-branch master --git-url https://github.com/QubesOS/qubes-pykickstart --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-07-09 13:50:13.406753 +0000 build-fedora1: output: + OPTS=' --component '\''pykickstart'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-pykickstart'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-09 13:50:13.406798 +0000 build-fedora1: output: + eval set -- ' --component '\''pykickstart'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-pykickstart'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-09 13:50:13.407036 +0000 build-fedora1: output: ++ set -- --component pykickstart --git-branch master --git-url https://github.com/QubesOS/qubes-pykickstart --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-07-09 13:50:13.407055 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-09 13:50:13.407062 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:13.407068 +0000 build-fedora1: output: + COMPONENT=pykickstart
+2022-07-09 13:50:13.407074 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407079 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407085 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-09 13:50:13.407110 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:13.407116 +0000 build-fedora1: output: + BRANCH=master
+2022-07-09 13:50:13.407121 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407299 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407311 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-09 13:50:13.407317 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:13.407325 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-pykickstart
+2022-07-09 13:50:13.407343 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407348 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407353 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-09 13:50:13.407358 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:13.407365 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-07-09 13:50:13.407369 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407374 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407380 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-09 13:50:13.407457 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:13.407468 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-07-09 13:50:13.407473 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407479 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407484 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-09 13:50:13.407489 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:13.407566 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:13.407577 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-09 13:50:13.407584 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-09 13:50:13.407590 +0000 build-fedora1: output: -]*$ ]]
+2022-07-09 13:50:13.407595 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-09 13:50:13.407697 +0000 build-fedora1: output: -]*$ ]]
+2022-07-09 13:50:13.407719 +0000 build-fedora1: output: + '[' -z pykickstart ']'
+2022-07-09 13:50:13.407729 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:50:13.408786 +0000 build-fedora1: output: + REPO=pykickstart
+2022-07-09 13:50:13.408802 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-07-09 13:50:13.408809 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:50:13.408815 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-07-09 13:50:13.408820 +0000 build-fedora1: output: + '[' -z master ']'
+2022-07-09 13:50:13.408825 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:50:13.408833 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-pykickstart ']'
+2022-07-09 13:50:13.408838 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:50:13.408843 +0000 build-fedora1: output: + : 0
+2022-07-09 13:50:13.408848 +0000 build-fedora1: output: + : 0
+2022-07-09 13:50:13.408853 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-07-09 13:50:13.408859 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-07-09 13:50:13.408864 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-07-09 13:50:13.408871 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-07-09 13:50:13.408877 +0000 build-fedora1: output: + [[ pykickstart =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-07-09 13:50:13.408898 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:50:13.408904 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-07-09 13:50:13.408910 +0000 build-fedora1: output: + fresh_clone=false
+2022-07-09 13:50:13.408915 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-07-09 13:50:13.408921 +0000 build-fedora1: output: + [[ -d pykickstart ]]
+2022-07-09 13:50:13.408926 +0000 build-fedora1: output: + rm -f -- pykickstart
+2022-07-09 13:50:13.408932 +0000 build-fedora1: output: + print_headers
+2022-07-09 13:50:13.408937 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:50:13.408944 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-pykickstart master'
+2022-07-09 13:50:13.408951 +0000 build-fedora1: output: + echo '-> Updating sources for pykickstart...'
+2022-07-09 13:50:13.408959 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-pykickstart master...'
+2022-07-09 13:50:13.408967 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-pykickstart pykickstart
+2022-07-09 13:50:13.408974 +0000 build-fedora1: output: -> Updating sources for pykickstart...
+2022-07-09 13:50:13.408981 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-pykickstart master...
+2022-07-09 13:50:14.089068 +0000 build-fedora1: output: + VERIFY_REF=HEAD
+2022-07-09 13:50:14.089112 +0000 build-fedora1: output: + fresh_clone=:
+2022-07-09 13:50:14.089120 +0000 build-fedora1: output: + export CHECK=signed-tag
+2022-07-09 13:50:14.089126 +0000 build-fedora1: output: + CHECK=signed-tag
+2022-07-09 13:50:14.089131 +0000 build-fedora1: output: + verify=true
+2022-07-09 13:50:14.089137 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:50:14.089224 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:50:14.089236 +0000 build-fedora1: output: ++ git -C pykickstart rev-parse -q --verify HEAD
+2022-07-09 13:50:14.090051 +0000 build-fedora1: output: --> Verifying tags...
+2022-07-09 13:50:14.090082 +0000 build-fedora1: output: + VERIFY_REF=ed4121a24f0fea7339fc69712636b25f8c002bee
+2022-07-09 13:50:14.090090 +0000 build-fedora1: output: + '[' true = false ']'
+2022-07-09 13:50:14.090097 +0000 build-fedora1: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-07-09 13:50:14.090103 +0000 build-fedora1: output: + echo '--> Verifying tags...'
+2022-07-09 13:50:14.090627 +0000 build-fedora1: output: ++ readlink -m /builder/keyring
+2022-07-09 13:50:14.092797 +0000 build-fedora1: output: + GNUPGHOME=/builder/keyring
+2022-07-09 13:50:14.094023 +0000 build-fedora1: output: + export GNUPGHOME
+2022-07-09 13:50:14.094055 +0000 build-fedora1: output: + '[' '!' -d /builder/keyring ']'
+2022-07-09 13:50:14.094062 +0000 build-fedora1: output: + mkdir -p /builder/keyring
+2022-07-09 13:50:14.094069 +0000 build-fedora1: output: + chmod 700 /builder/keyring
+2022-07-09 13:50:14.094984 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-07-09 13:50:14.105190 +0000 build-fedora1: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-07-09 13:50:14.108543 +0000 build-fedora1: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-07-09 13:50:14.108596 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-07-09 13:50:14.121644 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-07-09 13:50:14.122799 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-07-09 13:50:14.122832 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-07-09 13:50:14.122914 +0000 build-fedora1: output: gpg:               imported: 3
+2022-07-09 13:50:14.122926 +0000 build-fedora1: output: gpg: no ultimately trusted keys found
+2022-07-09 13:50:14.126531 +0000 build-fedora1: output: + gpg --import-ownertrust
+2022-07-09 13:50:14.128989 +0000 build-fedora1: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-07-09 13:50:14.129026 +0000 build-fedora1: output: gpg: inserting ownertrust of 6
+2022-07-09 13:50:14.129037 +0000 build-fedora1: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-07-09 13:50:14.129046 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-07-09 13:50:14.131585 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-07-09 13:50:14.131627 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-07-09 13:50:14.132727 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-07-09 13:50:14.132754 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-07-09 13:50:14.132761 +0000 build-fedora1: output: gpg:              unchanged: 3
+2022-07-09 13:50:14.134038 +0000 build-fedora1: output: + touch /builder/keyring/pubring.gpg
+2022-07-09 13:50:14.134084 +0000 build-fedora1: output: + gpgconf --kill gpg-agent
+2022-07-09 13:50:14.150910 +0000 build-fedora1: output: + pushd pykickstart
+2022-07-09 13:50:14.150958 +0000 build-fedora1: output: + expected_hash=ed4121a24f0fea7339fc69712636b25f8c002bee
+2022-07-09 13:50:14.150965 +0000 build-fedora1: output: + hash_len=40
+2022-07-09 13:50:14.150971 +0000 build-fedora1: output: + '[' 40 -ne 40 ']'
+2022-07-09 13:50:14.151069 +0000 build-fedora1: output: + [[ ed4121a24f0fea7339fc69712636b25f8c002bee =~ ^[a-f0-9]+$ ]]
+2022-07-09 13:50:14.151083 +0000 build-fedora1: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-07-09 13:50:14.151089 +0000 build-fedora1: output: ++ head -c 500
+2022-07-09 13:50:14.151100 +0000 build-fedora1: output: ++ git tag --points-at=ed4121a24f0fea7339fc69712636b25f8c002bee '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-07-09 13:50:14.157573 +0000 build-fedora1: output: + tags=5dd03a501a6bc1371c0da44d060ad9652eeb60b7:ed4121a24f0fea7339fc69712636b25f8c002bee:
+2022-07-09 13:50:14.157614 +0000 build-fedora1: output: + for tag in $tags
+2022-07-09 13:50:14.157622 +0000 build-fedora1: output: + (( 82 != hash_len * 2 + 2 ))
+2022-07-09 13:50:14.157633 +0000 build-fedora1: output: + [[ :ed4121a24f0fea7339fc69712636b25f8c002bee: == \:\e\d\4\1\2\1\a\2\4\f\0\f\e\a\7\3\3\9\f\c\6\9\7\1\2\6\3\6\b\2\5\f\8\c\0\0\2\b\e\e\: ]]
+2022-07-09 13:50:14.157640 +0000 build-fedora1: output: + tag=5dd03a501a6bc1371c0da44d060ad9652eeb60b7
+2022-07-09 13:50:14.157647 +0000 build-fedora1: output: + verify_git_obj tag 5dd03a501a6bc1371c0da44d060ad9652eeb60b7
+2022-07-09 13:50:14.157653 +0000 build-fedora1: output: + local content newsig_number
+2022-07-09 13:50:14.157662 +0000 build-fedora1: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- 5dd03a501a6bc1371c0da44d060ad9652eeb60b7
+2022-07-09 13:50:14.162125 +0000 build-fedora1: output: + content='[GNUPG:] NEWSIG
+2022-07-09 13:50:14.162166 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:50:14.162175 +0000 build-fedora1: output: [GNUPG:] SIG_ID Y4HaIHB+fcfWZHeX31+ZwcyIDwQ 2022-07-09 1657374382
+2022-07-09 13:50:14.162183 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:50:14.162190 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.162198 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.162205 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.162214 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:50:14.162226 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374382 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:50:14.162232 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:50:14.162238 +0000 build-fedora1: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-07-09 13:50:14.164305 +0000 build-fedora1: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-07-09 13:50:14.164345 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:50:14.164354 +0000 build-fedora1: output: [GNUPG:] SIG_ID Y4HaIHB+fcfWZHeX31+ZwcyIDwQ 2022-07-09 1657374382
+2022-07-09 13:50:14.164361 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:50:14.164369 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.164376 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.164383 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.164407 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:50:14.164419 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374382 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:50:14.164426 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:50:14.165269 +0000 build-fedora1: output: + newsig_number=1
+2022-07-09 13:50:14.165293 +0000 build-fedora1: output: + '[' 1 = 1 ']'
+2022-07-09 13:50:14.165301 +0000 build-fedora1: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp$'
+2022-07-09 13:50:14.167573 +0000 build-fedora1: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-07-09 13:50:14.167609 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:50:14.167618 +0000 build-fedora1: output: [GNUPG:] SIG_ID Y4HaIHB+fcfWZHeX31+ZwcyIDwQ 2022-07-09 1657374382
+2022-07-09 13:50:14.167626 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-07-09 13:50:14.167633 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.167641 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.167648 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-07-09 13:50:14.167657 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-07-09 13:50:14.167669 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-07-09 1657374382 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-07-09 13:50:14.167676 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-07-09 13:50:14.167683 +0000 build-fedora1: output: ---> Good tag 5dd03a501a6bc1371c0da44d060ad9652eeb60b7
+2022-07-09 13:50:14.169894 +0000 build-fedora1: output: + echo '---> Good tag 5dd03a501a6bc1371c0da44d060ad9652eeb60b7'
+2022-07-09 13:50:14.169933 +0000 build-fedora1: output: + '[' -z x ']'
+2022-07-09 13:50:14.169940 +0000 build-fedora1: output: + popd
+2022-07-09 13:50:14.169959 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:50:14.169966 +0000 build-fedora1: output: + pushd pykickstart
+2022-07-09 13:50:14.169972 +0000 build-fedora1: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-07-09 13:50:14.171031 +0000 build-fedora1: output: + CURRENT_BRANCH=master
+2022-07-09 13:50:14.171058 +0000 build-fedora1: output: + '[' master '!=' master ']'
+2022-07-09 13:50:14.171064 +0000 build-fedora1: output: + :
+2022-07-09 13:50:14.171300 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:50:14.171319 +0000 build-fedora1: output: + red='.[1;31m'
+2022-07-09 13:50:14.171325 +0000 build-fedora1: output: + green='.[1;32m'
+2022-07-09 13:50:14.171331 +0000 build-fedora1: output: + normal='.[0;0m'
+2022-07-09 13:50:14.172809 +0000 build-fedora1: output: ++ git name-rev --name-only master
+2022-07-09 13:50:14.174796 +0000 build-fedora1: output: --> Switching branch from master branch to .[1;32mmaster.[0;0m
+2022-07-09 13:50:14.174827 +0000 build-fedora1: output: + '[' -n 'tags/mm_ed4121a2^0' ']'
+2022-07-09 13:50:14.174835 +0000 build-fedora1: output: + echo '--> Switching branch from master branch to .[1;32mmaster.[0;0m'
+2022-07-09 13:50:14.174925 +0000 build-fedora1: output: + git merge-base --is-ancestor -- master ed4121a24f0fea7339fc69712636b25f8c002bee
+2022-07-09 13:50:14.177372 +0000 build-fedora1: output: + git checkout -B master ed4121a24f0fea7339fc69712636b25f8c002bee
+2022-07-09 13:50:14.179922 +0000 build-fedora1: output: Reset branch 'master'
+2022-07-09 13:50:14.181077 +0000 build-fedora1: output: Your branch is up to date with 'origin/master'.
+2022-07-09 13:50:14.182215 +0000 build-fedora1: output: + '[' -e .gitmodules ']'
+2022-07-09 13:50:14.182242 +0000 build-fedora1: output: + :
+2022-07-09 13:50:14.182258 +0000 build-fedora1: output: + popd
+2022-07-09 13:50:14.182268 +0000 build-fedora1: output: + exit_clean
+2022-07-09 13:50:14.182274 +0000 build-fedora1: output: + local exit_code=0
+2022-07-09 13:50:14.182282 +0000 build-fedora1: output: + '[' 0 -gt 0 ']'
+2022-07-09 13:50:14.183397 +0000 build-fedora1: output: + exit 0
+2022-07-09 13:50:14.186111 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5718 qubesbuilder.FileCopyOut+__builder__pykickstart /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/sources
+2022-07-09 13:50:26.490935 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1511 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-09 13:50:26.673855 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1511 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-09 13:50:27.014287 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1511 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-09 13:50:27.293878 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1511 bash -c 'rm -rf /builder/incoming/pykickstart /builder/pykickstart'
+2022-07-09 13:50:27.493322 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1511 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/pykickstart
+2022-07-09 13:50:27.718814 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1511 bash -c 'mkdir -p /builder && mv /builder/incoming/pykickstart /builder'
+2022-07-09 13:50:27.918281 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp1511 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/pykickstart && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/pykickstart --file-name pykickstart-3.24.tar.gz --file-url https://ftp.qubes-os.org/distfiles/pykickstart-3.24.tar.gz --checksum-cmd sha512sum --checksum-file /builder/pykickstart/pykickstart-3.24.tar.gz.sha512''.
+2022-07-09 13:50:28.093327 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/pykickstart --file-name pykickstart-3.24.tar.gz --file-url https://ftp.qubes-os.org/distfiles/pykickstart-3.24.tar.gz --checksum-cmd sha512sum --checksum-file /builder/pykickstart/pykickstart-3.24.tar.gz.sha512
+2022-07-09 13:50:28.101301 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/pykickstart'\'' --file-name '\''pykickstart-3.24.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/pykickstart-3.24.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/builder/pykickstart/pykickstart-3.24.tar.gz.sha512'\'' --'
+2022-07-09 13:50:28.101352 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/pykickstart'\'' --file-name '\''pykickstart-3.24.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/pykickstart-3.24.tar.gz'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/builder/pykickstart/pykickstart-3.24.tar.gz.sha512'\'' --'
+2022-07-09 13:50:28.101370 +0000 build-fedora1: output: ++ set -- --output-dir /builder/pykickstart --file-name pykickstart-3.24.tar.gz --file-url https://ftp.qubes-os.org/distfiles/pykickstart-3.24.tar.gz --checksum-cmd sha512sum --checksum-file /builder/pykickstart/pykickstart-3.24.tar.gz.sha512 --
+2022-07-09 13:50:28.101376 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-07-09 13:50:28.101509 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-09 13:50:28.101520 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:28.101528 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/pykickstart
+2022-07-09 13:50:28.101548 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.101554 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.101562 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-09 13:50:28.101568 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:28.101574 +0000 build-fedora1: output: + FILE_NAME=pykickstart-3.24.tar.gz
+2022-07-09 13:50:28.101579 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.101584 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.101718 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-09 13:50:28.101728 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:28.101737 +0000 build-fedora1: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/pykickstart-3.24.tar.gz
+2022-07-09 13:50:28.101743 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.101748 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.101753 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-09 13:50:28.101975 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:28.102022 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-07-09 13:50:28.102037 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.102050 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.102083 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-09 13:50:28.102096 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:28.102169 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/pykickstart/pykickstart-3.24.tar.gz.sha512
+2022-07-09 13:50:28.102199 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.102206 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.102212 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-09 13:50:28.102535 +0000 build-fedora1: output: + case "$1" in
+2022-07-09 13:50:28.102568 +0000 build-fedora1: output: + shift
+2022-07-09 13:50:28.102583 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-09 13:50:28.102600 +0000 build-fedora1: output: + '[' -z https://ftp.qubes-os.org/distfiles/pykickstart-3.24.tar.gz ']'
+2022-07-09 13:50:28.102619 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-07-09 13:50:28.102640 +0000 build-fedora1: output: + '[' -z pykickstart-3.24.tar.gz ']'
+2022-07-09 13:50:28.102656 +0000 build-fedora1: output: + '[' -z /builder/pykickstart/pykickstart-3.24.tar.gz.sha512 ']'
+2022-07-09 13:50:28.102672 +0000 build-fedora1: output: + '[' -n /builder/pykickstart/pykickstart-3.24.tar.gz.sha512 ']'
+2022-07-09 13:50:28.102687 +0000 build-fedora1: output: + '[' -e /builder/pykickstart/pykickstart-3.24.tar.gz.sha512 ']'
+2022-07-09 13:50:28.102699 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:50:28.102711 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-09 13:50:28.102722 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:50:28.102738 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-09 13:50:28.102753 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_pykickstart-3.24.tar.gz
+2022-07-09 13:50:28.102779 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_pykickstart-3.24.tar.gz https://ftp.qubes-os.org/distfiles/pykickstart-3.24.tar.gz
+2022-07-09 13:50:28.358719 +0000 build-fedora1: output: + '[' -n /builder/pykickstart/pykickstart-3.24.tar.gz.sha512 ']'
+2022-07-09 13:50:28.358761 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-07-09 13:50:28.358768 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-09 13:50:28.358775 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-07-09 13:50:28.363970 +0000 build-fedora1: output: +++ cat /builder/pykickstart/pykickstart-3.24.tar.gz.sha512
+2022-07-09 13:50:28.365812 +0000 build-fedora1: output: ++ printf '%s  -\n' 787270e422915e3bc76f249f944ce777793e5b9e8ce324876818b124ed6a60429754d4be061cc759a560cb7688f2003cb20692706847d9bcbfa5b644b2770295
+2022-07-09 13:50:28.370510 +0000 build-fedora1: output: + '[' -n /builder/pykickstart ']'
+2022-07-09 13:50:28.370591 +0000 build-fedora1: output: + mkdir -p /builder/pykickstart
+2022-07-09 13:50:28.371905 +0000 build-fedora1: output: + mv untrusted_pykickstart-3.24.tar.gz /builder/pykickstart/pykickstart-3.24.tar.gz
+2022-07-09 13:50:28.385566 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1511 qubesbuilder.FileCopyOut+__builder__pykickstart__pykickstart-3.24.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-07-09 13:50:40.803574 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5684 bash -c 'rm -rf /builder/incoming/pykickstart /builder/pykickstart'
+2022-07-09 13:50:40.988850 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5684 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/pykickstart
+2022-07-09 13:50:41.260445 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5684 bash -c 'mkdir -p /builder && mv /builder/incoming/pykickstart /builder'
+2022-07-09 13:50:41.464761 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5684 env VERBOSE='1' DEBUG='1' bash -c 'rm -f /builder/pykickstart/hash /builder/pykickstart/vtags && cd /builder && git -C /builder/pykickstart rev-parse 'HEAD^{}' >> /builder/pykickstart/hash && git -C /builder/pykickstart tag --points-at HEAD --list 'v*' >> /builder/pykickstart/vtags''.
+2022-07-09 13:50:41.703420 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5684 qubesbuilder.FileCopyOut+__builder__pykickstart__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/pykickstart/3.24-2/nodist/fetch
+2022-07-09 13:50:41.861088 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5684 qubesbuilder.FileCopyOut+__builder__pykickstart__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/pykickstart/3.24-2/nodist/fetch
+2022-07-09 13:50:44.393952 +0000 build-fedora1: pykickstart:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:50:44.394145 +0000 build-fedora1: pykickstart:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:50:44.394203 +0000 build-fedora1: pykickstart:vm-debian-11.amd64: Nothing to be done.
+2022-07-09 13:50:44.400736 +0000 build-fedora1: pykickstart:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:50:44.400777 +0000 build-fedora1: pykickstart:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:50:44.400896 +0000 build-fedora1: pykickstart:vm-fedora-35.x86_64: Nothing to be done.
+2022-07-09 13:50:44.401086 +0000 build-fedora1: > done
+2022-07-09 13:50:44.401107 +0000 > closing log

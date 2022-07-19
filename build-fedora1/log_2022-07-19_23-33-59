@@ -1,0 +1,92 @@
+2022-07-19 23:33:59.462909 +0000 > starting log
+2022-07-19 23:33:59.463273 +0000 build-fedora1: > starting build with log
+2022-07-19 23:33:59.463282 +0000 build-fedora1: >> args:
+2022-07-19 23:33:59.463296 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent build-logs>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-07-19 23:33:59.463302 +0000 build-fedora1: >> component:
+2022-07-19 23:33:59.463307 +0000 build-fedora1: >>   build-logs
+2022-07-19 23:33:59.463313 +0000 build-fedora1: >> distributions:
+2022-07-19 23:33:59.463323 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-07-19 23:34:09.317024 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4928 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-19 23:34:09.524293 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4928 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-19 23:34:09.709433 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4928 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-19 23:34:09.921373 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp4928 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component build-logs --git-branch master --git-url https://github.com/QubesOS/qubes-build-logs --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-07-19 23:34:10.104487 +0000 build-fedora1: output: + unset CLEAN
+2022-07-19 23:34:10.104528 +0000 build-fedora1: output: + CLEAN=0
+2022-07-19 23:34:10.104559 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component build-logs --git-branch master --git-url https://github.com/QubesOS/qubes-build-logs --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-07-19 23:34:10.106372 +0000 build-fedora1: output: + OPTS=' --component '\''build-logs'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-build-logs'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-19 23:34:10.106417 +0000 build-fedora1: output: + eval set -- ' --component '\''build-logs'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-build-logs'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-19 23:34:10.106432 +0000 build-fedora1: output: ++ set -- --component build-logs --git-branch master --git-url https://github.com/QubesOS/qubes-build-logs --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-07-19 23:34:10.106438 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-19 23:34:10.106444 +0000 build-fedora1: output: + case "$1" in
+2022-07-19 23:34:10.106450 +0000 build-fedora1: output: + COMPONENT=build-logs
+2022-07-19 23:34:10.106455 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106460 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106466 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-19 23:34:10.106834 +0000 build-fedora1: output: + case "$1" in
+2022-07-19 23:34:10.106848 +0000 build-fedora1: output: + BRANCH=master
+2022-07-19 23:34:10.106853 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106859 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106866 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-19 23:34:10.106871 +0000 build-fedora1: output: + case "$1" in
+2022-07-19 23:34:10.106879 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-build-logs
+2022-07-19 23:34:10.106898 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106906 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106933 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-19 23:34:10.106940 +0000 build-fedora1: output: + case "$1" in
+2022-07-19 23:34:10.106947 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-07-19 23:34:10.106952 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106957 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106962 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-19 23:34:10.106967 +0000 build-fedora1: output: + case "$1" in
+2022-07-19 23:34:10.106973 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-07-19 23:34:10.106978 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106983 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.106989 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-19 23:34:10.106994 +0000 build-fedora1: output: + case "$1" in
+2022-07-19 23:34:10.106999 +0000 build-fedora1: output: + shift
+2022-07-19 23:34:10.107007 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-19 23:34:10.107012 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-19 23:34:10.107017 +0000 build-fedora1: output: -]*$ ]]
+2022-07-19 23:34:10.107023 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-19 23:34:10.107028 +0000 build-fedora1: output: -]*$ ]]
+2022-07-19 23:34:10.107033 +0000 build-fedora1: output: + '[' -z build-logs ']'
+2022-07-19 23:34:10.107219 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-19 23:34:10.107240 +0000 build-fedora1: output: + REPO=build-logs
+2022-07-19 23:34:10.107269 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-07-19 23:34:10.107277 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-19 23:34:10.107283 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-07-19 23:34:10.107289 +0000 build-fedora1: output: + '[' -z master ']'
+2022-07-19 23:34:10.107294 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-19 23:34:10.107301 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-build-logs ']'
+2022-07-19 23:34:10.107310 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-19 23:34:10.107566 +0000 build-fedora1: output: + : 0
+2022-07-19 23:34:10.107585 +0000 build-fedora1: output: + : 0
+2022-07-19 23:34:10.107592 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-07-19 23:34:10.107598 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-07-19 23:34:10.107604 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-07-19 23:34:10.107611 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-07-19 23:34:10.107618 +0000 build-fedora1: output: + [[ build-logs =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-07-19 23:34:10.107623 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-19 23:34:10.107629 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-07-19 23:34:10.107635 +0000 build-fedora1: output: + fresh_clone=false
+2022-07-19 23:34:10.107640 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-07-19 23:34:10.107646 +0000 build-fedora1: output: + [[ -d build-logs ]]
+2022-07-19 23:34:10.107651 +0000 build-fedora1: output: + rm -f -- build-logs
+2022-07-19 23:34:10.107858 +0000 build-fedora1: output: + print_headers
+2022-07-19 23:34:10.107874 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-19 23:34:10.108011 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-build-logs master'
+2022-07-19 23:34:10.108049 +0000 build-fedora1: output: + echo '-> Updating sources for build-logs...'
+2022-07-19 23:34:10.108060 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-build-logs master...'
+2022-07-19 23:34:10.108069 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-build-logs build-logs
+2022-07-19 23:34:10.108075 +0000 build-fedora1: output: -> Updating sources for build-logs...
+2022-07-19 23:34:10.108085 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-build-logs master...
+2022-07-19 23:34:10.366920 +0000 build-fedora1: output: fatal: could not read Username for 'https://github.com': No such device or address
+2022-07-19 23:34:10.368715 +0000 build-fedora1: output: + '[' 0 == 1 ']'
+2022-07-19 23:34:10.368766 +0000 build-fedora1: output: + exit 1
+2022-07-19 23:34:10.368785 +0000 build-fedora1: output: + exit_clean
+2022-07-19 23:34:10.368801 +0000 build-fedora1: output: + local exit_code=1
+2022-07-19 23:34:10.368817 +0000 build-fedora1: output: + '[' 1 -gt 0 ']'
+2022-07-19 23:34:10.368833 +0000 build-fedora1: output: + false
+2022-07-19 23:34:10.368852 +0000 build-fedora1: output: + rm -f build-logs/.git/FETCH_HEAD
+2022-07-19 23:34:10.368867 +0000 build-fedora1: output: + exit 1
+2022-07-19 23:34:12.830127 +0000 > closing log

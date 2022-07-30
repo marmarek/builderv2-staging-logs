@@ -1,0 +1,92 @@
+2022-07-30 01:05:57.052256 +0000 > starting log
+2022-07-30 01:05:57.054364 +0000 build-fedora1: > starting build with log
+2022-07-30 01:05:57.054374 +0000 build-fedora1: >> args:
+2022-07-30 01:05:57.054388 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent alsa-utils>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-07-30 01:05:57.054395 +0000 build-fedora1: >> component:
+2022-07-30 01:05:57.054400 +0000 build-fedora1: >>   alsa-utils
+2022-07-30 01:05:57.054405 +0000 build-fedora1: >> distributions:
+2022-07-30 01:05:57.054416 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-07-30 01:06:09.886136 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6299 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-30 01:06:10.195136 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6299 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-30 01:06:10.785577 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6299 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-30 01:06:22.515297 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp6299 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component alsa-utils --git-branch master --git-url https://github.com/QubesOS/qubes-alsa-utils --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-07-30 01:06:23.549507 +0000 build-fedora1: output: + unset CLEAN
+2022-07-30 01:06:23.549549 +0000 build-fedora1: output: + CLEAN=0
+2022-07-30 01:06:23.551888 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component alsa-utils --git-branch master --git-url https://github.com/QubesOS/qubes-alsa-utils --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-07-30 01:06:23.700985 +0000 build-fedora1: output: + OPTS=' --component '\''alsa-utils'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-alsa-utils'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-30 01:06:23.701037 +0000 build-fedora1: output: + eval set -- ' --component '\''alsa-utils'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-alsa-utils'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-30 01:06:23.701052 +0000 build-fedora1: output: ++ set -- --component alsa-utils --git-branch master --git-url https://github.com/QubesOS/qubes-alsa-utils --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-07-30 01:06:23.701059 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-30 01:06:23.701065 +0000 build-fedora1: output: + case "$1" in
+2022-07-30 01:06:23.701071 +0000 build-fedora1: output: + COMPONENT=alsa-utils
+2022-07-30 01:06:23.701076 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701082 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701087 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-30 01:06:23.701092 +0000 build-fedora1: output: + case "$1" in
+2022-07-30 01:06:23.701098 +0000 build-fedora1: output: + BRANCH=master
+2022-07-30 01:06:23.701103 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701108 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701114 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-30 01:06:23.701119 +0000 build-fedora1: output: + case "$1" in
+2022-07-30 01:06:23.701126 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-alsa-utils
+2022-07-30 01:06:23.701147 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701152 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701158 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-30 01:06:23.701163 +0000 build-fedora1: output: + case "$1" in
+2022-07-30 01:06:23.701169 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-07-30 01:06:23.701175 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701180 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701185 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-30 01:06:23.701191 +0000 build-fedora1: output: + case "$1" in
+2022-07-30 01:06:23.701197 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-07-30 01:06:23.701202 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701207 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701213 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-30 01:06:23.701218 +0000 build-fedora1: output: + case "$1" in
+2022-07-30 01:06:23.701223 +0000 build-fedora1: output: + shift
+2022-07-30 01:06:23.701229 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-30 01:06:23.701235 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-30 01:06:23.701240 +0000 build-fedora1: output: -]*$ ]]
+2022-07-30 01:06:23.701246 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-30 01:06:23.701251 +0000 build-fedora1: output: -]*$ ]]
+2022-07-30 01:06:23.701257 +0000 build-fedora1: output: + '[' -z alsa-utils ']'
+2022-07-30 01:06:23.701262 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-30 01:06:23.701268 +0000 build-fedora1: output: + REPO=alsa-utils
+2022-07-30 01:06:23.701274 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-07-30 01:06:23.701279 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-30 01:06:23.701285 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-07-30 01:06:23.701290 +0000 build-fedora1: output: + '[' -z master ']'
+2022-07-30 01:06:23.701296 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-30 01:06:23.701303 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-alsa-utils ']'
+2022-07-30 01:06:23.701309 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-30 01:06:23.701314 +0000 build-fedora1: output: + : 0
+2022-07-30 01:06:23.701319 +0000 build-fedora1: output: + : 0
+2022-07-30 01:06:23.701324 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-07-30 01:06:23.701330 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-07-30 01:06:23.701336 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-07-30 01:06:23.701342 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-07-30 01:06:23.701349 +0000 build-fedora1: output: + [[ alsa-utils =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-07-30 01:06:23.701355 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-30 01:06:23.701361 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-07-30 01:06:23.701366 +0000 build-fedora1: output: + fresh_clone=false
+2022-07-30 01:06:23.701372 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-07-30 01:06:23.701378 +0000 build-fedora1: output: + [[ -d alsa-utils ]]
+2022-07-30 01:06:23.701383 +0000 build-fedora1: output: + rm -f -- alsa-utils
+2022-07-30 01:06:23.703781 +0000 build-fedora1: output: + print_headers
+2022-07-30 01:06:23.703811 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-30 01:06:23.703820 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-alsa-utils master'
+2022-07-30 01:06:23.703828 +0000 build-fedora1: output: + echo '-> Updating sources for alsa-utils...'
+2022-07-30 01:06:23.703836 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-alsa-utils master...'
+2022-07-30 01:06:23.703845 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-alsa-utils alsa-utils
+2022-07-30 01:06:23.703852 +0000 build-fedora1: output: -> Updating sources for alsa-utils...
+2022-07-30 01:06:23.703860 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-alsa-utils master...
+2022-07-30 01:06:25.146031 +0000 build-fedora1: output: fatal: Remote branch master not found in upstream origin
+2022-07-30 01:06:25.146865 +0000 build-fedora1: output: + '[' 0 == 1 ']'
+2022-07-30 01:06:25.146896 +0000 build-fedora1: output: + exit 1
+2022-07-30 01:06:25.146902 +0000 build-fedora1: output: + exit_clean
+2022-07-30 01:06:25.146908 +0000 build-fedora1: output: + local exit_code=1
+2022-07-30 01:06:25.146914 +0000 build-fedora1: output: + '[' 1 -gt 0 ']'
+2022-07-30 01:06:25.146919 +0000 build-fedora1: output: + false
+2022-07-30 01:06:25.146926 +0000 build-fedora1: output: + rm -f alsa-utils/.git/FETCH_HEAD
+2022-07-30 01:06:25.149655 +0000 build-fedora1: output: + exit 1
+2022-07-30 01:06:30.097155 +0000 > closing log

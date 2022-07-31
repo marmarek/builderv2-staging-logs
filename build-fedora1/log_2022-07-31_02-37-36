@@ -1,0 +1,92 @@
+2022-07-31 02:37:36.287392 +0000 > starting log
+2022-07-31 02:37:36.287693 +0000 build-fedora1: > starting build with log
+2022-07-31 02:37:36.287701 +0000 build-fedora1: >> args:
+2022-07-31 02:37:36.287715 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent sbsigntools>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-07-31 02:37:36.287721 +0000 build-fedora1: >> component:
+2022-07-31 02:37:36.287726 +0000 build-fedora1: >>   sbsigntools
+2022-07-31 02:37:36.287731 +0000 build-fedora1: >> distributions:
+2022-07-31 02:37:36.287741 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-07-31 02:37:46.542117 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp8035 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-31 02:37:46.729385 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8035 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-31 02:37:46.904475 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp8035 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-31 02:37:47.095922 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp8035 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component sbsigntools --git-branch master --git-url https://github.com/QubesOS/qubes-sbsigntools --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-07-31 02:37:47.312849 +0000 build-fedora1: output: + unset CLEAN
+2022-07-31 02:37:47.312926 +0000 build-fedora1: output: + CLEAN=0
+2022-07-31 02:37:47.313149 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component sbsigntools --git-branch master --git-url https://github.com/QubesOS/qubes-sbsigntools --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-07-31 02:37:47.317160 +0000 build-fedora1: output: + OPTS=' --component '\''sbsigntools'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-sbsigntools'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-31 02:37:47.317260 +0000 build-fedora1: output: + eval set -- ' --component '\''sbsigntools'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-sbsigntools'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-31 02:37:47.317524 +0000 build-fedora1: output: ++ set -- --component sbsigntools --git-branch master --git-url https://github.com/QubesOS/qubes-sbsigntools --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-07-31 02:37:47.317544 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-31 02:37:47.317551 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:37:47.317724 +0000 build-fedora1: output: + COMPONENT=sbsigntools
+2022-07-31 02:37:47.317765 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.317781 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318458 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-31 02:37:47.318475 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:37:47.318482 +0000 build-fedora1: output: + BRANCH=master
+2022-07-31 02:37:47.318487 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318493 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318500 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-31 02:37:47.318505 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:37:47.318512 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-sbsigntools
+2022-07-31 02:37:47.318530 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318535 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318540 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-31 02:37:47.318545 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:37:47.318552 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-07-31 02:37:47.318556 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318561 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318567 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-31 02:37:47.318572 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:37:47.318578 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-07-31 02:37:47.318583 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318588 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318593 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-31 02:37:47.318598 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:37:47.318603 +0000 build-fedora1: output: + shift
+2022-07-31 02:37:47.318608 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-31 02:37:47.318614 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-31 02:37:47.318619 +0000 build-fedora1: output: -]*$ ]]
+2022-07-31 02:37:47.319413 +0000 build-fedora1: output: -> Updating sources for sbsigntools...
+2022-07-31 02:37:47.319452 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-sbsigntools master...
+2022-07-31 02:37:47.319677 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-31 02:37:47.319727 +0000 build-fedora1: output: -]*$ ]]
+2022-07-31 02:37:47.319749 +0000 build-fedora1: output: + '[' -z sbsigntools ']'
+2022-07-31 02:37:47.319766 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-31 02:37:47.319780 +0000 build-fedora1: output: + REPO=sbsigntools
+2022-07-31 02:37:47.319797 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-07-31 02:37:47.319812 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-31 02:37:47.319827 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-07-31 02:37:47.319841 +0000 build-fedora1: output: + '[' -z master ']'
+2022-07-31 02:37:47.319860 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-31 02:37:47.319906 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-sbsigntools ']'
+2022-07-31 02:37:47.319923 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-31 02:37:47.319937 +0000 build-fedora1: output: + : 0
+2022-07-31 02:37:47.319950 +0000 build-fedora1: output: + : 0
+2022-07-31 02:37:47.319964 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-07-31 02:37:47.319979 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-07-31 02:37:47.319994 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-07-31 02:37:47.320012 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-07-31 02:37:47.320030 +0000 build-fedora1: output: + [[ sbsigntools =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-07-31 02:37:47.320045 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-31 02:37:47.320062 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-07-31 02:37:47.320092 +0000 build-fedora1: output: + fresh_clone=false
+2022-07-31 02:37:47.320108 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-07-31 02:37:47.320123 +0000 build-fedora1: output: + [[ -d sbsigntools ]]
+2022-07-31 02:37:47.320139 +0000 build-fedora1: output: + rm -f -- sbsigntools
+2022-07-31 02:37:47.320153 +0000 build-fedora1: output: + print_headers
+2022-07-31 02:37:47.320167 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-31 02:37:47.320188 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-sbsigntools master'
+2022-07-31 02:37:47.320212 +0000 build-fedora1: output: + echo '-> Updating sources for sbsigntools...'
+2022-07-31 02:37:47.320235 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-sbsigntools master...'
+2022-07-31 02:37:47.320258 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-sbsigntools sbsigntools
+2022-07-31 02:37:47.789321 +0000 build-fedora1: output: fatal: Remote branch master not found in upstream origin
+2022-07-31 02:37:47.792569 +0000 build-fedora1: output: + '[' 0 == 1 ']'
+2022-07-31 02:37:47.792626 +0000 build-fedora1: output: + exit 1
+2022-07-31 02:37:47.792640 +0000 build-fedora1: output: + exit_clean
+2022-07-31 02:37:47.792652 +0000 build-fedora1: output: + local exit_code=1
+2022-07-31 02:37:47.792663 +0000 build-fedora1: output: + '[' 1 -gt 0 ']'
+2022-07-31 02:37:47.792673 +0000 build-fedora1: output: + false
+2022-07-31 02:37:47.792686 +0000 build-fedora1: output: + rm -f sbsigntools/.git/FETCH_HEAD
+2022-07-31 02:37:47.792696 +0000 build-fedora1: output: + exit 1
+2022-07-31 02:37:50.284204 +0000 > closing log

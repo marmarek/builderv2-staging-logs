@@ -1,0 +1,92 @@
+2022-07-31 02:29:31.271403 +0000 > starting log
+2022-07-31 02:29:31.271707 +0000 build-fedora1: > starting build with log
+2022-07-31 02:29:31.271720 +0000 build-fedora1: >> args:
+2022-07-31 02:29:31.271736 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent tpm2-tss>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-07-31 02:29:31.271742 +0000 build-fedora1: >> component:
+2022-07-31 02:29:31.271748 +0000 build-fedora1: >>   tpm2-tss
+2022-07-31 02:29:31.271753 +0000 build-fedora1: >> distributions:
+2022-07-31 02:29:31.271763 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-07-31 02:29:41.551825 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp143 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-07-31 02:29:41.760778 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp143 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-07-31 02:29:41.988931 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp143 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-07-31 02:29:42.201772 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp143 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component tpm2-tss --git-branch master --git-url https://github.com/QubesOS/qubes-tpm2-tss --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-07-31 02:29:42.407769 +0000 build-fedora1: output: + unset CLEAN
+2022-07-31 02:29:42.407812 +0000 build-fedora1: output: + CLEAN=0
+2022-07-31 02:29:42.407970 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component tpm2-tss --git-branch master --git-url https://github.com/QubesOS/qubes-tpm2-tss --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-07-31 02:29:42.412864 +0000 build-fedora1: output: + OPTS=' --component '\''tpm2-tss'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-tpm2-tss'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-31 02:29:42.413118 +0000 build-fedora1: output: + eval set -- ' --component '\''tpm2-tss'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-tpm2-tss'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-07-31 02:29:42.413139 +0000 build-fedora1: output: ++ set -- --component tpm2-tss --git-branch master --git-url https://github.com/QubesOS/qubes-tpm2-tss --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-07-31 02:29:42.413146 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-07-31 02:29:42.413153 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:29:42.413159 +0000 build-fedora1: output: + COMPONENT=tpm2-tss
+2022-07-31 02:29:42.413263 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.413274 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.413281 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-07-31 02:29:42.413388 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:29:42.413399 +0000 build-fedora1: output: + BRANCH=master
+2022-07-31 02:29:42.413405 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.413816 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.413897 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-07-31 02:29:42.413918 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:29:42.413939 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-tpm2-tss
+2022-07-31 02:29:42.413975 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.414476 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.414510 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-07-31 02:29:42.414530 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:29:42.414551 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-07-31 02:29:42.414567 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.414582 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.414598 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-07-31 02:29:42.414614 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:29:42.414632 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-07-31 02:29:42.414647 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.414662 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.414678 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-07-31 02:29:42.414693 +0000 build-fedora1: output: + case "$1" in
+2022-07-31 02:29:42.414708 +0000 build-fedora1: output: + shift
+2022-07-31 02:29:42.414881 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-07-31 02:29:42.414901 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-31 02:29:42.414908 +0000 build-fedora1: output: -]*$ ]]
+2022-07-31 02:29:42.414915 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-07-31 02:29:42.414920 +0000 build-fedora1: output: -]*$ ]]
+2022-07-31 02:29:42.414926 +0000 build-fedora1: output: + '[' -z tpm2-tss ']'
+2022-07-31 02:29:42.414931 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-31 02:29:42.414937 +0000 build-fedora1: output: + REPO=tpm2-tss
+2022-07-31 02:29:42.414943 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-07-31 02:29:42.414949 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-31 02:29:42.414954 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-07-31 02:29:42.414970 +0000 build-fedora1: output: + '[' -z master ']'
+2022-07-31 02:29:42.415501 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-31 02:29:42.415516 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-tpm2-tss ']'
+2022-07-31 02:29:42.415522 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-07-31 02:29:42.415528 +0000 build-fedora1: output: + : 0
+2022-07-31 02:29:42.415533 +0000 build-fedora1: output: + : 0
+2022-07-31 02:29:42.415539 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-07-31 02:29:42.415544 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-07-31 02:29:42.415550 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-07-31 02:29:42.415649 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-07-31 02:29:42.415661 +0000 build-fedora1: output: + [[ tpm2-tss =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-07-31 02:29:42.415667 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-07-31 02:29:42.415762 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-07-31 02:29:42.415773 +0000 build-fedora1: output: + fresh_clone=false
+2022-07-31 02:29:42.415877 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-07-31 02:29:42.415890 +0000 build-fedora1: output: + [[ -d tpm2-tss ]]
+2022-07-31 02:29:42.416039 +0000 build-fedora1: output: + rm -f -- tpm2-tss
+2022-07-31 02:29:42.416050 +0000 build-fedora1: output: + print_headers
+2022-07-31 02:29:42.416060 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-07-31 02:29:42.416068 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-tpm2-tss master'
+2022-07-31 02:29:42.416326 +0000 build-fedora1: output: + echo '-> Updating sources for tpm2-tss...'
+2022-07-31 02:29:42.416394 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-tpm2-tss master...'
+2022-07-31 02:29:42.416415 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-tpm2-tss tpm2-tss
+2022-07-31 02:29:42.416428 +0000 build-fedora1: output: -> Updating sources for tpm2-tss...
+2022-07-31 02:29:42.416444 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-tpm2-tss master...
+2022-07-31 02:29:42.829422 +0000 build-fedora1: output: fatal: Remote branch master not found in upstream origin
+2022-07-31 02:29:42.829464 +0000 build-fedora1: output: + '[' 0 == 1 ']'
+2022-07-31 02:29:42.829471 +0000 build-fedora1: output: + exit 1
+2022-07-31 02:29:42.829477 +0000 build-fedora1: output: + exit_clean
+2022-07-31 02:29:42.829482 +0000 build-fedora1: output: + local exit_code=1
+2022-07-31 02:29:42.829488 +0000 build-fedora1: output: + '[' 1 -gt 0 ']'
+2022-07-31 02:29:42.829493 +0000 build-fedora1: output: + false
+2022-07-31 02:29:42.829500 +0000 build-fedora1: output: + rm -f tpm2-tss/.git/FETCH_HEAD
+2022-07-31 02:29:42.830365 +0000 build-fedora1: output: + exit 1
+2022-07-31 02:29:45.391146 +0000 > closing log

@@ -1,0 +1,151 @@
+2022-08-06 16:57:14.361703 +0000 > starting log
+2022-08-06 16:57:14.362017 +0000 build-fedora1: > starting build with log
+2022-08-06 16:57:14.362027 +0000 build-fedora1: >> args:
+2022-08-06 16:57:14.362041 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent posts>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-08-06 16:57:14.362048 +0000 build-fedora1: >> component:
+2022-08-06 16:57:14.362052 +0000 build-fedora1: >>   posts
+2022-08-06 16:57:14.362058 +0000 build-fedora1: >> distributions:
+2022-08-06 16:57:14.362068 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-08-06 16:57:24.868580 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3374 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-06 16:57:25.093242 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3374 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-06 16:57:25.317393 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3374 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-06 16:57:25.526747 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp3374 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component posts --git-branch master --git-url https://github.com/QubesOS/qubes-posts --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-08-06 16:57:25.694340 +0000 build-fedora1: output: + unset CLEAN
+2022-08-06 16:57:25.694382 +0000 build-fedora1: output: + CLEAN=0
+2022-08-06 16:57:25.695554 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component posts --git-branch master --git-url https://github.com/QubesOS/qubes-posts --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-08-06 16:57:25.698134 +0000 build-fedora1: output: + OPTS=' --component '\''posts'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-posts'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-06 16:57:25.698169 +0000 build-fedora1: output: + eval set -- ' --component '\''posts'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-posts'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-06 16:57:25.698183 +0000 build-fedora1: output: ++ set -- --component posts --git-branch master --git-url https://github.com/QubesOS/qubes-posts --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-08-06 16:57:25.698190 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-06 16:57:25.698197 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 16:57:25.698202 +0000 build-fedora1: output: + COMPONENT=posts
+2022-08-06 16:57:25.698208 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698213 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698219 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-06 16:57:25.698224 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 16:57:25.698229 +0000 build-fedora1: output: + BRANCH=master
+2022-08-06 16:57:25.698234 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698239 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698245 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-06 16:57:25.698250 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 16:57:25.698257 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-posts
+2022-08-06 16:57:25.698262 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698280 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698286 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-06 16:57:25.698291 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 16:57:25.698298 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-08-06 16:57:25.698303 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698308 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698313 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-06 16:57:25.698318 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 16:57:25.698325 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-08-06 16:57:25.698330 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698335 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698446 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-06 16:57:25.698457 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 16:57:25.698463 +0000 build-fedora1: output: + shift
+2022-08-06 16:57:25.698469 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-06 16:57:25.698475 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-06 16:57:25.698480 +0000 build-fedora1: output: -]*$ ]]
+2022-08-06 16:57:25.698486 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-06 16:57:25.698491 +0000 build-fedora1: output: -]*$ ]]
+2022-08-06 16:57:25.698497 +0000 build-fedora1: output: + '[' -z posts ']'
+2022-08-06 16:57:25.698502 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-06 16:57:25.698507 +0000 build-fedora1: output: + REPO=posts
+2022-08-06 16:57:25.698513 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-08-06 16:57:25.698519 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-06 16:57:25.698524 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-08-06 16:57:25.698530 +0000 build-fedora1: output: + '[' -z master ']'
+2022-08-06 16:57:25.698538 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-06 16:57:25.698545 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-posts ']'
+2022-08-06 16:57:25.698552 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-06 16:57:25.698954 +0000 build-fedora1: output: + : 0
+2022-08-06 16:57:25.698975 +0000 build-fedora1: output: + : 0
+2022-08-06 16:57:25.698983 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-08-06 16:57:25.698989 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-08-06 16:57:25.698996 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-08-06 16:57:25.699003 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-08-06 16:57:25.699012 +0000 build-fedora1: output: + [[ posts =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-08-06 16:57:25.699018 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-06 16:57:25.699024 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-08-06 16:57:25.699030 +0000 build-fedora1: output: + fresh_clone=false
+2022-08-06 16:57:25.699036 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-08-06 16:57:25.699041 +0000 build-fedora1: output: + [[ -d posts ]]
+2022-08-06 16:57:25.699047 +0000 build-fedora1: output: + rm -f -- posts
+2022-08-06 16:57:25.703757 +0000 build-fedora1: output: + print_headers
+2022-08-06 16:57:25.703780 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-06 16:57:25.703789 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-posts master'
+2022-08-06 16:57:25.703796 +0000 build-fedora1: output: + echo '-> Updating sources for posts...'
+2022-08-06 16:57:25.703804 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-posts master...'
+2022-08-06 16:57:25.703812 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-posts posts
+2022-08-06 16:57:25.703819 +0000 build-fedora1: output: -> Updating sources for posts...
+2022-08-06 16:57:25.703827 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-posts master...
+2022-08-06 16:57:26.818241 +0000 build-fedora1: output: + VERIFY_REF=HEAD
+2022-08-06 16:57:26.818298 +0000 build-fedora1: output: + fresh_clone=:
+2022-08-06 16:57:26.818311 +0000 build-fedora1: output: + export CHECK=signed-tag
+2022-08-06 16:57:26.818317 +0000 build-fedora1: output: + CHECK=signed-tag
+2022-08-06 16:57:26.818523 +0000 build-fedora1: output: + verify=true
+2022-08-06 16:57:26.818535 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-06 16:57:26.818542 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-06 16:57:26.819211 +0000 build-fedora1: output: ++ git -C posts rev-parse -q --verify HEAD
+2022-08-06 16:57:26.822162 +0000 build-fedora1: output: + VERIFY_REF=96c1b38fdf5d9dd18b4ea77cfa363817f7db97e7
+2022-08-06 16:57:26.822287 +0000 build-fedora1: output: --> Verifying tags...
+2022-08-06 16:57:26.822308 +0000 build-fedora1: output: + '[' true = false ']'
+2022-08-06 16:57:26.822386 +0000 build-fedora1: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-08-06 16:57:26.822400 +0000 build-fedora1: output: + echo '--> Verifying tags...'
+2022-08-06 16:57:26.822775 +0000 build-fedora1: output: ++ readlink -m /builder/keyring
+2022-08-06 16:57:26.825239 +0000 build-fedora1: output: + GNUPGHOME=/builder/keyring
+2022-08-06 16:57:26.825284 +0000 build-fedora1: output: + export GNUPGHOME
+2022-08-06 16:57:26.825305 +0000 build-fedora1: output: + '[' '!' -d /builder/keyring ']'
+2022-08-06 16:57:26.825322 +0000 build-fedora1: output: + mkdir -p /builder/keyring
+2022-08-06 16:57:26.826435 +0000 build-fedora1: output: + chmod 700 /builder/keyring
+2022-08-06 16:57:26.826997 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-08-06 16:57:26.836271 +0000 build-fedora1: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-08-06 16:57:26.838787 +0000 build-fedora1: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-08-06 16:57:26.838811 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-08-06 16:57:26.850646 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-08-06 16:57:26.852068 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-08-06 16:57:26.852548 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-08-06 16:57:26.852601 +0000 build-fedora1: output: gpg:               imported: 3
+2022-08-06 16:57:26.852666 +0000 build-fedora1: output: gpg: no ultimately trusted keys found
+2022-08-06 16:57:26.854797 +0000 build-fedora1: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-08-06 16:57:26.854849 +0000 build-fedora1: output: + gpg --import-ownertrust
+2022-08-06 16:57:26.858576 +0000 build-fedora1: output: gpg: inserting ownertrust of 6
+2022-08-06 16:57:26.859287 +0000 build-fedora1: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-08-06 16:57:26.859333 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-08-06 16:57:26.863755 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-08-06 16:57:26.864956 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-08-06 16:57:26.866376 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-08-06 16:57:26.866423 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-08-06 16:57:26.866452 +0000 build-fedora1: output: gpg:              unchanged: 3
+2022-08-06 16:57:26.866980 +0000 build-fedora1: output: + touch /builder/keyring/pubring.gpg
+2022-08-06 16:57:26.869132 +0000 build-fedora1: output: + gpgconf --kill gpg-agent
+2022-08-06 16:57:26.878163 +0000 build-fedora1: output: + pushd posts
+2022-08-06 16:57:26.878412 +0000 build-fedora1: output: + expected_hash=96c1b38fdf5d9dd18b4ea77cfa363817f7db97e7
+2022-08-06 16:57:26.878464 +0000 build-fedora1: output: + hash_len=40
+2022-08-06 16:57:26.878484 +0000 build-fedora1: output: + '[' 40 -ne 40 ']'
+2022-08-06 16:57:26.878507 +0000 build-fedora1: output: + [[ 96c1b38fdf5d9dd18b4ea77cfa363817f7db97e7 =~ ^[a-f0-9]+$ ]]
+2022-08-06 16:57:26.878537 +0000 build-fedora1: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-08-06 16:57:26.879382 +0000 build-fedora1: output: ++ git tag --points-at=96c1b38fdf5d9dd18b4ea77cfa363817f7db97e7 '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-08-06 16:57:26.879946 +0000 build-fedora1: output: ++ head -c 500
+2022-08-06 16:57:26.899536 +0000 build-fedora1: output: + tags=34792662bd0431d2571029c091c5baaaaaf6a4a3:96c1b38fdf5d9dd18b4ea77cfa363817f7db97e7:
+2022-08-06 16:57:26.899593 +0000 build-fedora1: output: + for tag in $tags
+2022-08-06 16:57:26.899616 +0000 build-fedora1: output: + (( 82 != hash_len * 2 + 2 ))
+2022-08-06 16:57:26.899647 +0000 build-fedora1: output: + [[ :96c1b38fdf5d9dd18b4ea77cfa363817f7db97e7: == \:\9\6\c\1\b\3\8\f\d\f\5\d\9\d\d\1\8\b\4\e\a\7\7\c\f\a\3\6\3\8\1\7\f\7\d\b\9\7\e\7\: ]]
+2022-08-06 16:57:26.899667 +0000 build-fedora1: output: + tag=34792662bd0431d2571029c091c5baaaaaf6a4a3
+2022-08-06 16:57:26.899698 +0000 build-fedora1: output: + verify_git_obj tag 34792662bd0431d2571029c091c5baaaaaf6a4a3
+2022-08-06 16:57:26.899715 +0000 build-fedora1: output: + local content newsig_number
+2022-08-06 16:57:26.900782 +0000 build-fedora1: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- 34792662bd0431d2571029c091c5baaaaaf6a4a3
+2022-08-06 16:57:26.907959 +0000 build-fedora1: output: ---> Invalid tag 34792662bd0431d2571029c091c5baaaaaf6a4a3
+2022-08-06 16:57:26.908050 +0000 build-fedora1: output: + content='[GNUPG:] NEWSIG
+2022-08-06 16:57:26.908080 +0000 build-fedora1: output: [GNUPG:] ERRSIG 8CE137352A019A17 1 10 00 1659805003 9 E11D15C6D20435769FFAA4568CE137352A019A17
+2022-08-06 16:57:26.908108 +0000 build-fedora1: output: [GNUPG:] NO_PUBKEY 8CE137352A019A17'
+2022-08-06 16:57:26.908130 +0000 build-fedora1: output: + echo '---> Invalid tag 34792662bd0431d2571029c091c5baaaaaf6a4a3'
+2022-08-06 16:57:26.908145 +0000 build-fedora1: output: + exit 1
+2022-08-06 16:57:26.908335 +0000 build-fedora1: output: + exit_clean
+2022-08-06 16:57:26.908387 +0000 build-fedora1: output: + local exit_code=1
+2022-08-06 16:57:26.908406 +0000 build-fedora1: output: + '[' 1 -gt 0 ']'
+2022-08-06 16:57:26.908429 +0000 build-fedora1: output: + :
+2022-08-06 16:57:26.908797 +0000 build-fedora1: output: + rm -rf posts
+2022-08-06 16:57:26.909727 +0000 build-fedora1: output: + exit 1
+2022-08-06 16:57:29.392495 +0000 > closing log

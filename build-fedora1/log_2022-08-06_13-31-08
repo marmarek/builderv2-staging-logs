@@ -1,0 +1,92 @@
+2022-08-06 13:31:08.626732 +0000 > starting log
+2022-08-06 13:31:08.627034 +0000 build-fedora1: > starting build with log
+2022-08-06 13:31:08.627043 +0000 build-fedora1: >> args:
+2022-08-06 13:31:08.627058 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent secpack-priv>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-08-06 13:31:08.627064 +0000 build-fedora1: >> component:
+2022-08-06 13:31:08.627069 +0000 build-fedora1: >>   secpack-priv
+2022-08-06 13:31:08.627075 +0000 build-fedora1: >> distributions:
+2022-08-06 13:31:08.627084 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-08-06 13:31:19.488997 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5161 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-06 13:31:19.687168 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5161 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-06 13:31:19.938787 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5161 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-06 13:31:20.196741 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5161 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component secpack-priv --git-branch master --git-url https://github.com/QubesOS/qubes-secpack-priv --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-08-06 13:31:20.443410 +0000 build-fedora1: output: + unset CLEAN
+2022-08-06 13:31:20.443453 +0000 build-fedora1: output: + CLEAN=0
+2022-08-06 13:31:20.444406 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component secpack-priv --git-branch master --git-url https://github.com/QubesOS/qubes-secpack-priv --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-08-06 13:31:20.447436 +0000 build-fedora1: output: + OPTS=' --component '\''secpack-priv'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-secpack-priv'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-06 13:31:20.447475 +0000 build-fedora1: output: + eval set -- ' --component '\''secpack-priv'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-secpack-priv'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-06 13:31:20.447513 +0000 build-fedora1: output: ++ set -- --component secpack-priv --git-branch master --git-url https://github.com/QubesOS/qubes-secpack-priv --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-08-06 13:31:20.447521 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-06 13:31:20.447528 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 13:31:20.447535 +0000 build-fedora1: output: + COMPONENT=secpack-priv
+2022-08-06 13:31:20.447560 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447565 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447571 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-06 13:31:20.447576 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 13:31:20.447584 +0000 build-fedora1: output: + BRANCH=master
+2022-08-06 13:31:20.447606 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447612 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447618 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-06 13:31:20.447623 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 13:31:20.447630 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-secpack-priv
+2022-08-06 13:31:20.447649 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447654 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447659 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-06 13:31:20.447665 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 13:31:20.447671 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-08-06 13:31:20.447676 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447685 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447690 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-06 13:31:20.447696 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 13:31:20.447834 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-08-06 13:31:20.447845 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447851 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.447857 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-06 13:31:20.447862 +0000 build-fedora1: output: + case "$1" in
+2022-08-06 13:31:20.447997 +0000 build-fedora1: output: + shift
+2022-08-06 13:31:20.448008 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-06 13:31:20.448014 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-06 13:31:20.448019 +0000 build-fedora1: output: -]*$ ]]
+2022-08-06 13:31:20.448129 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-06 13:31:20.448140 +0000 build-fedora1: output: -]*$ ]]
+2022-08-06 13:31:20.448147 +0000 build-fedora1: output: + '[' -z secpack-priv ']'
+2022-08-06 13:31:20.448281 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-06 13:31:20.448292 +0000 build-fedora1: output: + REPO=secpack-priv
+2022-08-06 13:31:20.448299 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-08-06 13:31:20.448467 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-06 13:31:20.448501 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-08-06 13:31:20.448514 +0000 build-fedora1: output: + '[' -z master ']'
+2022-08-06 13:31:20.448674 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-06 13:31:20.448834 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-secpack-priv ']'
+2022-08-06 13:31:20.448847 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-06 13:31:20.448853 +0000 build-fedora1: output: + : 0
+2022-08-06 13:31:20.448858 +0000 build-fedora1: output: + : 0
+2022-08-06 13:31:20.448864 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-08-06 13:31:20.448869 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-08-06 13:31:20.448995 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-08-06 13:31:20.449007 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-08-06 13:31:20.449015 +0000 build-fedora1: output: + [[ secpack-priv =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-08-06 13:31:20.449021 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-06 13:31:20.449027 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-08-06 13:31:20.449032 +0000 build-fedora1: output: + fresh_clone=false
+2022-08-06 13:31:20.449038 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-08-06 13:31:20.449169 +0000 build-fedora1: output: + [[ -d secpack-priv ]]
+2022-08-06 13:31:20.449180 +0000 build-fedora1: output: + rm -f -- secpack-priv
+2022-08-06 13:31:20.449187 +0000 build-fedora1: output: + print_headers
+2022-08-06 13:31:20.449193 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-06 13:31:20.449201 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-secpack-priv master'
+2022-08-06 13:31:20.449208 +0000 build-fedora1: output: + echo '-> Updating sources for secpack-priv...'
+2022-08-06 13:31:20.449216 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-secpack-priv master...'
+2022-08-06 13:31:20.449423 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-secpack-priv secpack-priv
+2022-08-06 13:31:20.449437 +0000 build-fedora1: output: -> Updating sources for secpack-priv...
+2022-08-06 13:31:20.449458 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-secpack-priv master...
+2022-08-06 13:31:20.749906 +0000 build-fedora1: output: fatal: could not read Username for 'https://github.com': No such device or address
+2022-08-06 13:31:20.751435 +0000 build-fedora1: output: + '[' 0 == 1 ']'
+2022-08-06 13:31:20.751462 +0000 build-fedora1: output: + exit 1
+2022-08-06 13:31:20.751468 +0000 build-fedora1: output: + exit_clean
+2022-08-06 13:31:20.751474 +0000 build-fedora1: output: + local exit_code=1
+2022-08-06 13:31:20.751480 +0000 build-fedora1: output: + '[' 1 -gt 0 ']'
+2022-08-06 13:31:20.751485 +0000 build-fedora1: output: + false
+2022-08-06 13:31:20.751492 +0000 build-fedora1: output: + rm -f secpack-priv/.git/FETCH_HEAD
+2022-08-06 13:31:20.754488 +0000 build-fedora1: output: + exit 1
+2022-08-06 13:31:23.180956 +0000 > closing log

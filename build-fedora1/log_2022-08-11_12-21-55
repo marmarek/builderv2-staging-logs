@@ -1,0 +1,1119 @@
+2022-08-11 12:21:55.913049 +0000 > starting log
+2022-08-11 12:21:55.913353 +0000 build-fedora1: > starting build with log
+2022-08-11 12:21:55.913362 +0000 build-fedora1: >> args:
+2022-08-11 12:21:55.913377 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent vmm-xen-stubdom-legacy>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-08-11 12:21:55.913383 +0000 build-fedora1: >> component:
+2022-08-11 12:21:55.913389 +0000 build-fedora1: >>   vmm-xen-stubdom-legacy
+2022-08-11 12:21:55.913432 +0000 build-fedora1: >>     commit-hash: 74d804eae53c06aa0ca400b363b3e81b2f16d510
+2022-08-11 12:21:55.913460 +0000 build-fedora1: >>     source-hash: 0041ffbd31da0c0a0696cc18e63cb2e16be7416e6f1be78faf2a5e9bb8d900f7a7cb4dbfcc28dc1f5fa6004c8ba4b35c7a35117c3629f6f6489dc7c5d431034c
+2022-08-11 12:21:55.913468 +0000 build-fedora1: >> distributions:
+2022-08-11 12:21:55.913479 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-08-11 12:21:55.913486 +0000 build-fedora1: vmm-xen-stubdom-legacy: source already fetched. Updating.
+2022-08-11 12:22:06.633029 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5353 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:22:06.877034 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5353 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:22:07.128883 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5353 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:22:07.424295 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5353 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:22:07.637117 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5353 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:22:07.964775 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5353 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:22:08.196716 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5353 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component vmm-xen-stubdom-legacy --git-branch master --git-url https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-08-11 12:22:08.314970 +0000 build-fedora1: output: + unset CLEAN
+2022-08-11 12:22:08.315019 +0000 build-fedora1: output: + CLEAN=0
+2022-08-11 12:22:08.315071 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component vmm-xen-stubdom-legacy --git-branch master --git-url https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-08-11 12:22:08.317337 +0000 build-fedora1: output: + OPTS=' --component '\''vmm-xen-stubdom-legacy'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-11 12:22:08.317380 +0000 build-fedora1: output: + eval set -- ' --component '\''vmm-xen-stubdom-legacy'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-11 12:22:08.317401 +0000 build-fedora1: output: ++ set -- --component vmm-xen-stubdom-legacy --git-branch master --git-url https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-08-11 12:22:08.317421 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:22:08.317427 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:08.317434 +0000 build-fedora1: output: + COMPONENT=vmm-xen-stubdom-legacy
+2022-08-11 12:22:08.317440 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317445 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317450 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:22:08.317456 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:08.317632 +0000 build-fedora1: output: + BRANCH=master
+2022-08-11 12:22:08.317645 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317651 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317657 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:22:08.317662 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:08.317670 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy
+2022-08-11 12:22:08.317675 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317681 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317686 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:22:08.317691 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:08.317698 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-08-11 12:22:08.317703 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317708 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317846 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:22:08.317857 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:08.317864 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-08-11 12:22:08.317870 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317875 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317880 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:22:08.317885 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:08.317890 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:08.317896 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:22:08.317902 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-11 12:22:08.318024 +0000 build-fedora1: output: -]*$ ]]
+2022-08-11 12:22:08.318046 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-11 12:22:08.318053 +0000 build-fedora1: output: -]*$ ]]
+2022-08-11 12:22:08.318059 +0000 build-fedora1: output: + '[' -z vmm-xen-stubdom-legacy ']'
+2022-08-11 12:22:08.318065 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:22:08.318071 +0000 build-fedora1: output: + REPO=vmm-xen-stubdom-legacy
+2022-08-11 12:22:08.318241 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-08-11 12:22:08.318253 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:22:08.318260 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-08-11 12:22:08.318266 +0000 build-fedora1: output: + '[' -z master ']'
+2022-08-11 12:22:08.318271 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:22:08.318279 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy ']'
+2022-08-11 12:22:08.318462 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:22:08.318480 +0000 build-fedora1: output: + : 0
+2022-08-11 12:22:08.318486 +0000 build-fedora1: output: + : 0
+2022-08-11 12:22:08.318491 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-08-11 12:22:08.318497 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-08-11 12:22:08.318503 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-08-11 12:22:08.318510 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-08-11 12:22:08.318517 +0000 build-fedora1: output: + [[ vmm-xen-stubdom-legacy =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-08-11 12:22:08.318523 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:22:08.319642 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-08-11 12:22:08.319656 +0000 build-fedora1: output: + fresh_clone=false
+2022-08-11 12:22:08.319787 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-08-11 12:22:08.319799 +0000 build-fedora1: output: + [[ -d vmm-xen-stubdom-legacy ]]
+2022-08-11 12:22:08.319806 +0000 build-fedora1: output: + cd vmm-xen-stubdom-legacy
+2022-08-11 12:22:08.319872 +0000 build-fedora1: output: + '[' 0 '!=' 1 ']'
+2022-08-11 12:22:08.320776 +0000 build-fedora1: output: ++ git rev-parse --is-shallow-repository
+2022-08-11 12:22:08.337055 +0000 build-fedora1: output: + '[' false == true ']'
+2022-08-11 12:22:08.337089 +0000 build-fedora1: output: + print_headers
+2022-08-11 12:22:08.337096 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:22:08.337105 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy master'
+2022-08-11 12:22:08.337112 +0000 build-fedora1: output: + echo '-> Updating sources for vmm-xen-stubdom-legacy...'
+2022-08-11 12:22:08.337121 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy master...'
+2022-08-11 12:22:08.337127 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:22:08.337136 +0000 build-fedora1: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy master
+2022-08-11 12:22:08.337143 +0000 build-fedora1: output: -> Updating sources for vmm-xen-stubdom-legacy...
+2022-08-11 12:22:08.337151 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-vmm-xen-stubdom-legacy master...
+2022-08-11 12:22:08.953381 +0000 build-fedora1: output: + VERIFY_REF=FETCH_HEAD
+2022-08-11 12:22:08.953424 +0000 build-fedora1: output: + fresh_clone=false
+2022-08-11 12:22:08.953460 +0000 build-fedora1: output: + cd -
+2022-08-11 12:22:08.953468 +0000 build-fedora1: output: + export CHECK=signed-tag
+2022-08-11 12:22:08.953474 +0000 build-fedora1: output: + CHECK=signed-tag
+2022-08-11 12:22:08.953485 +0000 build-fedora1: output: + verify=true
+2022-08-11 12:22:08.953491 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:22:08.953497 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:22:08.953505 +0000 build-fedora1: output: ++ git -C vmm-xen-stubdom-legacy rev-parse -q --verify FETCH_HEAD
+2022-08-11 12:22:08.954305 +0000 build-fedora1: output: + VERIFY_REF=6a25201f83092b8f7b4de22f57205ec7eb969065
+2022-08-11 12:22:08.954330 +0000 build-fedora1: output: + '[' true = false ']'
+2022-08-11 12:22:08.954339 +0000 build-fedora1: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-08-11 12:22:08.954346 +0000 build-fedora1: output: + echo '--> Verifying tags...'
+2022-08-11 12:22:08.954356 +0000 build-fedora1: output: --> Verifying tags...
+2022-08-11 12:22:08.954645 +0000 build-fedora1: output: ++ readlink -m /builder/keyring
+2022-08-11 12:22:08.956092 +0000 build-fedora1: output: + GNUPGHOME=/builder/keyring
+2022-08-11 12:22:08.956193 +0000 build-fedora1: output: + export GNUPGHOME
+2022-08-11 12:22:08.956280 +0000 build-fedora1: output: + '[' '!' -d /builder/keyring ']'
+2022-08-11 12:22:08.956458 +0000 build-fedora1: output: + mkdir -p /builder/keyring
+2022-08-11 12:22:08.956825 +0000 build-fedora1: output: + chmod 700 /builder/keyring
+2022-08-11 12:22:08.957472 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-08-11 12:22:08.967154 +0000 build-fedora1: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-08-11 12:22:08.970840 +0000 build-fedora1: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-08-11 12:22:08.970881 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-08-11 12:22:08.983970 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-08-11 12:22:08.985322 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-08-11 12:22:08.985491 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-08-11 12:22:08.985510 +0000 build-fedora1: output: gpg:               imported: 3
+2022-08-11 12:22:08.985517 +0000 build-fedora1: output: gpg: no ultimately trusted keys found
+2022-08-11 12:22:08.986530 +0000 build-fedora1: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-08-11 12:22:08.986561 +0000 build-fedora1: output: + gpg --import-ownertrust
+2022-08-11 12:22:08.988020 +0000 build-fedora1: output: gpg: inserting ownertrust of 6
+2022-08-11 12:22:08.988138 +0000 build-fedora1: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-08-11 12:22:08.988261 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-08-11 12:22:08.993019 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-08-11 12:22:08.994493 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-08-11 12:22:08.996370 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-08-11 12:22:08.996867 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-08-11 12:22:08.997322 +0000 build-fedora1: output: gpg:              unchanged: 3
+2022-08-11 12:22:08.998289 +0000 build-fedora1: output: + touch /builder/keyring/pubring.gpg
+2022-08-11 12:22:08.999818 +0000 build-fedora1: output: + gpgconf --kill gpg-agent
+2022-08-11 12:22:09.008889 +0000 build-fedora1: output: + pushd vmm-xen-stubdom-legacy
+2022-08-11 12:22:09.009442 +0000 build-fedora1: output: + expected_hash=6a25201f83092b8f7b4de22f57205ec7eb969065
+2022-08-11 12:22:09.009490 +0000 build-fedora1: output: + hash_len=40
+2022-08-11 12:22:09.009509 +0000 build-fedora1: output: + '[' 40 -ne 40 ']'
+2022-08-11 12:22:09.009531 +0000 build-fedora1: output: + [[ 6a25201f83092b8f7b4de22f57205ec7eb969065 =~ ^[a-f0-9]+$ ]]
+2022-08-11 12:22:09.009557 +0000 build-fedora1: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-08-11 12:22:09.010190 +0000 build-fedora1: output: ++ git tag --points-at=6a25201f83092b8f7b4de22f57205ec7eb969065 '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-08-11 12:22:09.010318 +0000 build-fedora1: output: ++ head -c 500
+2022-08-11 12:22:09.014817 +0000 build-fedora1: output: + tags=2b73b33e40e5f71161e03df86d1de0837eeb4563:6a25201f83092b8f7b4de22f57205ec7eb969065:
+2022-08-11 12:22:09.014935 +0000 build-fedora1: output: + for tag in $tags
+2022-08-11 12:22:09.015281 +0000 build-fedora1: output: + (( 82 != hash_len * 2 + 2 ))
+2022-08-11 12:22:09.015330 +0000 build-fedora1: output: + [[ :6a25201f83092b8f7b4de22f57205ec7eb969065: == \:\6\a\2\5\2\0\1\f\8\3\0\9\2\b\8\f\7\b\4\d\e\2\2\f\5\7\2\0\5\e\c\7\e\b\9\6\9\0\6\5\: ]]
+2022-08-11 12:22:09.015351 +0000 build-fedora1: output: + tag=2b73b33e40e5f71161e03df86d1de0837eeb4563
+2022-08-11 12:22:09.015839 +0000 build-fedora1: output: + verify_git_obj tag 2b73b33e40e5f71161e03df86d1de0837eeb4563
+2022-08-11 12:22:09.016144 +0000 build-fedora1: output: + local content newsig_number
+2022-08-11 12:22:09.016315 +0000 build-fedora1: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- 2b73b33e40e5f71161e03df86d1de0837eeb4563
+2022-08-11 12:22:09.026007 +0000 build-fedora1: output: + content='[GNUPG:] NEWSIG
+2022-08-11 12:22:09.026061 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-11 12:22:09.026304 +0000 build-fedora1: output: [GNUPG:] SIG_ID ctksW7Sn4VhzMYBkKWUOpkzvaTU 2022-08-11 1660220503
+2022-08-11 12:22:09.026364 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-11 12:22:09.026937 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.026981 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.027003 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.027377 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-08-11 12:22:09.027444 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-08-11 1660220503 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-08-11 12:22:09.027705 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-08-11 12:22:09.027832 +0000 build-fedora1: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-08-11 12:22:09.028834 +0000 build-fedora1: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-08-11 12:22:09.028875 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-11 12:22:09.028999 +0000 build-fedora1: output: [GNUPG:] SIG_ID ctksW7Sn4VhzMYBkKWUOpkzvaTU 2022-08-11 1660220503
+2022-08-11 12:22:09.029260 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-11 12:22:09.029363 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.029686 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.029883 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.030115 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-08-11 12:22:09.030258 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-08-11 1660220503 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-08-11 12:22:09.030414 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-08-11 12:22:09.030628 +0000 build-fedora1: output: + newsig_number=1
+2022-08-11 12:22:09.030767 +0000 build-fedora1: output: + '[' 1 = 1 ']'
+2022-08-11 12:22:09.030932 +0000 build-fedora1: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp$'
+2022-08-11 12:22:09.031180 +0000 build-fedora1: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-08-11 12:22:09.031395 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-11 12:22:09.031605 +0000 build-fedora1: output: [GNUPG:] SIG_ID ctksW7Sn4VhzMYBkKWUOpkzvaTU 2022-08-11 1660220503
+2022-08-11 12:22:09.031852 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-11 12:22:09.031986 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.032145 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.032416 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-11 12:22:09.032438 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-08-11 12:22:09.032450 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-08-11 1660220503 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-08-11 12:22:09.032676 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-08-11 12:22:09.032719 +0000 build-fedora1: output: + echo '---> Good tag 2b73b33e40e5f71161e03df86d1de0837eeb4563'
+2022-08-11 12:22:09.032737 +0000 build-fedora1: output: + '[' -z x ']'
+2022-08-11 12:22:09.032754 +0000 build-fedora1: output: + popd
+2022-08-11 12:22:09.033010 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:22:09.033064 +0000 build-fedora1: output: + pushd vmm-xen-stubdom-legacy
+2022-08-11 12:22:09.033088 +0000 build-fedora1: output: ---> Good tag 2b73b33e40e5f71161e03df86d1de0837eeb4563
+2022-08-11 12:22:09.033108 +0000 build-fedora1: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-08-11 12:22:09.033126 +0000 build-fedora1: output: + CURRENT_BRANCH=master
+2022-08-11 12:22:09.033142 +0000 build-fedora1: output: --> Merging...
+2022-08-11 12:22:09.033369 +0000 build-fedora1: output: + '[' master '!=' master ']'
+2022-08-11 12:22:09.033581 +0000 build-fedora1: output: + false
+2022-08-11 12:22:09.033728 +0000 build-fedora1: output: + false
+2022-08-11 12:22:09.033923 +0000 build-fedora1: output: + '[' '' = 1 ']'
+2022-08-11 12:22:09.034189 +0000 build-fedora1: output: + echo '--> Merging...'
+2022-08-11 12:22:09.034307 +0000 build-fedora1: output: + git -c merge.verifySignatures=no merge --ff-only --commit -q 6a25201f83092b8f7b4de22f57205ec7eb969065
+2022-08-11 12:22:09.039779 +0000 build-fedora1: output: + tracking_branch=refs/remotes//master
+2022-08-11 12:22:09.039802 +0000 build-fedora1: output: + '[' -f .git/refs/remotes//master ']'
+2022-08-11 12:22:09.039809 +0000 build-fedora1: output: + popd
+2022-08-11 12:22:09.040743 +0000 build-fedora1: output: + exit_clean
+2022-08-11 12:22:09.040761 +0000 build-fedora1: output: + local exit_code=0
+2022-08-11 12:22:09.040768 +0000 build-fedora1: output: + '[' 0 -gt 0 ']'
+2022-08-11 12:22:09.040862 +0000 build-fedora1: output: + exit 0
+2022-08-11 12:22:09.052855 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5353 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/sources
+2022-08-11 12:22:22.412386 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4899 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:22:22.606144 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4899 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:22:22.802743 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4899 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:22:23.025355 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4899 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:22:23.298568 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4899 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:22:23.642329 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4899 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:22:23.745424 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp4899 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name xen-4.13.0.tar.gz --file-url https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz --signature-url https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig --pubkey-file xen.org-key.asc''.
+2022-08-11 12:22:23.871141 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name xen-4.13.0.tar.gz --file-url https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz --signature-url https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig --pubkey-file xen.org-key.asc
+2022-08-11 12:22:23.884050 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''xen-4.13.0.tar.gz'\'' --file-url '\''https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz'\'' --signature-url '\''https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig'\'' --pubkey-file '\''xen.org-key.asc'\'' --'
+2022-08-11 12:22:23.884162 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''xen-4.13.0.tar.gz'\'' --file-url '\''https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz'\'' --signature-url '\''https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig'\'' --pubkey-file '\''xen.org-key.asc'\'' --'
+2022-08-11 12:22:23.884181 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name xen-4.13.0.tar.gz --file-url https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz --signature-url https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig --pubkey-file xen.org-key.asc --
+2022-08-11 12:22:23.884188 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:22:23.884194 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:22:23.884200 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:23.884207 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:22:23.884213 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884218 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884223 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:22:23.884229 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:23.884235 +0000 build-fedora1: output: + FILE_NAME=xen-4.13.0.tar.gz
+2022-08-11 12:22:23.884240 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884245 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884251 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:22:23.884256 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:23.884264 +0000 build-fedora1: output: + FILE_URL=https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz
+2022-08-11 12:22:23.884270 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884275 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884280 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:22:23.884285 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:23.884294 +0000 build-fedora1: output: + SIGNATURE_URL=https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig
+2022-08-11 12:22:23.884299 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884304 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884310 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:22:23.884315 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:23.884320 +0000 build-fedora1: output: + PUBKEY_FILE+=("$2")
+2022-08-11 12:22:23.884325 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884330 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884336 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:22:23.884341 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:23.884346 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:23.884352 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:22:23.884360 +0000 build-fedora1: output: + '[' -z https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz ']'
+2022-08-11 12:22:23.884368 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:22:23.884374 +0000 build-fedora1: output: + '[' -z xen-4.13.0.tar.gz ']'
+2022-08-11 12:22:23.884387 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:22:23.884395 +0000 build-fedora1: output: + '[' -z https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig ']'
+2022-08-11 12:22:23.884401 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:22:23.884409 +0000 build-fedora1: output: + '[' -n https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig ']'
+2022-08-11 12:22:23.884417 +0000 build-fedora1: output: + '[' -z xen.org-key.asc ']'
+2022-08-11 12:22:23.884425 +0000 build-fedora1: output: + '[' -z https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig ']'
+2022-08-11 12:22:23.884434 +0000 build-fedora1: output: + '[' -n https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig ']'
+2022-08-11 12:22:23.884440 +0000 build-fedora1: output: + '[' '!' -e xen.org-key.asc ']'
+2022-08-11 12:22:23.884447 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xen-4.13.0.tar.gz
+2022-08-11 12:22:23.884459 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xen-4.13.0.tar.gz https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz
+2022-08-11 12:22:28.196016 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:22:28.197496 +0000 build-fedora1: output: + '[' -n https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig ']'
+2022-08-11 12:22:28.197563 +0000 build-fedora1: output: + '[' -n xen.org-key.asc ']'
+2022-08-11 12:22:28.197639 +0000 build-fedora1: output: ++ basename https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig
+2022-08-11 12:22:28.198531 +0000 build-fedora1: output: + SIGNATURE_FILE_NAME=xen-4.13.0.tar.gz.sig
+2022-08-11 12:22:28.198634 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o xen-4.13.0.tar.gz.sig https://downloads.xenproject.org/release/xen/4.13.0/xen-4.13.0.tar.gz.sig
+2022-08-11 12:22:28.592787 +0000 build-fedora1: output: ++ mktemp -u
+2022-08-11 12:22:28.595084 +0000 build-fedora1: output: + keyring=/tmp/tmp.UcmOFn9ITv
+2022-08-11 12:22:28.595140 +0000 build-fedora1: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2022-08-11 12:22:28.595169 +0000 build-fedora1: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.UcmOFn9ITv -q --import xen.org-key.asc
+2022-08-11 12:22:28.621402 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:22:28.621440 +0000 build-fedora1: output: + gpgv --keyring /tmp/tmp.UcmOFn9ITv xen-4.13.0.tar.gz.sig untrusted_xen-4.13.0.tar.gz
+2022-08-11 12:22:28.750250 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:22:28.750312 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:22:28.752037 +0000 build-fedora1: output: + mv untrusted_xen-4.13.0.tar.gz /builder/vmm-xen-stubdom-legacy/xen-4.13.0.tar.gz
+2022-08-11 12:22:28.760752 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4899 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__xen-4.13.0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:22:29.267525 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4899 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__xen-4.13.0.tar.gz.sig /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:22:42.684374 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5281 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:22:42.911456 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5281 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:22:43.164341 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5281 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:22:43.391767 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5281 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:22:43.665551 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5281 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:22:43.989037 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5281 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:22:44.127504 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5281 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name grub-0.97.tar.gz --file-url https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz --signature-url https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig --pubkey-file grub-0.97-key.asc''.
+2022-08-11 12:22:44.306662 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name grub-0.97.tar.gz --file-url https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz --signature-url https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig --pubkey-file grub-0.97-key.asc
+2022-08-11 12:22:44.307199 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''grub-0.97.tar.gz'\'' --file-url '\''https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz'\'' --signature-url '\''https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig'\'' --pubkey-file '\''grub-0.97-key.asc'\'' --'
+2022-08-11 12:22:44.307386 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''grub-0.97.tar.gz'\'' --file-url '\''https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz'\'' --signature-url '\''https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig'\'' --pubkey-file '\''grub-0.97-key.asc'\'' --'
+2022-08-11 12:22:44.307448 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name grub-0.97.tar.gz --file-url https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz --signature-url https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig --pubkey-file grub-0.97-key.asc --
+2022-08-11 12:22:44.307466 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:22:44.307538 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:22:44.307566 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:44.307611 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:22:44.307703 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.307724 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.307979 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:22:44.308791 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:44.308806 +0000 build-fedora1: output: + FILE_NAME=grub-0.97.tar.gz
+2022-08-11 12:22:44.308813 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308818 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308824 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:22:44.308829 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:44.308837 +0000 build-fedora1: output: + FILE_URL=https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz
+2022-08-11 12:22:44.308842 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308847 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308852 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:22:44.308857 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:44.308865 +0000 build-fedora1: output: + SIGNATURE_URL=https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig
+2022-08-11 12:22:44.308870 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308875 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308880 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:22:44.308886 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:44.308891 +0000 build-fedora1: output: + PUBKEY_FILE+=("$2")
+2022-08-11 12:22:44.308910 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308915 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308921 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:22:44.308926 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:22:44.308931 +0000 build-fedora1: output: + shift
+2022-08-11 12:22:44.308936 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:22:44.308944 +0000 build-fedora1: output: + '[' -z https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz ']'
+2022-08-11 12:22:44.308952 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:22:44.308958 +0000 build-fedora1: output: + '[' -z grub-0.97.tar.gz ']'
+2022-08-11 12:22:44.308964 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:22:44.308971 +0000 build-fedora1: output: + '[' -z https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig ']'
+2022-08-11 12:22:44.308977 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:22:44.308984 +0000 build-fedora1: output: + '[' -n https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig ']'
+2022-08-11 12:22:44.308990 +0000 build-fedora1: output: + '[' -z grub-0.97-key.asc ']'
+2022-08-11 12:22:44.308998 +0000 build-fedora1: output: + '[' -z https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig ']'
+2022-08-11 12:22:44.309007 +0000 build-fedora1: output: + '[' -n https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig ']'
+2022-08-11 12:22:44.309014 +0000 build-fedora1: output: + '[' '!' -e grub-0.97-key.asc ']'
+2022-08-11 12:22:44.309020 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_grub-0.97.tar.gz
+2022-08-11 12:22:44.309032 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_grub-0.97.tar.gz https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz
+2022-08-11 12:22:47.783658 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:22:47.785031 +0000 build-fedora1: output: + '[' -n https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig ']'
+2022-08-11 12:22:47.785097 +0000 build-fedora1: output: + '[' -n grub-0.97-key.asc ']'
+2022-08-11 12:22:47.785133 +0000 build-fedora1: output: ++ basename https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig
+2022-08-11 12:22:47.785972 +0000 build-fedora1: output: + SIGNATURE_FILE_NAME=grub-0.97.tar.gz.sig
+2022-08-11 12:22:47.786050 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o grub-0.97.tar.gz.sig https://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz.sig
+2022-08-11 12:22:48.134448 +0000 build-fedora1: output: ++ mktemp -u
+2022-08-11 12:22:48.136982 +0000 build-fedora1: output: + keyring=/tmp/tmp.7bJgaxZZ9u
+2022-08-11 12:22:48.137039 +0000 build-fedora1: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2022-08-11 12:22:48.137071 +0000 build-fedora1: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.7bJgaxZZ9u -q --import grub-0.97-key.asc
+2022-08-11 12:22:48.163328 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:22:48.163365 +0000 build-fedora1: output: + gpgv --keyring /tmp/tmp.7bJgaxZZ9u grub-0.97.tar.gz.sig untrusted_grub-0.97.tar.gz
+2022-08-11 12:22:48.171162 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:22:48.171204 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:22:48.173512 +0000 build-fedora1: output: + mv untrusted_grub-0.97.tar.gz /builder/vmm-xen-stubdom-legacy/grub-0.97.tar.gz
+2022-08-11 12:22:48.182060 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5281 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__grub-0.97.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:22:48.359329 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5281 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__grub-0.97.tar.gz.sig /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:23:01.499217 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2605 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:23:01.702702 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2605 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:23:01.891522 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2605 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:23:02.110411 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2605 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:23:02.375870 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2605 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:23:02.764787 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2605 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:23:02.934852 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp2605 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name lwip-1.3.0.tar.gz --file-url https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz --signature-url https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig --pubkey-file lwip-key.asc''.
+2022-08-11 12:23:03.097733 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name lwip-1.3.0.tar.gz --file-url https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz --signature-url https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig --pubkey-file lwip-key.asc
+2022-08-11 12:23:03.097792 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''lwip-1.3.0.tar.gz'\'' --file-url '\''https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz'\'' --signature-url '\''https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig'\'' --pubkey-file '\''lwip-key.asc'\'' --'
+2022-08-11 12:23:03.097815 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''lwip-1.3.0.tar.gz'\'' --file-url '\''https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz'\'' --signature-url '\''https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig'\'' --pubkey-file '\''lwip-key.asc'\'' --'
+2022-08-11 12:23:03.097977 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name lwip-1.3.0.tar.gz --file-url https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz --signature-url https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig --pubkey-file lwip-key.asc --
+2022-08-11 12:23:03.097990 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:23:03.097997 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:23:03.098003 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:03.098010 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:23:03.098016 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.098021 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.098027 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:23:03.098266 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:03.098285 +0000 build-fedora1: output: + FILE_NAME=lwip-1.3.0.tar.gz
+2022-08-11 12:23:03.098291 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.098297 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.098610 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:23:03.099127 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:03.099172 +0000 build-fedora1: output: + FILE_URL=https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz
+2022-08-11 12:23:03.099188 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.099201 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.099215 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:23:03.099228 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:03.099250 +0000 build-fedora1: output: + SIGNATURE_URL=https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig
+2022-08-11 12:23:03.099263 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.099275 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.099288 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:23:03.099301 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:03.099314 +0000 build-fedora1: output: + PUBKEY_FILE+=("$2")
+2022-08-11 12:23:03.099515 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.099547 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.099560 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:23:03.099570 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:03.099580 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:03.099610 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:23:03.099626 +0000 build-fedora1: output: + '[' -z https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz ']'
+2022-08-11 12:23:03.099642 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:23:03.099653 +0000 build-fedora1: output: + '[' -z lwip-1.3.0.tar.gz ']'
+2022-08-11 12:23:03.099811 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:23:03.099834 +0000 build-fedora1: output: + '[' -z https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig ']'
+2022-08-11 12:23:03.099841 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:03.099958 +0000 build-fedora1: output: + '[' -n https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig ']'
+2022-08-11 12:23:03.099970 +0000 build-fedora1: output: + '[' -z lwip-key.asc ']'
+2022-08-11 12:23:03.100082 +0000 build-fedora1: output: + '[' -z https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig ']'
+2022-08-11 12:23:03.100315 +0000 build-fedora1: output: + '[' -n https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig ']'
+2022-08-11 12:23:03.100422 +0000 build-fedora1: output: + '[' '!' -e lwip-key.asc ']'
+2022-08-11 12:23:03.100459 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_lwip-1.3.0.tar.gz
+2022-08-11 12:23:03.100494 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_lwip-1.3.0.tar.gz https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz
+2022-08-11 12:23:04.210050 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:04.210098 +0000 build-fedora1: output: + '[' -n https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig ']'
+2022-08-11 12:23:04.210107 +0000 build-fedora1: output: + '[' -n lwip-key.asc ']'
+2022-08-11 12:23:04.210358 +0000 build-fedora1: output: ++ basename https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig
+2022-08-11 12:23:04.211032 +0000 build-fedora1: output: + SIGNATURE_FILE_NAME=lwip-1.3.0.tar.gz.sig
+2022-08-11 12:23:04.211142 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o lwip-1.3.0.tar.gz.sig https://download.savannah.gnu.org/releases/lwip/older_versions/lwip-1.3.0.tar.gz.sig
+2022-08-11 12:23:04.975143 +0000 build-fedora1: output: ++ mktemp -u
+2022-08-11 12:23:04.977078 +0000 build-fedora1: output: + keyring=/tmp/tmp.KnpudNxW1z
+2022-08-11 12:23:04.977234 +0000 build-fedora1: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2022-08-11 12:23:04.977274 +0000 build-fedora1: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.KnpudNxW1z -q --import lwip-key.asc
+2022-08-11 12:23:05.001675 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:23:05.001713 +0000 build-fedora1: output: + gpgv --keyring /tmp/tmp.KnpudNxW1z lwip-1.3.0.tar.gz.sig untrusted_lwip-1.3.0.tar.gz
+2022-08-11 12:23:05.006267 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:23:05.006291 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:23:05.007011 +0000 build-fedora1: output: + mv untrusted_lwip-1.3.0.tar.gz /builder/vmm-xen-stubdom-legacy/lwip-1.3.0.tar.gz
+2022-08-11 12:23:05.014301 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2605 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__lwip-1.3.0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:23:05.184943 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2605 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__lwip-1.3.0.tar.gz.sig /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:23:18.670163 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6387 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:23:18.855694 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6387 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:23:19.043464 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6387 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:23:19.259936 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6387 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:23:19.463231 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp6387 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:23:19.972157 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp6387 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:23:20.199449 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp6387 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name gmp-4.3.2.tar.bz2 --file-url https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2 --signature-url https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig --pubkey-file gmp-key.asc''.
+2022-08-11 12:23:20.347341 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name gmp-4.3.2.tar.bz2 --file-url https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2 --signature-url https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig --pubkey-file gmp-key.asc
+2022-08-11 12:23:20.351460 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''gmp-4.3.2.tar.bz2'\'' --file-url '\''https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2'\'' --signature-url '\''https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig'\'' --pubkey-file '\''gmp-key.asc'\'' --'
+2022-08-11 12:23:20.351710 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''gmp-4.3.2.tar.bz2'\'' --file-url '\''https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2'\'' --signature-url '\''https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig'\'' --pubkey-file '\''gmp-key.asc'\'' --'
+2022-08-11 12:23:20.351762 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name gmp-4.3.2.tar.bz2 --file-url https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2 --signature-url https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig --pubkey-file gmp-key.asc --
+2022-08-11 12:23:20.351809 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:23:20.351856 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:23:20.351863 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:20.351907 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:23:20.351915 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.351920 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.351964 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:23:20.351990 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:20.351997 +0000 build-fedora1: output: + FILE_NAME=gmp-4.3.2.tar.bz2
+2022-08-11 12:23:20.352023 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352029 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352038 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:23:20.352061 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:20.352129 +0000 build-fedora1: output: + FILE_URL=https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2
+2022-08-11 12:23:20.352153 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352158 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352164 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:23:20.352208 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:20.352217 +0000 build-fedora1: output: + SIGNATURE_URL=https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig
+2022-08-11 12:23:20.352241 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352266 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352295 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:23:20.352301 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:20.352306 +0000 build-fedora1: output: + PUBKEY_FILE+=("$2")
+2022-08-11 12:23:20.352311 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352343 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352367 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:23:20.352393 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:20.352399 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:20.352423 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:23:20.352445 +0000 build-fedora1: output: + '[' -z https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2 ']'
+2022-08-11 12:23:20.352473 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:23:20.352499 +0000 build-fedora1: output: + '[' -z gmp-4.3.2.tar.bz2 ']'
+2022-08-11 12:23:20.352524 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:23:20.352533 +0000 build-fedora1: output: + '[' -z https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig ']'
+2022-08-11 12:23:20.352559 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:20.352571 +0000 build-fedora1: output: + '[' -n https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig ']'
+2022-08-11 12:23:20.352577 +0000 build-fedora1: output: + '[' -z gmp-key.asc ']'
+2022-08-11 12:23:20.352593 +0000 build-fedora1: output: + '[' -z https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig ']'
+2022-08-11 12:23:20.352650 +0000 build-fedora1: output: + '[' -n https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig ']'
+2022-08-11 12:23:20.352677 +0000 build-fedora1: output: + '[' '!' -e gmp-key.asc ']'
+2022-08-11 12:23:20.352685 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_gmp-4.3.2.tar.bz2
+2022-08-11 12:23:20.352697 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_gmp-4.3.2.tar.bz2 https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2
+2022-08-11 12:23:21.568653 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:21.568744 +0000 build-fedora1: output: + '[' -n https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig ']'
+2022-08-11 12:23:21.568767 +0000 build-fedora1: output: + '[' -n gmp-key.asc ']'
+2022-08-11 12:23:21.568793 +0000 build-fedora1: output: ++ basename https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig
+2022-08-11 12:23:21.569703 +0000 build-fedora1: output: + SIGNATURE_FILE_NAME=gmp-4.3.2.tar.bz2.sig
+2022-08-11 12:23:21.569736 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o gmp-4.3.2.tar.bz2.sig https://ftp.gnu.org/gnu/gmp/gmp-4.3.2.tar.bz2.sig
+2022-08-11 12:23:21.901650 +0000 build-fedora1: output: ++ mktemp -u
+2022-08-11 12:23:21.904045 +0000 build-fedora1: output: + keyring=/tmp/tmp.VGs1tKg0aT
+2022-08-11 12:23:21.904153 +0000 build-fedora1: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2022-08-11 12:23:21.904189 +0000 build-fedora1: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.VGs1tKg0aT -q --import gmp-key.asc
+2022-08-11 12:23:21.929670 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:23:21.929725 +0000 build-fedora1: output: + gpgv --keyring /tmp/tmp.VGs1tKg0aT gmp-4.3.2.tar.bz2.sig untrusted_gmp-4.3.2.tar.bz2
+2022-08-11 12:23:21.939398 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:23:21.939446 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:23:21.940275 +0000 build-fedora1: output: + mv untrusted_gmp-4.3.2.tar.bz2 /builder/vmm-xen-stubdom-legacy/gmp-4.3.2.tar.bz2
+2022-08-11 12:23:21.948234 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6387 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__gmp-4.3.2.tar.bz2 /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:23:22.147079 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp6387 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__gmp-4.3.2.tar.bz2.sig /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:23:35.431489 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9503 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:23:35.617012 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9503 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:23:35.849189 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9503 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:23:36.058818 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9503 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:23:36.283555 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9503 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:23:36.648856 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9503 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:23:36.780975 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp9503 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name newlib-1.16.0.tar.gz --file-url https://ftp.qubes-os.org/distfiles/newlib-1.16.0.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256''.
+2022-08-11 12:23:36.961937 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name newlib-1.16.0.tar.gz --file-url https://ftp.qubes-os.org/distfiles/newlib-1.16.0.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256
+2022-08-11 12:23:36.979740 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''newlib-1.16.0.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/newlib-1.16.0.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256'\'' --'
+2022-08-11 12:23:36.979835 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''newlib-1.16.0.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/newlib-1.16.0.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256'\'' --'
+2022-08-11 12:23:36.979873 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name newlib-1.16.0.tar.gz --file-url https://ftp.qubes-os.org/distfiles/newlib-1.16.0.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256 --
+2022-08-11 12:23:36.979882 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:23:36.979888 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:23:36.979929 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:36.979946 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:23:36.979952 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.979957 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.979985 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:23:36.980011 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:36.980019 +0000 build-fedora1: output: + FILE_NAME=newlib-1.16.0.tar.gz
+2022-08-11 12:23:36.980025 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980030 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980035 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:23:36.980041 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:36.980048 +0000 build-fedora1: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/newlib-1.16.0.tar.gz
+2022-08-11 12:23:36.980079 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980085 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980090 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:23:36.980096 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:36.980102 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-08-11 12:23:36.980107 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980160 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980167 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:23:36.980173 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:36.980255 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256
+2022-08-11 12:23:36.980262 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980288 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980316 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:23:36.980341 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:36.980399 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:36.980406 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:23:36.980436 +0000 build-fedora1: output: + '[' -z https://ftp.qubes-os.org/distfiles/newlib-1.16.0.tar.gz ']'
+2022-08-11 12:23:36.980445 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:23:36.980511 +0000 build-fedora1: output: + '[' -z newlib-1.16.0.tar.gz ']'
+2022-08-11 12:23:36.980542 +0000 build-fedora1: output: + '[' -z /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256 ']'
+2022-08-11 12:23:36.980558 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256 ']'
+2022-08-11 12:23:36.980609 +0000 build-fedora1: output: + '[' -e /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256 ']'
+2022-08-11 12:23:36.980638 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:36.980663 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:23:36.980672 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:36.980832 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:36.980882 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_newlib-1.16.0.tar.gz
+2022-08-11 12:23:36.980897 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_newlib-1.16.0.tar.gz https://ftp.qubes-os.org/distfiles/newlib-1.16.0.tar.gz
+2022-08-11 12:23:37.758876 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256 ']'
+2022-08-11 12:23:37.758954 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-08-11 12:23:37.758982 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:23:37.759173 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-08-11 12:23:37.760198 +0000 build-fedora1: output: +++ cat /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz.sha256
+2022-08-11 12:23:37.762369 +0000 build-fedora1: output: ++ printf '%s  -\n' db426394965c48c1d29023e1cc6d965ea6b9a9035d8a849be2750ca4659a3d07
+2022-08-11 12:23:37.775992 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:23:37.776039 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:23:37.776706 +0000 build-fedora1: output: + mv untrusted_newlib-1.16.0.tar.gz /builder/vmm-xen-stubdom-legacy/newlib-1.16.0.tar.gz
+2022-08-11 12:23:37.785572 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9503 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__newlib-1.16.0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:23:51.233757 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5262 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:23:51.433837 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5262 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:23:51.647309 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5262 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:23:51.865434 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5262 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:23:52.082502 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5262 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:23:52.825829 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5262 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:23:52.933128 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5262 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name pciutils-2.2.9.tar.bz2 --file-url https://www.kernel.org/pub/software/utils/pciutils/pciutils-2.2.9.tar.bz2 --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256''.
+2022-08-11 12:23:53.081646 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name pciutils-2.2.9.tar.bz2 --file-url https://www.kernel.org/pub/software/utils/pciutils/pciutils-2.2.9.tar.bz2 --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256
+2022-08-11 12:23:53.083892 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''pciutils-2.2.9.tar.bz2'\'' --file-url '\''https://www.kernel.org/pub/software/utils/pciutils/pciutils-2.2.9.tar.bz2'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256'\'' --'
+2022-08-11 12:23:53.083999 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''pciutils-2.2.9.tar.bz2'\'' --file-url '\''https://www.kernel.org/pub/software/utils/pciutils/pciutils-2.2.9.tar.bz2'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256'\'' --'
+2022-08-11 12:23:53.084049 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name pciutils-2.2.9.tar.bz2 --file-url https://www.kernel.org/pub/software/utils/pciutils/pciutils-2.2.9.tar.bz2 --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256 --
+2022-08-11 12:23:53.084207 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:23:53.084605 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:23:53.084927 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:53.085076 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:23:53.085456 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.085932 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.085966 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:23:53.087035 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:53.087084 +0000 build-fedora1: output: + FILE_NAME=pciutils-2.2.9.tar.bz2
+2022-08-11 12:23:53.087102 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.087118 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.087135 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:23:53.087159 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:53.087409 +0000 build-fedora1: output: + FILE_URL=https://www.kernel.org/pub/software/utils/pciutils/pciutils-2.2.9.tar.bz2
+2022-08-11 12:23:53.087461 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.087755 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.088125 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:23:53.088330 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:53.088421 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-08-11 12:23:53.088650 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.089001 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.089030 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:23:53.089316 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:53.089537 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256
+2022-08-11 12:23:53.089698 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.089857 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.090015 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:23:53.090148 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:23:53.090507 +0000 build-fedora1: output: + shift
+2022-08-11 12:23:53.090638 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:23:53.091134 +0000 build-fedora1: output: + '[' -z https://www.kernel.org/pub/software/utils/pciutils/pciutils-2.2.9.tar.bz2 ']'
+2022-08-11 12:23:53.091176 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:23:53.091194 +0000 build-fedora1: output: + '[' -z pciutils-2.2.9.tar.bz2 ']'
+2022-08-11 12:23:53.091436 +0000 build-fedora1: output: + '[' -z /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256 ']'
+2022-08-11 12:23:53.091787 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256 ']'
+2022-08-11 12:23:53.091804 +0000 build-fedora1: output: + '[' -e /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256 ']'
+2022-08-11 12:23:53.091813 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:53.091932 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:23:53.092100 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:53.092326 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:23:53.092447 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_pciutils-2.2.9.tar.bz2
+2022-08-11 12:23:53.092655 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_pciutils-2.2.9.tar.bz2 https://www.kernel.org/pub/software/utils/pciutils/pciutils-2.2.9.tar.bz2
+2022-08-11 12:23:53.552383 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256 ']'
+2022-08-11 12:23:53.552461 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-08-11 12:23:53.552482 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:23:53.552502 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-08-11 12:23:53.552719 +0000 build-fedora1: output: +++ cat /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2.sha256
+2022-08-11 12:23:53.553201 +0000 build-fedora1: output: ++ printf '%s  -\n' f60ae61cfbd5da1d849d0beaa21f593c38dac9359f0b3ddc612f447408265b24
+2022-08-11 12:23:53.555688 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:23:53.555855 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:23:53.556428 +0000 build-fedora1: output: + mv untrusted_pciutils-2.2.9.tar.bz2 /builder/vmm-xen-stubdom-legacy/pciutils-2.2.9.tar.bz2
+2022-08-11 12:23:53.563139 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5262 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__pciutils-2.2.9.tar.bz2 /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:24:06.710825 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp145 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:24:06.932568 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp145 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:24:07.128621 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp145 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:24:07.344873 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp145 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:24:07.661456 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp145 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:24:07.975490 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp145 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:24:08.158646 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp145 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name zlib-1.2.3.tar.gz --file-url https://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256''.
+2022-08-11 12:24:08.280991 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name zlib-1.2.3.tar.gz --file-url https://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256
+2022-08-11 12:24:08.283509 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''zlib-1.2.3.tar.gz'\'' --file-url '\''https://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256'\'' --'
+2022-08-11 12:24:08.283636 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''zlib-1.2.3.tar.gz'\'' --file-url '\''https://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256'\'' --'
+2022-08-11 12:24:08.283687 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name zlib-1.2.3.tar.gz --file-url https://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256 --
+2022-08-11 12:24:08.283713 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:24:08.284083 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:24:08.284130 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:08.284140 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:24:08.284145 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.284151 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.284156 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:24:08.284166 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:08.284208 +0000 build-fedora1: output: + FILE_NAME=zlib-1.2.3.tar.gz
+2022-08-11 12:24:08.284373 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.284540 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.284648 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:24:08.284726 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:08.284843 +0000 build-fedora1: output: + FILE_URL=https://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz
+2022-08-11 12:24:08.284958 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.284971 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.285010 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:24:08.285115 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:08.285169 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-08-11 12:24:08.285268 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.285505 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.285980 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:24:08.286008 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:08.286031 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256
+2022-08-11 12:24:08.286046 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.286060 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.286075 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:24:08.286111 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:08.286126 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:08.286141 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:24:08.286164 +0000 build-fedora1: output: + '[' -z https://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz ']'
+2022-08-11 12:24:08.286187 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:24:08.286204 +0000 build-fedora1: output: + '[' -z zlib-1.2.3.tar.gz ']'
+2022-08-11 12:24:08.286225 +0000 build-fedora1: output: + '[' -z /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256 ']'
+2022-08-11 12:24:08.286246 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256 ']'
+2022-08-11 12:24:08.286267 +0000 build-fedora1: output: + '[' -e /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256 ']'
+2022-08-11 12:24:08.286282 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:08.286296 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:24:08.286323 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:08.286339 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:08.286358 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_zlib-1.2.3.tar.gz
+2022-08-11 12:24:08.286391 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_zlib-1.2.3.tar.gz https://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz
+2022-08-11 12:24:09.392042 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256 ']'
+2022-08-11 12:24:09.392117 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-08-11 12:24:09.392148 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:24:09.392168 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-08-11 12:24:09.394368 +0000 build-fedora1: output: +++ cat /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz.sha256
+2022-08-11 12:24:09.396154 +0000 build-fedora1: output: ++ printf '%s  -\n' 1795c7d067a43174113fdf03447532f373e1c6c57c08d61d9e4e9be5e244b05e
+2022-08-11 12:24:09.403439 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:24:09.403495 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:24:09.405733 +0000 build-fedora1: output: + mv untrusted_zlib-1.2.3.tar.gz /builder/vmm-xen-stubdom-legacy/zlib-1.2.3.tar.gz
+2022-08-11 12:24:09.412352 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp145 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__zlib-1.2.3.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:24:22.769469 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4484 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:24:22.942415 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4484 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:24:23.174621 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4484 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:24:23.420575 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4484 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:24:23.644663 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4484 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:24:23.907753 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4484 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:24:24.139322 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp4484 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name ocaml-3.11.0.tar.gz --file-url https://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.0.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256''.
+2022-08-11 12:24:24.328801 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name ocaml-3.11.0.tar.gz --file-url https://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.0.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256
+2022-08-11 12:24:24.329399 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''ocaml-3.11.0.tar.gz'\'' --file-url '\''https://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.0.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256'\'' --'
+2022-08-11 12:24:24.329501 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''ocaml-3.11.0.tar.gz'\'' --file-url '\''https://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.0.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256'\'' --'
+2022-08-11 12:24:24.329523 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name ocaml-3.11.0.tar.gz --file-url https://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.0.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256 --
+2022-08-11 12:24:24.329562 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:24:24.329670 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:24:24.329790 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:24.329813 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:24:24.329918 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.329954 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.329961 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:24:24.329967 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:24.329976 +0000 build-fedora1: output: + FILE_NAME=ocaml-3.11.0.tar.gz
+2022-08-11 12:24:24.330014 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.330058 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.330115 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:24:24.330177 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:24.330326 +0000 build-fedora1: output: + FILE_URL=https://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.0.tar.gz
+2022-08-11 12:24:24.330464 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.330493 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.330505 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:24:24.330960 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:24.330986 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-08-11 12:24:24.330997 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.331007 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.331017 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:24:24.331030 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:24.331044 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256
+2022-08-11 12:24:24.331107 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.331119 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.331129 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:24:24.331138 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:24.331164 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:24.331174 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:24:24.331188 +0000 build-fedora1: output: + '[' -z https://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.0.tar.gz ']'
+2022-08-11 12:24:24.331203 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:24:24.331215 +0000 build-fedora1: output: + '[' -z ocaml-3.11.0.tar.gz ']'
+2022-08-11 12:24:24.331229 +0000 build-fedora1: output: + '[' -z /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256 ']'
+2022-08-11 12:24:24.331243 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256 ']'
+2022-08-11 12:24:24.331256 +0000 build-fedora1: output: + '[' -e /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256 ']'
+2022-08-11 12:24:24.331266 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:24.331275 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:24:24.331285 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:24.331298 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:24.331310 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_ocaml-3.11.0.tar.gz
+2022-08-11 12:24:24.331331 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_ocaml-3.11.0.tar.gz https://caml.inria.fr/pub/distrib/ocaml-3.11/ocaml-3.11.0.tar.gz
+2022-08-11 12:24:24.868286 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256 ']'
+2022-08-11 12:24:24.868368 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-08-11 12:24:24.868399 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:24:24.868863 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-08-11 12:24:24.869179 +0000 build-fedora1: output: +++ cat /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz.sha256
+2022-08-11 12:24:24.869968 +0000 build-fedora1: output: ++ printf '%s  -\n' ecdd4f8473ab0dee5d3acb5c0a31a4c1dd6aa12179895cf1903dd0f455c43a4f
+2022-08-11 12:24:24.873472 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:24:24.873494 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:24:24.874172 +0000 build-fedora1: output: + mv untrusted_ocaml-3.11.0.tar.gz /builder/vmm-xen-stubdom-legacy/ocaml-3.11.0.tar.gz
+2022-08-11 12:24:24.878676 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4484 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__ocaml-3.11.0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:24:38.392655 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9798 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:24:38.584179 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9798 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:24:38.839512 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9798 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:24:39.056129 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9798 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:24:39.320539 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9798 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:24:39.803627 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9798 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:24:39.970661 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp9798 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name gc.tar.gz --file-url https://xenbits.xensource.com/xen-extfiles/gc.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256''.
+2022-08-11 12:24:40.090952 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name gc.tar.gz --file-url https://xenbits.xensource.com/xen-extfiles/gc.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256
+2022-08-11 12:24:40.093138 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''gc.tar.gz'\'' --file-url '\''https://xenbits.xensource.com/xen-extfiles/gc.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256'\'' --'
+2022-08-11 12:24:40.093379 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''gc.tar.gz'\'' --file-url '\''https://xenbits.xensource.com/xen-extfiles/gc.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256'\'' --'
+2022-08-11 12:24:40.093505 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name gc.tar.gz --file-url https://xenbits.xensource.com/xen-extfiles/gc.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256 --
+2022-08-11 12:24:40.093525 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:24:40.093543 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:24:40.093558 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:40.093577 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:24:40.093622 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.093637 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.093716 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:24:40.093970 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:40.093993 +0000 build-fedora1: output: + FILE_NAME=gc.tar.gz
+2022-08-11 12:24:40.094007 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.094154 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.094231 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:24:40.094350 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:40.094376 +0000 build-fedora1: output: + FILE_URL=https://xenbits.xensource.com/xen-extfiles/gc.tar.gz
+2022-08-11 12:24:40.094446 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.094474 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.094944 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:24:40.095115 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:40.095264 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-08-11 12:24:40.095280 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.095313 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.095329 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:24:40.095343 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:40.095364 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256
+2022-08-11 12:24:40.095378 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.095392 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.095407 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:24:40.095421 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:40.095435 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:40.095450 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:24:40.095470 +0000 build-fedora1: output: + '[' -z https://xenbits.xensource.com/xen-extfiles/gc.tar.gz ']'
+2022-08-11 12:24:40.095515 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:24:40.095532 +0000 build-fedora1: output: + '[' -z gc.tar.gz ']'
+2022-08-11 12:24:40.095552 +0000 build-fedora1: output: + '[' -z /builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256 ']'
+2022-08-11 12:24:40.095572 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256 ']'
+2022-08-11 12:24:40.095613 +0000 build-fedora1: output: + '[' -e /builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256 ']'
+2022-08-11 12:24:40.096575 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:40.096642 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:24:40.096659 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:40.096673 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:40.096692 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_gc.tar.gz
+2022-08-11 12:24:40.096721 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_gc.tar.gz https://xenbits.xensource.com/xen-extfiles/gc.tar.gz
+2022-08-11 12:24:41.381562 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256 ']'
+2022-08-11 12:24:41.381728 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-08-11 12:24:41.381760 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:24:41.381780 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-08-11 12:24:41.383329 +0000 build-fedora1: output: +++ cat /builder/vmm-xen-stubdom-legacy/gc.tar.gz.sha256
+2022-08-11 12:24:41.385080 +0000 build-fedora1: output: ++ printf '%s  -\n' 448f8e4c6ee8c80eac059cf1c9379d20c388bcb900fc0796cd2a44d1dcbbae69
+2022-08-11 12:24:41.388568 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:24:41.388643 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:24:41.389596 +0000 build-fedora1: output: + mv untrusted_gc.tar.gz /builder/vmm-xen-stubdom-legacy/gc.tar.gz
+2022-08-11 12:24:41.393724 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9798 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__gc.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:24:54.612433 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4562 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:24:54.777300 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4562 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:24:54.967961 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4562 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:24:55.222923 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4562 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:24:55.480857 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp4562 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:24:55.767174 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp4562 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:24:55.880694 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp4562 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name tpm_emulator-0.7.4.tar.gz --file-url https://sourceforge.net/projects/tpm-emulator.berlios/files/tpm_emulator-0.7.4.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256''.
+2022-08-11 12:24:56.018959 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name tpm_emulator-0.7.4.tar.gz --file-url https://sourceforge.net/projects/tpm-emulator.berlios/files/tpm_emulator-0.7.4.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256
+2022-08-11 12:24:56.020521 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''tpm_emulator-0.7.4.tar.gz'\'' --file-url '\''https://sourceforge.net/projects/tpm-emulator.berlios/files/tpm_emulator-0.7.4.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256'\'' --'
+2022-08-11 12:24:56.020576 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''tpm_emulator-0.7.4.tar.gz'\'' --file-url '\''https://sourceforge.net/projects/tpm-emulator.berlios/files/tpm_emulator-0.7.4.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256'\'' --'
+2022-08-11 12:24:56.020614 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name tpm_emulator-0.7.4.tar.gz --file-url https://sourceforge.net/projects/tpm-emulator.berlios/files/tpm_emulator-0.7.4.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256 --
+2022-08-11 12:24:56.020936 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:24:56.020950 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:24:56.020957 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:56.020964 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:24:56.020970 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.020975 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.020980 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:24:56.020986 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:56.020992 +0000 build-fedora1: output: + FILE_NAME=tpm_emulator-0.7.4.tar.gz
+2022-08-11 12:24:56.021217 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021228 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021234 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:24:56.021240 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:56.021249 +0000 build-fedora1: output: + FILE_URL=https://sourceforge.net/projects/tpm-emulator.berlios/files/tpm_emulator-0.7.4.tar.gz
+2022-08-11 12:24:56.021255 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021260 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021265 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:24:56.021271 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:56.021277 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-08-11 12:24:56.021282 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021290 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021335 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:24:56.021342 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:56.021351 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256
+2022-08-11 12:24:56.021356 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021376 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021382 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:24:56.021387 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:24:56.021481 +0000 build-fedora1: output: + shift
+2022-08-11 12:24:56.021493 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:24:56.021503 +0000 build-fedora1: output: + '[' -z https://sourceforge.net/projects/tpm-emulator.berlios/files/tpm_emulator-0.7.4.tar.gz ']'
+2022-08-11 12:24:56.021512 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:24:56.021621 +0000 build-fedora1: output: + '[' -z tpm_emulator-0.7.4.tar.gz ']'
+2022-08-11 12:24:56.021645 +0000 build-fedora1: output: + '[' -z /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256 ']'
+2022-08-11 12:24:56.021688 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256 ']'
+2022-08-11 12:24:56.021698 +0000 build-fedora1: output: + '[' -e /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256 ']'
+2022-08-11 12:24:56.021707 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:56.021736 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:24:56.021779 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:56.021786 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:24:56.021825 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_tpm_emulator-0.7.4.tar.gz
+2022-08-11 12:24:56.021885 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_tpm_emulator-0.7.4.tar.gz https://sourceforge.net/projects/tpm-emulator.berlios/files/tpm_emulator-0.7.4.tar.gz
+2022-08-11 12:24:57.987548 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256 ']'
+2022-08-11 12:24:57.987679 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-08-11 12:24:57.987701 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:24:57.988044 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-08-11 12:24:57.988930 +0000 build-fedora1: output: +++ cat /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz.sha256
+2022-08-11 12:24:57.989717 +0000 build-fedora1: output: ++ printf '%s  -\n' 4e48ea0d83dd9441cc1af04ab18cd6c961b9fa54d5cbf2c2feee038988dea459
+2022-08-11 12:24:57.991556 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:24:57.991573 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:24:57.992388 +0000 build-fedora1: output: + mv untrusted_tpm_emulator-0.7.4.tar.gz /builder/vmm-xen-stubdom-legacy/tpm_emulator-0.7.4.tar.gz
+2022-08-11 12:24:57.996582 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp4562 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__tpm_emulator-0.7.4.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:25:11.422494 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5475 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:25:11.603236 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5475 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:25:11.788599 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5475 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:25:12.058654 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5475 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:25:12.356431 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5475 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:25:12.845658 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5475 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:25:12.977507 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5475 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name polarssl-1.1.4-gpl.tgz --file-url https://ftp.qubes-os.org/distfiles/polarssl-1.1.4-gpl.tgz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256''.
+2022-08-11 12:25:13.105493 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name polarssl-1.1.4-gpl.tgz --file-url https://ftp.qubes-os.org/distfiles/polarssl-1.1.4-gpl.tgz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256
+2022-08-11 12:25:13.108772 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''polarssl-1.1.4-gpl.tgz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/polarssl-1.1.4-gpl.tgz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256'\'' --'
+2022-08-11 12:25:13.108873 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''polarssl-1.1.4-gpl.tgz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/polarssl-1.1.4-gpl.tgz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256'\'' --'
+2022-08-11 12:25:13.108895 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name polarssl-1.1.4-gpl.tgz --file-url https://ftp.qubes-os.org/distfiles/polarssl-1.1.4-gpl.tgz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256 --
+2022-08-11 12:25:13.108902 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:25:13.108909 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:25:13.108915 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:13.108922 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:25:13.108927 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.108932 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.108938 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:25:13.108943 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:13.108949 +0000 build-fedora1: output: + FILE_NAME=polarssl-1.1.4-gpl.tgz
+2022-08-11 12:25:13.108956 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.108961 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.109069 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:25:13.109081 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:13.109127 +0000 build-fedora1: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/polarssl-1.1.4-gpl.tgz
+2022-08-11 12:25:13.109135 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.109140 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.109146 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:25:13.109151 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:13.109157 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-08-11 12:25:13.109165 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.109189 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.109196 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:25:13.109202 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:13.109212 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256
+2022-08-11 12:25:13.109218 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.109347 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.109369 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:25:13.109376 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:13.109381 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:13.109387 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:25:13.109492 +0000 build-fedora1: output: + '[' -z https://ftp.qubes-os.org/distfiles/polarssl-1.1.4-gpl.tgz ']'
+2022-08-11 12:25:13.109508 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:25:13.109674 +0000 build-fedora1: output: + '[' -z polarssl-1.1.4-gpl.tgz ']'
+2022-08-11 12:25:13.109771 +0000 build-fedora1: output: + '[' -z /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256 ']'
+2022-08-11 12:25:13.109798 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256 ']'
+2022-08-11 12:25:13.109818 +0000 build-fedora1: output: + '[' -e /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256 ']'
+2022-08-11 12:25:13.109840 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:25:13.109854 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:25:13.109868 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:25:13.109880 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:25:13.109898 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_polarssl-1.1.4-gpl.tgz
+2022-08-11 12:25:13.109926 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_polarssl-1.1.4-gpl.tgz https://ftp.qubes-os.org/distfiles/polarssl-1.1.4-gpl.tgz
+2022-08-11 12:25:13.373237 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256 ']'
+2022-08-11 12:25:13.373278 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-08-11 12:25:13.373286 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:25:13.373293 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-08-11 12:25:13.373943 +0000 build-fedora1: output: +++ cat /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz.sha256
+2022-08-11 12:25:13.374229 +0000 build-fedora1: output: ++ printf '%s  -\n' 2d29fd04a0d0ba29dae6bd29fb418944c08d3916665dcca74afb297ef37584b6
+2022-08-11 12:25:13.378941 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:25:13.378982 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:25:13.379686 +0000 build-fedora1: output: + mv untrusted_polarssl-1.1.4-gpl.tgz /builder/vmm-xen-stubdom-legacy/polarssl-1.1.4-gpl.tgz
+2022-08-11 12:25:13.386971 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5475 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__polarssl-1.1.4-gpl.tgz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:25:26.579999 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9687 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:25:26.807385 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9687 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:25:27.065152 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9687 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:25:27.351526 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9687 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:25:27.593778 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp9687 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:25:28.021195 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp9687 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:25:28.131957 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp9687 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder/vmm-xen-stubdom-legacy && /builder/plugins/fetch/scripts/download-and-verify-file --output-dir /builder/vmm-xen-stubdom-legacy --file-name tboot-20090330.tar.gz --file-url https://xenbits.xensource.com/xen-extfiles/tboot-20090330.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256''.
+2022-08-11 12:25:28.281359 +0000 build-fedora1: output: ++ getopt -o hu:f:c:m:s:p:o:x --long help,file-name:,file-url:,checksum-file:,checksum-cmd:,signature-url:,pubkey-file:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-and-verify-file -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name tboot-20090330.tar.gz --file-url https://xenbits.xensource.com/xen-extfiles/tboot-20090330.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256
+2022-08-11 12:25:28.285618 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''tboot-20090330.tar.gz'\'' --file-url '\''https://xenbits.xensource.com/xen-extfiles/tboot-20090330.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256'\'' --'
+2022-08-11 12:25:28.285725 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/vmm-xen-stubdom-legacy'\'' --file-name '\''tboot-20090330.tar.gz'\'' --file-url '\''https://xenbits.xensource.com/xen-extfiles/tboot-20090330.tar.gz'\'' --checksum-cmd '\''sha256sum'\'' --checksum-file '\''/builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256'\'' --'
+2022-08-11 12:25:28.285751 +0000 build-fedora1: output: ++ set -- --output-dir /builder/vmm-xen-stubdom-legacy --file-name tboot-20090330.tar.gz --file-url https://xenbits.xensource.com/xen-extfiles/tboot-20090330.tar.gz --checksum-cmd sha256sum --checksum-file /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256 --
+2022-08-11 12:25:28.285758 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-11 12:25:28.285941 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-11 12:25:28.285956 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:28.285965 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/vmm-xen-stubdom-legacy
+2022-08-11 12:25:28.286119 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.286155 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.286570 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-11 12:25:28.287244 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:28.287261 +0000 build-fedora1: output: + FILE_NAME=tboot-20090330.tar.gz
+2022-08-11 12:25:28.287268 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287273 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287279 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-11 12:25:28.287284 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:28.287293 +0000 build-fedora1: output: + FILE_URL=https://xenbits.xensource.com/xen-extfiles/tboot-20090330.tar.gz
+2022-08-11 12:25:28.287298 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287303 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287332 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-11 12:25:28.287340 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:28.287346 +0000 build-fedora1: output: + CHECKSUM_CMD=sha256sum
+2022-08-11 12:25:28.287351 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287356 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287361 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-11 12:25:28.287366 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:28.287377 +0000 build-fedora1: output: + FILE_CHECKSUM=/builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256
+2022-08-11 12:25:28.287383 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287403 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287561 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-11 12:25:28.287589 +0000 build-fedora1: output: + case "$1" in
+2022-08-11 12:25:28.287615 +0000 build-fedora1: output: + shift
+2022-08-11 12:25:28.287971 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-11 12:25:28.287999 +0000 build-fedora1: output: + '[' -z https://xenbits.xensource.com/xen-extfiles/tboot-20090330.tar.gz ']'
+2022-08-11 12:25:28.288015 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-11 12:25:28.288027 +0000 build-fedora1: output: + '[' -z tboot-20090330.tar.gz ']'
+2022-08-11 12:25:28.288042 +0000 build-fedora1: output: + '[' -z /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256 ']'
+2022-08-11 12:25:28.288056 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256 ']'
+2022-08-11 12:25:28.288070 +0000 build-fedora1: output: + '[' -e /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256 ']'
+2022-08-11 12:25:28.288080 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:25:28.288089 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-11 12:25:28.288099 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:25:28.288109 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-11 12:25:28.288121 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_tboot-20090330.tar.gz
+2022-08-11 12:25:28.288143 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_tboot-20090330.tar.gz https://xenbits.xensource.com/xen-extfiles/tboot-20090330.tar.gz
+2022-08-11 12:25:29.149697 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256 ']'
+2022-08-11 12:25:29.149736 +0000 build-fedora1: output: + '[' -z sha256sum ']'
+2022-08-11 12:25:29.149744 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-11 12:25:29.149750 +0000 build-fedora1: output: + sha256sum --status -c /dev/fd/63
+2022-08-11 12:25:29.149759 +0000 build-fedora1: output: +++ cat /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz.sha256
+2022-08-11 12:25:29.150265 +0000 build-fedora1: output: ++ printf '%s  -\n' 01f99081de5ec406c36e8b9c4be2199a26a9b184dd5f6404133c05f046598166
+2022-08-11 12:25:29.154809 +0000 build-fedora1: output: + '[' -n /builder/vmm-xen-stubdom-legacy ']'
+2022-08-11 12:25:29.154831 +0000 build-fedora1: output: + mkdir -p /builder/vmm-xen-stubdom-legacy
+2022-08-11 12:25:29.155531 +0000 build-fedora1: output: + mv untrusted_tboot-20090330.tar.gz /builder/vmm-xen-stubdom-legacy/tboot-20090330.tar.gz
+2022-08-11 12:25:29.159588 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp9687 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__tboot-20090330.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:25:42.244825 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp752 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:25:42.440465 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp752 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:25:42.710489 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp752 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:25:42.981529 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp752 env VERBOSE='1' DEBUG='1' bash -c 'rm -f /builder/vmm-xen-stubdom-legacy/hash /builder/vmm-xen-stubdom-legacy/vtags && cd /builder && git -C /builder/vmm-xen-stubdom-legacy rev-parse 'HEAD^{}' >> /builder/vmm-xen-stubdom-legacy/hash && git -C /builder/vmm-xen-stubdom-legacy tag --points-at HEAD --list 'v*' >> /builder/vmm-xen-stubdom-legacy/vtags''.
+2022-08-11 12:25:43.380416 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp752 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/vmm-xen-stubdom-legacy/4.13.0-1/nodist/fetch
+2022-08-11 12:25:43.567376 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp752 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/vmm-xen-stubdom-legacy/4.13.0-1/nodist/fetch
+2022-08-11 12:25:56.557959 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5480 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:25:56.841303 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5480 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:25:57.140573 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5480 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:25:57.378230 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5480 env VERBOSE='1' DEBUG='1' bash -c 'rm -f /builder/vmm-xen-stubdom-legacy/modules && cd /builder && git -C /builder/vmm-xen-stubdom-legacy/gui-common rev-parse --short HEAD >> /builder/vmm-xen-stubdom-legacy/modules && git -C /builder/vmm-xen-stubdom-legacy/core-vchan-xen rev-parse --short HEAD >> /builder/vmm-xen-stubdom-legacy/modules && git -C /builder/vmm-xen-stubdom-legacy/gui-agent-xen-hvm-stubdom rev-parse --short HEAD >> /builder/vmm-xen-stubdom-legacy/modules && git -C /builder/vmm-xen-stubdom-legacy/stubdom-dhcp rev-parse --short HEAD >> /builder/vmm-xen-stubdom-legacy/modules''.
+2022-08-11 12:25:57.695345 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp5480 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__modules /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/components/vmm-xen-stubdom-legacy/4.13.0-1/nodist/fetch
+2022-08-11 12:26:10.669800 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3355 bash -c 'rm -rf /builder/incoming/distfiles /builder/distfiles'
+2022-08-11 12:26:10.913478 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3355 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:26:14.116665 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3355 bash -c 'mkdir -p /builder && mv /builder/incoming/distfiles /builder'
+2022-08-11 12:26:14.252640 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3355 bash -c 'rm -rf /builder/incoming/vmm-xen-stubdom-legacy /builder/vmm-xen-stubdom-legacy'
+2022-08-11 12:26:14.403070 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3355 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/vmm-xen-stubdom-legacy
+2022-08-11 12:26:14.615261 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3355 bash -c 'mkdir -p /builder && mv /builder/incoming/vmm-xen-stubdom-legacy /builder'
+2022-08-11 12:26:14.787671 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3355 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-11 12:26:14.922534 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3355 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-11 12:26:15.153545 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3355 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-11 12:26:15.291065 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp3355 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/create-archive /builder/vmm-xen-stubdom-legacy/gui-common gui-common-c611481.tar.gz gui-common/ && /builder/plugins/fetch/scripts/create-archive /builder/vmm-xen-stubdom-legacy/core-vchan-xen core-vchan-xen-42d07fb.tar.gz core-vchan-xen/ && /builder/plugins/fetch/scripts/create-archive /builder/vmm-xen-stubdom-legacy/gui-agent-xen-hvm-stubdom gui-agent-xen-hvm-stubdom-5f57a59.tar.gz gui-agent-xen-hvm-stubdom/ && /builder/plugins/fetch/scripts/create-archive /builder/vmm-xen-stubdom-legacy/stubdom-dhcp stubdom-dhcp-6a25201.tar.gz stubdom-dhcp/''.
+2022-08-11 12:26:15.447896 +0000 build-fedora1: output: ++ tar --version
+2022-08-11 12:26:15.448427 +0000 build-fedora1: output: ++ awk '{print $4}'
+2022-08-11 12:26:15.449062 +0000 build-fedora1: output: ++ head -1
+2022-08-11 12:26:15.460254 +0000 build-fedora1: output: + TAR_VERSION=1.34
+2022-08-11 12:26:15.460548 +0000 build-fedora1: output: ++ readlink -f /builder/vmm-xen-stubdom-legacy/gui-common
+2022-08-11 12:26:15.462957 +0000 build-fedora1: output: /builder/vmm-xen-stubdom-legacy/gui-common ~
+2022-08-11 12:26:15.463036 +0000 build-fedora1: output: + GIT_ARCHIVE_SRC=/builder/vmm-xen-stubdom-legacy/gui-common
+2022-08-11 12:26:15.463056 +0000 build-fedora1: output: + GIT_ARCHIVE_TYPE=gz
+2022-08-11 12:26:15.463077 +0000 build-fedora1: output: + GIT_TARBALL_NAME=gui-common-c611481.tar
+2022-08-11 12:26:15.463096 +0000 build-fedora1: output: + '[' xgui-common/ '!=' x ']'
+2022-08-11 12:26:15.463115 +0000 build-fedora1: output: + GIT_ARCHIVE_PREFIX=gui-common/
+2022-08-11 12:26:15.463134 +0000 build-fedora1: output: + pushd /builder/vmm-xen-stubdom-legacy/gui-common
+2022-08-11 12:26:15.463520 +0000 build-fedora1: output: ++ git log -1 --format=%ct
+2022-08-11 12:26:15.482453 +0000 build-fedora1: output: + SOURCE_DATE_EPOCH=1441241159
+2022-08-11 12:26:15.482507 +0000 build-fedora1: output: ++ printf '%s\n' 1.34 1.28
+2022-08-11 12:26:15.482525 +0000 build-fedora1: output: ++ sort -V
+2022-08-11 12:26:15.482643 +0000 build-fedora1: output: ++ head -n1
+2022-08-11 12:26:15.486704 +0000 build-fedora1: output: + '[' 1.28 == 1.28 ']'
+2022-08-11 12:26:15.486779 +0000 build-fedora1: output: + tar --sort=name --mtime=@1441241159 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%gui-common/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude gui-common-c611481.tar -cf gui-common-c611481.tar .
+2022-08-11 12:26:15.490867 +0000 build-fedora1: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-08-11 12:26:15.490920 +0000 build-fedora1: output: + gzip -fn gui-common-c611481.tar
+2022-08-11 12:26:15.494679 +0000 build-fedora1: output: + popd
+2022-08-11 12:26:15.494827 +0000 build-fedora1: output: ~
+2022-08-11 12:26:15.497917 +0000 build-fedora1: output: ++ tar --version
+2022-08-11 12:26:15.498491 +0000 build-fedora1: output: ++ head -1
+2022-08-11 12:26:15.500685 +0000 build-fedora1: output: ++ awk '{print $4}'
+2022-08-11 12:26:15.503958 +0000 build-fedora1: output: + TAR_VERSION=1.34
+2022-08-11 12:26:15.504370 +0000 build-fedora1: output: ++ readlink -f /builder/vmm-xen-stubdom-legacy/core-vchan-xen
+2022-08-11 12:26:15.507085 +0000 build-fedora1: output: + GIT_ARCHIVE_SRC=/builder/vmm-xen-stubdom-legacy/core-vchan-xen
+2022-08-11 12:26:15.507146 +0000 build-fedora1: output: + GIT_ARCHIVE_TYPE=gz
+2022-08-11 12:26:15.507177 +0000 build-fedora1: output: + GIT_TARBALL_NAME=core-vchan-xen-42d07fb.tar
+2022-08-11 12:26:15.507201 +0000 build-fedora1: output: + '[' xcore-vchan-xen/ '!=' x ']'
+2022-08-11 12:26:15.507219 +0000 build-fedora1: output: + GIT_ARCHIVE_PREFIX=core-vchan-xen/
+2022-08-11 12:26:15.507238 +0000 build-fedora1: output: + pushd /builder/vmm-xen-stubdom-legacy/core-vchan-xen
+2022-08-11 12:26:15.507254 +0000 build-fedora1: output: ++ git log -1 --format=%ct
+2022-08-11 12:26:15.507273 +0000 build-fedora1: output: /builder/vmm-xen-stubdom-legacy/core-vchan-xen ~
+2022-08-11 12:26:15.509650 +0000 build-fedora1: output: + SOURCE_DATE_EPOCH=1522938812
+2022-08-11 12:26:15.510144 +0000 build-fedora1: output: ++ printf '%s\n' 1.34 1.28
+2022-08-11 12:26:15.510234 +0000 build-fedora1: output: ++ sort -V
+2022-08-11 12:26:15.510656 +0000 build-fedora1: output: ++ head -n1
+2022-08-11 12:26:15.512503 +0000 build-fedora1: output: + '[' 1.28 == 1.28 ']'
+2022-08-11 12:26:15.512612 +0000 build-fedora1: output: + tar --sort=name --mtime=@1522938812 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%core-vchan-xen/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude core-vchan-xen-42d07fb.tar -cf core-vchan-xen-42d07fb.tar .
+2022-08-11 12:26:15.514665 +0000 build-fedora1: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-08-11 12:26:15.514713 +0000 build-fedora1: output: + gzip -fn core-vchan-xen-42d07fb.tar
+2022-08-11 12:26:15.517395 +0000 build-fedora1: output: + popd
+2022-08-11 12:26:15.517434 +0000 build-fedora1: output: ~
+2022-08-11 12:26:15.519197 +0000 build-fedora1: output: ++ tar --version
+2022-08-11 12:26:15.519585 +0000 build-fedora1: output: ++ awk '{print $4}'
+2022-08-11 12:26:15.521972 +0000 build-fedora1: output: ++ head -1
+2022-08-11 12:26:15.523957 +0000 build-fedora1: output: + TAR_VERSION=1.34
+2022-08-11 12:26:15.524429 +0000 build-fedora1: output: ++ readlink -f /builder/vmm-xen-stubdom-legacy/gui-agent-xen-hvm-stubdom
+2022-08-11 12:26:15.526920 +0000 build-fedora1: output: + GIT_ARCHIVE_SRC=/builder/vmm-xen-stubdom-legacy/gui-agent-xen-hvm-stubdom
+2022-08-11 12:26:15.526962 +0000 build-fedora1: output: + GIT_ARCHIVE_TYPE=gz
+2022-08-11 12:26:15.526986 +0000 build-fedora1: output: + GIT_TARBALL_NAME=gui-agent-xen-hvm-stubdom-5f57a59.tar
+2022-08-11 12:26:15.527005 +0000 build-fedora1: output: + '[' xgui-agent-xen-hvm-stubdom/ '!=' x ']'
+2022-08-11 12:26:15.527023 +0000 build-fedora1: output: + GIT_ARCHIVE_PREFIX=gui-agent-xen-hvm-stubdom/
+2022-08-11 12:26:15.527043 +0000 build-fedora1: output: + pushd /builder/vmm-xen-stubdom-legacy/gui-agent-xen-hvm-stubdom
+2022-08-11 12:26:15.527060 +0000 build-fedora1: output: ++ git log -1 --format=%ct
+2022-08-11 12:26:15.527080 +0000 build-fedora1: output: /builder/vmm-xen-stubdom-legacy/gui-agent-xen-hvm-stubdom ~
+2022-08-11 12:26:15.529786 +0000 build-fedora1: output: + SOURCE_DATE_EPOCH=1492460237
+2022-08-11 12:26:15.530341 +0000 build-fedora1: output: ++ sort -V
+2022-08-11 12:26:15.530596 +0000 build-fedora1: output: ++ head -n1
+2022-08-11 12:26:15.532356 +0000 build-fedora1: output: ++ printf '%s\n' 1.34 1.28
+2022-08-11 12:26:15.534112 +0000 build-fedora1: output: + '[' 1.28 == 1.28 ']'
+2022-08-11 12:26:15.534139 +0000 build-fedora1: output: + tar --sort=name --mtime=@1492460237 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%gui-agent-xen-hvm-stubdom/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude gui-agent-xen-hvm-stubdom-5f57a59.tar -cf gui-agent-xen-hvm-stubdom-5f57a59.tar .
+2022-08-11 12:26:15.537050 +0000 build-fedora1: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-08-11 12:26:15.537098 +0000 build-fedora1: output: + gzip -fn gui-agent-xen-hvm-stubdom-5f57a59.tar
+2022-08-11 12:26:15.538888 +0000 build-fedora1: output: + popd
+2022-08-11 12:26:15.538929 +0000 build-fedora1: output: ~
+2022-08-11 12:26:15.540317 +0000 build-fedora1: output: ++ tar --version
+2022-08-11 12:26:15.541239 +0000 build-fedora1: output: ++ head -1
+2022-08-11 12:26:15.541258 +0000 build-fedora1: output: ++ awk '{print $4}'
+2022-08-11 12:26:15.544665 +0000 build-fedora1: output: + TAR_VERSION=1.34
+2022-08-11 12:26:15.545278 +0000 build-fedora1: output: ++ readlink -f /builder/vmm-xen-stubdom-legacy/stubdom-dhcp
+2022-08-11 12:26:15.547062 +0000 build-fedora1: output: /builder/vmm-xen-stubdom-legacy/stubdom-dhcp ~
+2022-08-11 12:26:15.548029 +0000 build-fedora1: output: + GIT_ARCHIVE_SRC=/builder/vmm-xen-stubdom-legacy/stubdom-dhcp
+2022-08-11 12:26:15.548072 +0000 build-fedora1: output: + GIT_ARCHIVE_TYPE=gz
+2022-08-11 12:26:15.548094 +0000 build-fedora1: output: + GIT_TARBALL_NAME=stubdom-dhcp-6a25201.tar
+2022-08-11 12:26:15.548134 +0000 build-fedora1: output: + '[' xstubdom-dhcp/ '!=' x ']'
+2022-08-11 12:26:15.548152 +0000 build-fedora1: output: + GIT_ARCHIVE_PREFIX=stubdom-dhcp/
+2022-08-11 12:26:15.548178 +0000 build-fedora1: output: + pushd /builder/vmm-xen-stubdom-legacy/stubdom-dhcp
+2022-08-11 12:26:15.548195 +0000 build-fedora1: output: ++ git log -1 --format=%ct
+2022-08-11 12:26:15.549671 +0000 build-fedora1: output: + SOURCE_DATE_EPOCH=1660220500
+2022-08-11 12:26:15.550467 +0000 build-fedora1: output: ++ printf '%s\n' 1.34 1.28
+2022-08-11 12:26:15.550639 +0000 build-fedora1: output: ++ sort -V
+2022-08-11 12:26:15.551099 +0000 build-fedora1: output: ++ head -n1
+2022-08-11 12:26:15.553618 +0000 build-fedora1: output: + '[' 1.28 == 1.28 ']'
+2022-08-11 12:26:15.553718 +0000 build-fedora1: output: + tar --sort=name --mtime=@1660220500 --owner=0 --group=0 --numeric-owner --mode=go=rX '--xform=s%^\./%stubdom-dhcp/%' --exclude-vcs-ignores --exclude-ignore=.tarignore --exclude pkgs --exclude '.git/*' --exclude stubdom-dhcp-6a25201.tar -cf stubdom-dhcp-6a25201.tar .
+2022-08-11 12:26:15.556520 +0000 build-fedora1: output: + case "$GIT_ARCHIVE_TYPE" in
+2022-08-11 12:26:15.556663 +0000 build-fedora1: output: + gzip -fn stubdom-dhcp-6a25201.tar
+2022-08-11 12:26:15.561771 +0000 build-fedora1: output: ~
+2022-08-11 12:26:15.561830 +0000 build-fedora1: output: + popd
+2022-08-11 12:26:15.565206 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3355 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__gui-common__gui-common-c611481.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:26:15.735502 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3355 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__core-vchan-xen__core-vchan-xen-42d07fb.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:26:15.839379 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3355 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__gui-agent-xen-hvm-stubdom__gui-agent-xen-hvm-stubdom-5f57a59.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:26:15.981622 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3355 qubesbuilder.FileCopyOut+__builder__vmm-xen-stubdom-legacy__stubdom-dhcp__stubdom-dhcp-6a25201.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/distfiles
+2022-08-11 12:26:18.678155 +0000 build-fedora1: vmm-xen-stubdom-legacy:vm-debian-11.amd64: Nothing to be done.
+2022-08-11 12:26:18.678219 +0000 build-fedora1: vmm-xen-stubdom-legacy:vm-debian-11.amd64: Nothing to be done.
+2022-08-11 12:26:18.678239 +0000 build-fedora1: vmm-xen-stubdom-legacy:vm-debian-11.amd64: Nothing to be done.
+2022-08-11 12:26:18.699722 +0000 build-fedora1: vmm-xen-stubdom-legacy:vm-fedora-35.x86_64: Nothing to be done.
+2022-08-11 12:26:18.699769 +0000 build-fedora1: vmm-xen-stubdom-legacy:vm-fedora-35.x86_64: Nothing to be done.
+2022-08-11 12:26:18.699790 +0000 build-fedora1: vmm-xen-stubdom-legacy:vm-fedora-35.x86_64: Nothing to be done.
+2022-08-11 12:26:18.699803 +0000 build-fedora1: > done
+2022-08-11 12:26:18.699819 +0000 > closing log

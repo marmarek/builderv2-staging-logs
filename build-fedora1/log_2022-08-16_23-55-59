@@ -1,0 +1,92 @@
+2022-08-16 23:55:59.548344 +0000 > starting log
+2022-08-16 23:55:59.548647 +0000 build-fedora1: > starting build with log
+2022-08-16 23:55:59.548657 +0000 build-fedora1: >> args:
+2022-08-16 23:55:59.548719 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent gui-rust>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>], 'fetch')
+2022-08-16 23:55:59.548730 +0000 build-fedora1: >> component:
+2022-08-16 23:55:59.548736 +0000 build-fedora1: >>   gui-rust
+2022-08-16 23:55:59.548742 +0000 build-fedora1: >> distributions:
+2022-08-16 23:55:59.548752 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-35.x86_64>]
+2022-08-16 23:56:10.940454 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5901 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-16 23:56:11.143753 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp5901 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-16 23:56:11.332768 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp5901 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-16 23:56:11.587688 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp5901 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component gui-rust --git-branch master --git-url https://github.com/QubesOS/qubes-gui-rust --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-08-16 23:56:11.873492 +0000 build-fedora1: output: + unset CLEAN
+2022-08-16 23:56:11.873533 +0000 build-fedora1: output: + CLEAN=0
+2022-08-16 23:56:11.873735 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component gui-rust --git-branch master --git-url https://github.com/QubesOS/qubes-gui-rust --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-08-16 23:56:11.876115 +0000 build-fedora1: output: + OPTS=' --component '\''gui-rust'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-gui-rust'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-16 23:56:11.876147 +0000 build-fedora1: output: + eval set -- ' --component '\''gui-rust'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-gui-rust'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-16 23:56:11.876275 +0000 build-fedora1: output: ++ set -- --component gui-rust --git-branch master --git-url https://github.com/QubesOS/qubes-gui-rust --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-08-16 23:56:11.876288 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-16 23:56:11.876295 +0000 build-fedora1: output: + case "$1" in
+2022-08-16 23:56:11.876301 +0000 build-fedora1: output: + COMPONENT=gui-rust
+2022-08-16 23:56:11.876306 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876311 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876317 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-16 23:56:11.876322 +0000 build-fedora1: output: + case "$1" in
+2022-08-16 23:56:11.876440 +0000 build-fedora1: output: + BRANCH=master
+2022-08-16 23:56:11.876460 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876465 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876471 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-16 23:56:11.876477 +0000 build-fedora1: output: + case "$1" in
+2022-08-16 23:56:11.876484 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-gui-rust
+2022-08-16 23:56:11.876502 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876509 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876518 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-16 23:56:11.876525 +0000 build-fedora1: output: + case "$1" in
+2022-08-16 23:56:11.876530 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-08-16 23:56:11.876548 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876554 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876559 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-16 23:56:11.876647 +0000 build-fedora1: output: + case "$1" in
+2022-08-16 23:56:11.876661 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-08-16 23:56:11.876667 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876774 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876787 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-16 23:56:11.876793 +0000 build-fedora1: output: + case "$1" in
+2022-08-16 23:56:11.876798 +0000 build-fedora1: output: + shift
+2022-08-16 23:56:11.876804 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-16 23:56:11.876810 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-16 23:56:11.876899 +0000 build-fedora1: output: -]*$ ]]
+2022-08-16 23:56:11.876919 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-16 23:56:11.877041 +0000 build-fedora1: output: -]*$ ]]
+2022-08-16 23:56:11.877053 +0000 build-fedora1: output: + '[' -z gui-rust ']'
+2022-08-16 23:56:11.877158 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-16 23:56:11.877170 +0000 build-fedora1: output: + REPO=gui-rust
+2022-08-16 23:56:11.877177 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-08-16 23:56:11.877182 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-16 23:56:11.877188 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-08-16 23:56:11.877298 +0000 build-fedora1: output: + '[' -z master ']'
+2022-08-16 23:56:11.877309 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-16 23:56:11.877317 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-gui-rust ']'
+2022-08-16 23:56:11.877323 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-16 23:56:11.877328 +0000 build-fedora1: output: + : 0
+2022-08-16 23:56:11.877333 +0000 build-fedora1: output: + : 0
+2022-08-16 23:56:11.877431 +0000 build-fedora1: output: + GIT_OPTIONS=
+2022-08-16 23:56:11.877442 +0000 build-fedora1: output: + '[' 0 = 1 ']'
+2022-08-16 23:56:11.877449 +0000 build-fedora1: output: + GIT_MERGE_OPTS=--ff-only
+2022-08-16 23:56:11.877456 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-08-16 23:56:11.877462 +0000 build-fedora1: output: + [[ gui-rust =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-08-16 23:56:11.877468 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-16 23:56:11.877574 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-08-16 23:56:11.877591 +0000 build-fedora1: output: + fresh_clone=false
+2022-08-16 23:56:11.877598 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-08-16 23:56:11.877603 +0000 build-fedora1: output: + [[ -d gui-rust ]]
+2022-08-16 23:56:11.877609 +0000 build-fedora1: output: + rm -f -- gui-rust
+2022-08-16 23:56:11.879635 +0000 build-fedora1: output: -> Updating sources for gui-rust...
+2022-08-16 23:56:11.879895 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-gui-rust master...
+2022-08-16 23:56:11.879910 +0000 build-fedora1: output: + print_headers
+2022-08-16 23:56:11.879916 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-16 23:56:11.879923 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-gui-rust master'
+2022-08-16 23:56:11.879990 +0000 build-fedora1: output: + echo '-> Updating sources for gui-rust...'
+2022-08-16 23:56:11.880003 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-gui-rust master...'
+2022-08-16 23:56:11.880694 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-gui-rust gui-rust
+2022-08-16 23:56:12.337108 +0000 build-fedora1: output: fatal: Remote branch master not found in upstream origin
+2022-08-16 23:56:12.338256 +0000 build-fedora1: output: + '[' 0 == 1 ']'
+2022-08-16 23:56:12.338321 +0000 build-fedora1: output: + exit 1
+2022-08-16 23:56:12.338341 +0000 build-fedora1: output: + exit_clean
+2022-08-16 23:56:12.338562 +0000 build-fedora1: output: + local exit_code=1
+2022-08-16 23:56:12.338587 +0000 build-fedora1: output: + '[' 1 -gt 0 ']'
+2022-08-16 23:56:12.338594 +0000 build-fedora1: output: + false
+2022-08-16 23:56:12.338763 +0000 build-fedora1: output: + rm -f gui-rust/.git/FETCH_HEAD
+2022-08-16 23:56:12.339444 +0000 build-fedora1: output: + exit 1
+2022-08-16 23:56:14.946351 +0000 > closing log

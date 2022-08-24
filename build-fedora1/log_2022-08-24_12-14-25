@@ -1,0 +1,454 @@
+2022-08-24 12:14:25.237806 +0000 > starting log
+2022-08-24 12:14:25.238125 +0000 build-fedora1: > starting build with log
+2022-08-24 12:14:25.238133 +0000 build-fedora1: >> args:
+2022-08-24 12:14:25.238148 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent core-libvirt>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-36.x86_64>], 'fetch')
+2022-08-24 12:14:25.238154 +0000 build-fedora1: >> component:
+2022-08-24 12:14:25.238160 +0000 build-fedora1: >>   core-libvirt
+2022-08-24 12:14:25.238167 +0000 build-fedora1: >>     commit-hash: a8769bda57ea3e29858607ef350785d39ab70020
+2022-08-24 12:14:25.238177 +0000 build-fedora1: >>     source-hash: 548c46342970167fbf3ba57e67b1bb82c8c938cb59c111ca053056438c41a2226522dc1c63a4fecb624496d735a7bff9a26610e0242b6ca5cfb6243cd12e23f4
+2022-08-24 12:14:25.238183 +0000 build-fedora1: >> distributions:
+2022-08-24 12:14:25.238193 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-36.x86_64>]
+2022-08-24 12:14:25.238199 +0000 build-fedora1: core-libvirt: source already fetched. Updating.
+2022-08-24 12:14:36.438842 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1555 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-24 12:14:36.668025 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1555 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-24 12:14:36.961605 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1555 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-24 12:14:37.245606 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1555 bash -c 'rm -rf /builder/incoming/core-libvirt /builder/core-libvirt'
+2022-08-24 12:14:37.542514 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1555 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/core-libvirt
+2022-08-24 12:14:37.805207 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1555 bash -c 'mkdir -p /builder && mv /builder/incoming/core-libvirt /builder'
+2022-08-24 12:14:37.951937 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp1555 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component core-libvirt --git-branch master --git-url https://github.com/QubesOS/qubes-core-libvirt --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-08-24 12:14:38.121591 +0000 build-fedora1: output: + unset CLEAN
+2022-08-24 12:14:38.121636 +0000 build-fedora1: output: + CLEAN=0
+2022-08-24 12:14:38.122364 +0000 build-fedora1: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT DO_MERGE FETCH_VERSIONS_ONLY MAINTAINERS
+2022-08-24 12:14:38.122705 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component core-libvirt --git-branch master --git-url https://github.com/QubesOS/qubes-core-libvirt --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-08-24 12:14:38.125382 +0000 build-fedora1: output: + OPTS=' --component '\''core-libvirt'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-core-libvirt'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-24 12:14:38.125425 +0000 build-fedora1: output: + eval set -- ' --component '\''core-libvirt'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-core-libvirt'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-08-24 12:14:38.125461 +0000 build-fedora1: output: ++ set -- --component core-libvirt --git-branch master --git-url https://github.com/QubesOS/qubes-core-libvirt --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-08-24 12:14:38.125601 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-24 12:14:38.125612 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:38.126898 +0000 build-fedora1: output: + COMPONENT=core-libvirt
+2022-08-24 12:14:38.126921 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.126930 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.126938 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-24 12:14:38.126947 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:38.126955 +0000 build-fedora1: output: + BRANCH=master
+2022-08-24 12:14:38.126963 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.126970 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.126978 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-24 12:14:38.126986 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:38.126997 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-core-libvirt
+2022-08-24 12:14:38.127005 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.127012 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.127027 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-24 12:14:38.127035 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:38.127045 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-08-24 12:14:38.127280 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.127298 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.127308 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-24 12:14:38.127410 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:38.127437 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-08-24 12:14:38.127446 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.127454 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.127721 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-24 12:14:38.127741 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:38.127750 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:38.127880 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-24 12:14:38.127922 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-24 12:14:38.127934 +0000 build-fedora1: output: -]*$ ]]
+2022-08-24 12:14:38.128143 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-08-24 12:14:38.128199 +0000 build-fedora1: output: -]*$ ]]
+2022-08-24 12:14:38.128222 +0000 build-fedora1: output: + [[ -n core-libvirt ]]
+2022-08-24 12:14:38.128239 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-24 12:14:38.128256 +0000 build-fedora1: output: + REPO=core-libvirt
+2022-08-24 12:14:38.128274 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-08-24 12:14:38.128317 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-24 12:14:38.128341 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-08-24 12:14:38.128505 +0000 build-fedora1: output: + '[' -z master ']'
+2022-08-24 12:14:38.128543 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-24 12:14:38.128561 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-core-libvirt ']'
+2022-08-24 12:14:38.128573 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-24 12:14:38.128586 +0000 build-fedora1: output: + case ${IGNORE_MISSING=0} in
+2022-08-24 12:14:38.128596 +0000 build-fedora1: output: + :
+2022-08-24 12:14:38.128608 +0000 build-fedora1: output: + case ${GIT_CLONE_FAST=0} in
+2022-08-24 12:14:38.128617 +0000 build-fedora1: output: + :
+2022-08-24 12:14:38.128628 +0000 build-fedora1: output: + GIT_OPTIONS=()
+2022-08-24 12:14:38.128745 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-08-24 12:14:38.128775 +0000 build-fedora1: output: + GIT_MERGE_OPTS=("--ff-only")
+2022-08-24 12:14:38.128783 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-08-24 12:14:38.128790 +0000 build-fedora1: output: + [[ core-libvirt =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-08-24 12:14:38.128796 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-24 12:14:38.128802 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-08-24 12:14:38.128808 +0000 build-fedora1: output: + fresh_clone=false
+2022-08-24 12:14:38.128813 +0000 build-fedora1: output: + [[ '' = \1 ]]
+2022-08-24 12:14:38.128819 +0000 build-fedora1: output: + [[ -d core-libvirt ]]
+2022-08-24 12:14:38.128824 +0000 build-fedora1: output: + cd core-libvirt
+2022-08-24 12:14:38.128831 +0000 build-fedora1: output: ++ git rev-parse --is-shallow-repository
+2022-08-24 12:14:38.144241 +0000 build-fedora1: output: -> Updating sources for core-libvirt...
+2022-08-24 12:14:38.144262 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-core-libvirt master...
+2022-08-24 12:14:38.144760 +0000 build-fedora1: output: + is_shallow=false
+2022-08-24 12:14:38.144912 +0000 build-fedora1: output: + [[ 0 -ne 1 ]]
+2022-08-24 12:14:38.144940 +0000 build-fedora1: output: + [[ false = \t\r\u\e ]]
+2022-08-24 12:14:38.144953 +0000 build-fedora1: output: + print_headers
+2022-08-24 12:14:38.144963 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-24 12:14:38.144976 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-core-libvirt master'
+2022-08-24 12:14:38.145111 +0000 build-fedora1: output: + echo '-> Updating sources for core-libvirt...'
+2022-08-24 12:14:38.145138 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-core-libvirt master...'
+2022-08-24 12:14:38.145284 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-24 12:14:38.145315 +0000 build-fedora1: output: + git fetch -q --tags -- https://github.com/QubesOS/qubes-core-libvirt master
+2022-08-24 12:14:38.768871 +0000 build-fedora1: output: + VERIFY_REF=FETCH_HEAD
+2022-08-24 12:14:38.768940 +0000 build-fedora1: output: + fresh_clone=false
+2022-08-24 12:14:38.768977 +0000 build-fedora1: output: + cd -
+2022-08-24 12:14:38.769008 +0000 build-fedora1: output: + export CHECK=signed-tag
+2022-08-24 12:14:38.769042 +0000 build-fedora1: output: + CHECK=signed-tag
+2022-08-24 12:14:38.769058 +0000 build-fedora1: output: + verify=true
+2022-08-24 12:14:38.769077 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-24 12:14:38.769339 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-24 12:14:38.769372 +0000 build-fedora1: output: ++ git -C core-libvirt rev-parse -q --verify FETCH_HEAD
+2022-08-24 12:14:38.770147 +0000 build-fedora1: output: + VERIFY_REF=c8b95ab22039310b303752897602d161060ab083
+2022-08-24 12:14:38.770172 +0000 build-fedora1: output: + '[' true = false ']'
+2022-08-24 12:14:38.770254 +0000 build-fedora1: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-08-24 12:14:38.770275 +0000 build-fedora1: output: + echo '--> Verifying tags...'
+2022-08-24 12:14:38.770282 +0000 build-fedora1: output: --> Verifying tags...
+2022-08-24 12:14:38.770532 +0000 build-fedora1: output: ++ readlink -m /builder/keyring
+2022-08-24 12:14:38.772579 +0000 build-fedora1: output: + GNUPGHOME=/builder/keyring
+2022-08-24 12:14:38.772595 +0000 build-fedora1: output: + export GNUPGHOME
+2022-08-24 12:14:38.772605 +0000 build-fedora1: output: + '[' '!' -d /builder/keyring ']'
+2022-08-24 12:14:38.772611 +0000 build-fedora1: output: + mkdir -p /builder/keyring
+2022-08-24 12:14:38.774593 +0000 build-fedora1: output: + chmod 700 /builder/keyring
+2022-08-24 12:14:38.775571 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-08-24 12:14:38.785334 +0000 build-fedora1: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-08-24 12:14:38.788305 +0000 build-fedora1: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-08-24 12:14:38.788391 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-08-24 12:14:38.806134 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-08-24 12:14:38.808076 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-08-24 12:14:38.808127 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-08-24 12:14:38.808146 +0000 build-fedora1: output: gpg:               imported: 3
+2022-08-24 12:14:38.808171 +0000 build-fedora1: output: gpg: no ultimately trusted keys found
+2022-08-24 12:14:38.810297 +0000 build-fedora1: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-08-24 12:14:38.810402 +0000 build-fedora1: output: + gpg --import-ownertrust
+2022-08-24 12:14:38.814622 +0000 build-fedora1: output: gpg: inserting ownertrust of 6
+2022-08-24 12:14:38.815881 +0000 build-fedora1: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-08-24 12:14:38.815939 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-08-24 12:14:38.820600 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-08-24 12:14:38.822166 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-08-24 12:14:38.823832 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-08-24 12:14:38.823876 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-08-24 12:14:38.823895 +0000 build-fedora1: output: gpg:              unchanged: 3
+2022-08-24 12:14:38.825044 +0000 build-fedora1: output: + touch /builder/keyring/pubring.gpg
+2022-08-24 12:14:38.827135 +0000 build-fedora1: output: + gpgconf --kill gpg-agent
+2022-08-24 12:14:38.835755 +0000 build-fedora1: output: + pushd core-libvirt
+2022-08-24 12:14:38.835855 +0000 build-fedora1: output: + expected_hash=c8b95ab22039310b303752897602d161060ab083
+2022-08-24 12:14:38.835876 +0000 build-fedora1: output: + hash_len=40
+2022-08-24 12:14:38.835897 +0000 build-fedora1: output: + '[' 40 -ne 40 ']'
+2022-08-24 12:14:38.836236 +0000 build-fedora1: output: + [[ c8b95ab22039310b303752897602d161060ab083 =~ ^[a-f0-9]+$ ]]
+2022-08-24 12:14:38.836314 +0000 build-fedora1: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-08-24 12:14:38.837297 +0000 build-fedora1: output: ++ git tag --points-at=c8b95ab22039310b303752897602d161060ab083 '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-08-24 12:14:38.838054 +0000 build-fedora1: output: ++ head -c 500
+2022-08-24 12:14:38.844758 +0000 build-fedora1: output: + tags=97237703eb1878630430ef4c72d0dc1f547adfbe:c8b95ab22039310b303752897602d161060ab083:
+2022-08-24 12:14:38.844806 +0000 build-fedora1: output: + for tag in $tags
+2022-08-24 12:14:38.844836 +0000 build-fedora1: output: + (( 82 != hash_len * 2 + 2 ))
+2022-08-24 12:14:38.844866 +0000 build-fedora1: output: + [[ :c8b95ab22039310b303752897602d161060ab083: == \:\c\8\b\9\5\a\b\2\2\0\3\9\3\1\0\b\3\0\3\7\5\2\8\9\7\6\0\2\d\1\6\1\0\6\0\a\b\0\8\3\: ]]
+2022-08-24 12:14:38.845241 +0000 build-fedora1: output: + tag=97237703eb1878630430ef4c72d0dc1f547adfbe
+2022-08-24 12:14:38.845281 +0000 build-fedora1: output: + verify_git_obj tag 97237703eb1878630430ef4c72d0dc1f547adfbe
+2022-08-24 12:14:38.845300 +0000 build-fedora1: output: + local content newsig_number
+2022-08-24 12:14:38.845865 +0000 build-fedora1: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- 97237703eb1878630430ef4c72d0dc1f547adfbe
+2022-08-24 12:14:38.854268 +0000 build-fedora1: output: + content='[GNUPG:] NEWSIG
+2022-08-24 12:14:38.854491 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-24 12:14:38.854540 +0000 build-fedora1: output: [GNUPG:] SIG_ID 8yZhLmC93h7qCXfxgWErdDxsEXg 2022-08-24 1661343244
+2022-08-24 12:14:38.854562 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-24 12:14:38.854937 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.854983 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.855006 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.855033 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-08-24 12:14:38.855062 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-08-24 1661343244 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-08-24 12:14:38.855332 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-08-24 12:14:38.855358 +0000 build-fedora1: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-08-24 12:14:38.855367 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-24 12:14:38.855375 +0000 build-fedora1: output: [GNUPG:] SIG_ID 8yZhLmC93h7qCXfxgWErdDxsEXg 2022-08-24 1661343244
+2022-08-24 12:14:38.855383 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-24 12:14:38.855390 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.855397 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.855406 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.855608 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-08-24 12:14:38.855720 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-08-24 1661343244 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-08-24 12:14:38.855742 +0000 build-fedora1: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-08-24 12:14:38.855760 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-08-24 12:14:38.858072 +0000 build-fedora1: output: + newsig_number=1
+2022-08-24 12:14:38.858111 +0000 build-fedora1: output: + '[' 1 = 1 ']'
+2022-08-24 12:14:38.858429 +0000 build-fedora1: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp\>'
+2022-08-24 12:14:38.858504 +0000 build-fedora1: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-08-24 12:14:38.858537 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-24 12:14:38.858696 +0000 build-fedora1: output: [GNUPG:] SIG_ID 8yZhLmC93h7qCXfxgWErdDxsEXg 2022-08-24 1661343244
+2022-08-24 12:14:38.859102 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-08-24 12:14:38.859173 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.859198 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.859221 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-08-24 12:14:38.859249 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-08-24 12:14:38.859280 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-08-24 1661343244 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-08-24 12:14:38.859303 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-08-24 12:14:38.861327 +0000 build-fedora1: output: + echo '---> Good tag 97237703eb1878630430ef4c72d0dc1f547adfbe'
+2022-08-24 12:14:38.861534 +0000 build-fedora1: output: + '[' -z x ']'
+2022-08-24 12:14:38.861565 +0000 build-fedora1: output: + popd
+2022-08-24 12:14:38.861583 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-24 12:14:38.861600 +0000 build-fedora1: output: + pushd core-libvirt
+2022-08-24 12:14:38.861641 +0000 build-fedora1: output: ---> Good tag 97237703eb1878630430ef4c72d0dc1f547adfbe
+2022-08-24 12:14:38.861750 +0000 build-fedora1: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-08-24 12:14:38.862731 +0000 build-fedora1: output: + CURRENT_BRANCH=master
+2022-08-24 12:14:38.862812 +0000 build-fedora1: output: + '[' master '!=' master ']'
+2022-08-24 12:14:38.862850 +0000 build-fedora1: output: + false
+2022-08-24 12:14:38.862871 +0000 build-fedora1: output: + false
+2022-08-24 12:14:38.862983 +0000 build-fedora1: output: + '[' '' = 1 ']'
+2022-08-24 12:14:38.863074 +0000 build-fedora1: output: + echo '--> Merging...'
+2022-08-24 12:14:38.863243 +0000 build-fedora1: output: --> Merging...
+2022-08-24 12:14:38.863294 +0000 build-fedora1: output: + git -c merge.verifySignatures=no merge --ff-only --commit -q c8b95ab22039310b303752897602d161060ab083
+2022-08-24 12:14:38.872776 +0000 build-fedora1: output: + tracking_branch=refs/remotes//master
+2022-08-24 12:14:38.873020 +0000 build-fedora1: output: + '[' -f .git/refs/remotes//master ']'
+2022-08-24 12:14:38.873111 +0000 build-fedora1: output: + popd
+2022-08-24 12:14:38.873122 +0000 build-fedora1: output: + exit_clean
+2022-08-24 12:14:38.873128 +0000 build-fedora1: output: + local exit_code=0
+2022-08-24 12:14:38.873134 +0000 build-fedora1: output: + '[' 0 -gt 0 ']'
+2022-08-24 12:14:38.873246 +0000 build-fedora1: output: + exit 0
+2022-08-24 12:14:38.881643 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1555 qubesbuilder.FileCopyOut+__builder__core-libvirt /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/sources
+2022-08-24 12:14:53.622464 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp749 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-24 12:14:53.824900 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp749 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-24 12:14:54.151622 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp749 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-24 12:14:54.376604 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp749 bash -c 'rm -rf /builder/incoming/core-libvirt /builder/core-libvirt'
+2022-08-24 12:14:54.657330 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp749 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/core-libvirt
+2022-08-24 12:14:54.957763 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp749 bash -c 'mkdir -p /builder && mv /builder/incoming/core-libvirt /builder'
+2022-08-24 12:14:55.080880 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp749 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/core-libvirt --file-name libvirt-6.6.0.tar.xz --file-url https://libvirt.org/sources/libvirt-6.6.0.tar.xz --signature-url https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc''.
+2022-08-24 12:14:55.230069 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-08-24 12:14:55.230184 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/core-libvirt --file-name libvirt-6.6.0.tar.xz --file-url https://libvirt.org/sources/libvirt-6.6.0.tar.xz --signature-url https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:14:55.231506 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/core-libvirt'\'' --file-name '\''libvirt-6.6.0.tar.xz'\'' --file-url '\''https://libvirt.org/sources/libvirt-6.6.0.tar.xz'\'' --signature-url '\''https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc'\'' --'
+2022-08-24 12:14:55.231555 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/core-libvirt'\'' --file-name '\''libvirt-6.6.0.tar.xz'\'' --file-url '\''https://libvirt.org/sources/libvirt-6.6.0.tar.xz'\'' --signature-url '\''https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc'\'' --'
+2022-08-24 12:14:55.232242 +0000 build-fedora1: output: ++ set -- --output-dir /builder/core-libvirt --file-name libvirt-6.6.0.tar.xz --file-url https://libvirt.org/sources/libvirt-6.6.0.tar.xz --signature-url https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc --
+2022-08-24 12:14:55.232268 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-24 12:14:55.232276 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:55.232283 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/core-libvirt
+2022-08-24 12:14:55.232289 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232294 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232299 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-24 12:14:55.232305 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:55.232311 +0000 build-fedora1: output: + FILE_NAME=libvirt-6.6.0.tar.xz
+2022-08-24 12:14:55.232316 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232321 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232326 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-24 12:14:55.232331 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:55.232339 +0000 build-fedora1: output: + FILE_URL=https://libvirt.org/sources/libvirt-6.6.0.tar.xz
+2022-08-24 12:14:55.232344 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232349 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232354 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-24 12:14:55.232360 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:55.232367 +0000 build-fedora1: output: + SIGNATURE_URL=https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:14:55.232372 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232377 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232383 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-24 12:14:55.232388 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:14:55.232393 +0000 build-fedora1: output: + shift
+2022-08-24 12:14:55.232398 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-24 12:14:55.232405 +0000 build-fedora1: output: + '[' -z https://libvirt.org/sources/libvirt-6.6.0.tar.xz ']'
+2022-08-24 12:14:55.232416 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-24 12:14:55.232446 +0000 build-fedora1: output: + '[' -z libvirt-6.6.0.tar.xz ']'
+2022-08-24 12:14:55.232454 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_libvirt-6.6.0.tar.xz
+2022-08-24 12:14:55.232643 +0000 build-fedora1: output: + '[' -n /builder/core-libvirt ']'
+2022-08-24 12:14:55.232697 +0000 build-fedora1: output: + mkdir -p /builder/core-libvirt
+2022-08-24 12:14:55.233309 +0000 build-fedora1: output: + cd /builder/core-libvirt
+2022-08-24 12:14:55.233331 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_libvirt-6.6.0.tar.xz -- https://libvirt.org/sources/libvirt-6.6.0.tar.xz
+2022-08-24 12:14:57.025142 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-24 12:14:57.025222 +0000 build-fedora1: output: + '[' -n https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc ']'
+2022-08-24 12:14:57.025341 +0000 build-fedora1: output: ++ basename https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:14:57.027392 +0000 build-fedora1: output: + SIGNATURE_FILE_NAME=libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:14:57.027461 +0000 build-fedora1: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:14:57.027499 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_libvirt-6.6.0.tar.xz.asc https://libvirt.org/sources/libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:14:57.273143 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp749 qubesbuilder.FileCopyOut+__builder__core-libvirt__untrusted_libvirt-6.6.0.tar.xz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3
+2022-08-24 12:14:57.509691 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp749 qubesbuilder.FileCopyOut+__builder__core-libvirt__untrusted_libvirt-6.6.0.tar.xz.asc /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3
+2022-08-24 12:15:00.275031 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz --untrusted-signature-file /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc'.
+2022-08-24 12:15:00.277944 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-08-24 12:15:00.277999 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz --untrusted-signature-file /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc
+2022-08-24 12:15:00.278639 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz'\'' --untrusted-signature-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc'\'' --pubkey-file '\''/home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc'\'' --'
+2022-08-24 12:15:00.278671 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz'\'' --untrusted-signature-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc'\'' --pubkey-file '\''/home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc'\'' --'
+2022-08-24 12:15:00.278712 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz --untrusted-signature-file /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc --
+2022-08-24 12:15:00.278731 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-24 12:15:00.280592 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-24 12:15:00.280604 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:00.280612 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3
+2022-08-24 12:15:00.280618 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280623 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280628 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-24 12:15:00.280634 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:00.280643 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz
+2022-08-24 12:15:00.280648 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280653 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280658 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-24 12:15:00.280672 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:00.280682 +0000 build-fedora1: output: + UNTRUSTED_SIGNATURE_FILE=/home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:15:00.280687 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280692 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280703 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-24 12:15:00.280708 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:00.280713 +0000 build-fedora1: output: + PUBKEY_FILE+=("$2")
+2022-08-24 12:15:00.280718 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280723 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280729 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-24 12:15:00.280734 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:00.280739 +0000 build-fedora1: output: + PUBKEY_FILE+=("$2")
+2022-08-24 12:15:00.280744 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280749 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280755 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-24 12:15:00.280760 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:00.280765 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:00.280770 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-24 12:15:00.280799 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz ']'
+2022-08-24 12:15:00.280885 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3 ']'
+2022-08-24 12:15:00.281033 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3
+2022-08-24 12:15:00.281187 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz
+2022-08-24 12:15:00.281331 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_libvirt-6.6.0.tar.xz
+2022-08-24 12:15:00.281472 +0000 build-fedora1: output: + FILE_NAME=libvirt-6.6.0.tar.xz
+2022-08-24 12:15:00.281643 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-24 12:15:00.281800 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc ']'
+2022-08-24 12:15:00.281941 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-24 12:15:00.282094 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc ']'
+2022-08-24 12:15:00.282250 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc ']'
+2022-08-24 12:15:00.282396 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc ']'
+2022-08-24 12:15:00.282583 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc ']'
+2022-08-24 12:15:00.282743 +0000 build-fedora1: output: + '[' '!' -e /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc ']'
+2022-08-24 12:15:00.282884 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-24 12:15:00.283117 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc ']'
+2022-08-24 12:15:00.283330 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc ']'
+2022-08-24 12:15:00.283494 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:15:00.283675 +0000 build-fedora1: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:15:00.283829 +0000 build-fedora1: output: + SIGNATURE_FILE_NAME=libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:15:00.283978 +0000 build-fedora1: output: ++ mktemp -u
+2022-08-24 12:15:00.284131 +0000 build-fedora1: output: + keyring=/tmp/tmp.Hu68oV431k
+2022-08-24 12:15:00.284281 +0000 build-fedora1: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2022-08-24 12:15:00.284640 +0000 build-fedora1: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.Hu68oV431k -q --import /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc
+2022-08-24 12:15:00.284776 +0000 build-fedora1: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2022-08-24 12:15:00.284816 +0000 build-fedora1: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.Hu68oV431k -q --import /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc
+2022-08-24 12:15:00.288433 +0000 build-fedora1: output: + gpgv --keyring /tmp/tmp.Hu68oV431k /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz
+2022-08-24 12:15:00.312306 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz.asc /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/libvirt-6.6.0.tar.xz.asc
+2022-08-24 12:15:00.313992 +0000 build-fedora1: output: + rm -rf /tmp/tmp.Hu68oV431k
+2022-08-24 12:15:00.314746 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/untrusted_libvirt-6.6.0.tar.xz /home/user/builder-r4.2/artifacts/tmp/tmpph1sjza3/libvirt-6.6.0.tar.xz
+2022-08-24 12:15:11.463295 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1055 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-08-24 12:15:11.640170 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1055 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-08-24 12:15:11.859661 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1055 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-08-24 12:15:12.076180 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1055 bash -c 'rm -rf /builder/incoming/core-libvirt /builder/core-libvirt'
+2022-08-24 12:15:12.236484 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1055 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/core-libvirt
+2022-08-24 12:15:12.551997 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1055 bash -c 'mkdir -p /builder && mv /builder/incoming/core-libvirt /builder'
+2022-08-24 12:15:12.804945 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp1055 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/core-libvirt --file-name libvirt-python-6.6.0.tar.gz --file-url https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz --signature-url https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc''.
+2022-08-24 12:15:13.014024 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-08-24 12:15:13.015776 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/core-libvirt --file-name libvirt-python-6.6.0.tar.gz --file-url https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz --signature-url https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:13.020855 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/core-libvirt'\'' --file-name '\''libvirt-python-6.6.0.tar.gz'\'' --file-url '\''https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz'\'' --signature-url '\''https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc'\'' --'
+2022-08-24 12:15:13.021006 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/core-libvirt'\'' --file-name '\''libvirt-python-6.6.0.tar.gz'\'' --file-url '\''https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz'\'' --signature-url '\''https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc'\'' --'
+2022-08-24 12:15:13.021770 +0000 build-fedora1: output: ++ set -- --output-dir /builder/core-libvirt --file-name libvirt-python-6.6.0.tar.gz --file-url https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz --signature-url https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc --
+2022-08-24 12:15:13.021800 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-24 12:15:13.021808 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:13.021815 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/core-libvirt
+2022-08-24 12:15:13.021820 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021826 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021849 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-24 12:15:13.021855 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:13.021862 +0000 build-fedora1: output: + FILE_NAME=libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:13.021867 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021872 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021877 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-24 12:15:13.021883 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:13.021891 +0000 build-fedora1: output: + FILE_URL=https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:13.021896 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021901 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021907 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-24 12:15:13.021912 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:13.021920 +0000 build-fedora1: output: + SIGNATURE_URL=https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:13.021925 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021930 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021935 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-24 12:15:13.021941 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:13.021946 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:13.021951 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-24 12:15:13.021959 +0000 build-fedora1: output: + '[' -z https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz ']'
+2022-08-24 12:15:13.021967 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-08-24 12:15:13.021974 +0000 build-fedora1: output: + '[' -z libvirt-python-6.6.0.tar.gz ']'
+2022-08-24 12:15:13.021995 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:13.022002 +0000 build-fedora1: output: + '[' -n /builder/core-libvirt ']'
+2022-08-24 12:15:13.022008 +0000 build-fedora1: output: + mkdir -p /builder/core-libvirt
+2022-08-24 12:15:13.022014 +0000 build-fedora1: output: + cd /builder/core-libvirt
+2022-08-24 12:15:13.022026 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_libvirt-python-6.6.0.tar.gz -- https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:13.471540 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-08-24 12:15:13.471637 +0000 build-fedora1: output: + '[' -n https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc ']'
+2022-08-24 12:15:13.471676 +0000 build-fedora1: output: ++ basename https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:13.473649 +0000 build-fedora1: output: + SIGNATURE_FILE_NAME=libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:13.473792 +0000 build-fedora1: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:13.473846 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_libvirt-python-6.6.0.tar.gz.asc https://libvirt.org/sources/python/libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:13.722532 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1055 qubesbuilder.FileCopyOut+__builder__core-libvirt__untrusted_libvirt-python-6.6.0.tar.gz /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4
+2022-08-24 12:15:13.911886 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1055 qubesbuilder.FileCopyOut+__builder__core-libvirt__untrusted_libvirt-python-6.6.0.tar.gz.asc /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4
+2022-08-24 12:15:16.707196 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz --untrusted-signature-file /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc'.
+2022-08-24 12:15:16.709349 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-08-24 12:15:16.710154 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz --untrusted-signature-file /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc
+2022-08-24 12:15:16.711822 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz'\'' --untrusted-signature-file '\''/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc'\'' --pubkey-file '\''/home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc'\'' --'
+2022-08-24 12:15:16.711939 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz'\'' --untrusted-signature-file '\''/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc'\'' --pubkey-file '\''/home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc'\'' --pubkey-file '\''/home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc'\'' --'
+2022-08-24 12:15:16.712016 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz --untrusted-signature-file /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc --pubkey-file /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc --
+2022-08-24 12:15:16.712033 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-08-24 12:15:16.712587 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-08-24 12:15:16.712610 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:16.712631 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4
+2022-08-24 12:15:16.712646 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712682 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712697 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-08-24 12:15:16.712712 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:16.712736 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:16.712750 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712764 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712778 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-08-24 12:15:16.712792 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:16.712818 +0000 build-fedora1: output: + UNTRUSTED_SIGNATURE_FILE=/home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:16.712832 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712846 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712860 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-08-24 12:15:16.712875 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:16.712890 +0000 build-fedora1: output: + PUBKEY_FILE+=("$2")
+2022-08-24 12:15:16.712904 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712917 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712932 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-08-24 12:15:16.712946 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:16.712961 +0000 build-fedora1: output: + PUBKEY_FILE+=("$2")
+2022-08-24 12:15:16.712974 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.712988 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.713002 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-08-24 12:15:16.713016 +0000 build-fedora1: output: + case "$1" in
+2022-08-24 12:15:16.713030 +0000 build-fedora1: output: + shift
+2022-08-24 12:15:16.713045 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-08-24 12:15:16.713069 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz ']'
+2022-08-24 12:15:16.713097 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4 ']'
+2022-08-24 12:15:16.713117 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4
+2022-08-24 12:15:16.713601 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:16.714408 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:16.714487 +0000 build-fedora1: output: + FILE_NAME=libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:16.714508 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-08-24 12:15:16.714535 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc ']'
+2022-08-24 12:15:16.714552 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-24 12:15:16.714578 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc ']'
+2022-08-24 12:15:16.714603 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc ']'
+2022-08-24 12:15:16.714630 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc ']'
+2022-08-24 12:15:16.714678 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc ']'
+2022-08-24 12:15:16.714704 +0000 build-fedora1: output: + '[' '!' -e /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc ']'
+2022-08-24 12:15:16.714726 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-08-24 12:15:16.714806 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc ']'
+2022-08-24 12:15:16.714837 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc ']'
+2022-08-24 12:15:16.714869 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:16.715434 +0000 build-fedora1: output: + UNTRUSTED_SIGNATURE_FILE_NAME=untrusted_libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:16.715461 +0000 build-fedora1: output: + SIGNATURE_FILE_NAME=libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:16.715671 +0000 build-fedora1: output: ++ mktemp -u
+2022-08-24 12:15:16.716305 +0000 build-fedora1: output: + keyring=/tmp/tmp.BducDVVdPf
+2022-08-24 12:15:16.716328 +0000 build-fedora1: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2022-08-24 12:15:16.716369 +0000 build-fedora1: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.BducDVVdPf -q --import /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-jiri-denemark-key.asc
+2022-08-24 12:15:16.719241 +0000 build-fedora1: output: + for pubkey_file in "${PUBKEY_FILE[@]}"
+2022-08-24 12:15:16.719291 +0000 build-fedora1: output: + gpg --no-auto-check-trustdb --no-default-keyring --keyring /tmp/tmp.BducDVVdPf -q --import /home/user/builder-r4.2/artifacts/sources/core-libvirt/redhat-veillard-key.asc
+2022-08-24 12:15:16.731881 +0000 build-fedora1: output: + gpgv --keyring /tmp/tmp.BducDVVdPf /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:16.736084 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz.asc /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/libvirt-python-6.6.0.tar.gz.asc
+2022-08-24 12:15:16.737541 +0000 build-fedora1: output: + rm -rf /tmp/tmp.BducDVVdPf
+2022-08-24 12:15:16.738676 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/untrusted_libvirt-python-6.6.0.tar.gz /home/user/builder-r4.2/artifacts/tmp/tmp0qf2zng4/libvirt-python-6.6.0.tar.gz
+2022-08-24 12:15:27.951136 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3645 bash -c 'rm -rf /builder/incoming/core-libvirt /builder/core-libvirt'
+2022-08-24 12:15:28.174997 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3645 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/core-libvirt
+2022-08-24 12:15:28.434444 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3645 bash -c 'mkdir -p /builder && mv /builder/incoming/core-libvirt /builder'
+2022-08-24 12:15:28.680837 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp3645 env VERBOSE='1' DEBUG='1' bash -c 'rm -f /builder/core-libvirt/hash /builder/core-libvirt/vtags && cd /builder && git -C /builder/core-libvirt rev-parse 'HEAD^{}' >> /builder/core-libvirt/hash && git -C /builder/core-libvirt tag --points-at HEAD --list 'v*' >> /builder/core-libvirt/vtags''.
+2022-08-24 12:15:28.938715 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3645 qubesbuilder.FileCopyOut+__builder__core-libvirt__hash /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpf35kb_iu
+2022-08-24 12:15:29.165280 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3645 qubesbuilder.FileCopyOut+__builder__core-libvirt__vtags /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpf35kb_iu
+2022-08-24 12:15:31.933870 +0000 build-fedora1: > done
+2022-08-24 12:15:31.933939 +0000 > closing log

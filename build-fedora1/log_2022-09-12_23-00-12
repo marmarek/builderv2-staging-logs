@@ -1,0 +1,921 @@
+2022-09-12 23:00:12.619632 +0000 > starting log
+2022-09-12 23:00:12.619938 +0000 build-fedora1: > starting build with log
+2022-09-12 23:00:12.619947 +0000 build-fedora1: >> args:
+2022-09-12 23:00:12.619961 +0000 build-fedora1: >>   (<Config /home/user/builder-r4.2/builder.yml>, [<QubesComponent windows-tools-cross>], [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-36.x86_64>], 'fetch')
+2022-09-12 23:00:12.619966 +0000 build-fedora1: >> component:
+2022-09-12 23:00:12.619972 +0000 build-fedora1: >>   windows-tools-cross
+2022-09-12 23:00:12.619977 +0000 build-fedora1: >> distributions:
+2022-09-12 23:00:12.619987 +0000 build-fedora1: >>   [<QubesDistribution host-fedora-32.x86_64>, <QubesDistribution vm-debian-11.amd64>, <QubesDistribution vm-fedora-36.x86_64>]
+2022-09-12 23:00:24.021154 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1186 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:00:24.208962 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1186 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:00:24.412101 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1186 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:00:24.632125 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp1186 env VERBOSE='1' DEBUG='1' bash -c 'cd /builder && /builder/plugins/fetch/scripts/get-and-verify-source --component windows-tools-cross --git-branch master --git-url https://github.com/QubesOS/qubes-windows-tools-cross --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys''.
+2022-09-12 23:00:24.831811 +0000 build-fedora1: output: + unset CLEAN
+2022-09-12 23:00:24.831851 +0000 build-fedora1: output: + CLEAN=0
+2022-09-12 23:00:24.831871 +0000 build-fedora1: output: + unset GETOPT_COMPATIBLE fresh_clone GIT_CLONE_FAST GIT_BASEURL GIT_PREFIX GIT_SUFFIX GIT_URL GIT_REMOTE BRANCH COMPONENT CLEAN FETCH_ONLY IGNORE_MISSING REPO KEYS_DIR KEYRING_DIR_GIT INSECURE_SKIP_CHECKING LESS_SECURE_SIGNED_COMMITS_SUFFICIENT DO_MERGE FETCH_VERSIONS_ONLY MAINTAINERS
+2022-09-12 23:00:24.831908 +0000 build-fedora1: output: ++ getopt -o '' -l help,git-baseurl:,git-prefix:,git-suffix:,git-url:,git-remote:,git-branch:,component:,clean,fetch-only,ignore-missing,repo:,keys-dir:,keyring-dir-git:,insecure-skip-checking,less-secure-signed-commits-sufficient,do-merge,fetch-versions-only,maintainer: -n /builder/plugins/fetch/scripts/get-and-verify-source -- --component windows-tools-cross --git-branch master --git-url https://github.com/QubesOS/qubes-windows-tools-cross --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys
+2022-09-12 23:00:24.833944 +0000 build-fedora1: output: + OPTS=' --component '\''windows-tools-cross'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-windows-tools-cross'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-09-12 23:00:24.833989 +0000 build-fedora1: output: + eval set -- ' --component '\''windows-tools-cross'\'' --git-branch '\''master'\'' --git-url '\''https://github.com/QubesOS/qubes-windows-tools-cross'\'' --keyring-dir-git '\''/builder/keyring'\'' --keys-dir '\''/builder/plugins/fetch/keys'\'' --'
+2022-09-12 23:00:24.834238 +0000 build-fedora1: output: ++ set -- --component windows-tools-cross --git-branch master --git-url https://github.com/QubesOS/qubes-windows-tools-cross --keyring-dir-git /builder/keyring --keys-dir /builder/plugins/fetch/keys --
+2022-09-12 23:00:24.834292 +0000 build-fedora1: output: + [[ 11 -gt 0 ]]
+2022-09-12 23:00:24.834312 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:24.834330 +0000 build-fedora1: output: + COMPONENT=windows-tools-cross
+2022-09-12 23:00:24.834345 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834366 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834592 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-09-12 23:00:24.834625 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:24.834632 +0000 build-fedora1: output: + BRANCH=master
+2022-09-12 23:00:24.834638 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834643 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834649 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:00:24.834654 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:24.834662 +0000 build-fedora1: output: + GIT_URL=https://github.com/QubesOS/qubes-windows-tools-cross
+2022-09-12 23:00:24.834667 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834672 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834677 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:00:24.834682 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:24.834689 +0000 build-fedora1: output: + KEYRING_DIR_GIT=/builder/keyring
+2022-09-12 23:00:24.834694 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834699 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834704 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:00:24.834709 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:24.834715 +0000 build-fedora1: output: + KEYS_DIR=/builder/plugins/fetch/keys
+2022-09-12 23:00:24.834720 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834725 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834730 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:00:24.834735 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:24.834740 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:24.834746 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:00:24.841721 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-09-12 23:00:24.841753 +0000 build-fedora1: output: -]*$ ]]
+2022-09-12 23:00:24.841764 +0000 build-fedora1: output: + [[ '' =~ ^[A-Za-z0-9
+2022-09-12 23:00:24.841844 +0000 build-fedora1: output: -]*$ ]]
+2022-09-12 23:00:24.841858 +0000 build-fedora1: output: + [[ -n windows-tools-cross ]]
+2022-09-12 23:00:24.841976 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:00:24.841988 +0000 build-fedora1: output: + REPO=windows-tools-cross
+2022-09-12 23:00:24.842093 +0000 build-fedora1: output: + '[' -z /builder/keyring ']'
+2022-09-12 23:00:24.842245 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:00:24.842283 +0000 build-fedora1: output: + GIT_SUFFIX=.git
+2022-09-12 23:00:24.842658 +0000 build-fedora1: output: + '[' -z master ']'
+2022-09-12 23:00:24.842852 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:00:24.842869 +0000 build-fedora1: output: + '[' -z https://github.com/QubesOS/qubes-windows-tools-cross ']'
+2022-09-12 23:00:24.842876 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:00:24.843020 +0000 build-fedora1: output: + case ${IGNORE_MISSING=0} in
+2022-09-12 23:00:24.843031 +0000 build-fedora1: output: + :
+2022-09-12 23:00:24.843040 +0000 build-fedora1: output: + case ${GIT_CLONE_FAST=0} in
+2022-09-12 23:00:24.843045 +0000 build-fedora1: output: + :
+2022-09-12 23:00:24.843108 +0000 build-fedora1: output: + GIT_OPTIONS=()
+2022-09-12 23:00:24.843129 +0000 build-fedora1: output: + [[ 0 = \1 ]]
+2022-09-12 23:00:24.843351 +0000 build-fedora1: output: + GIT_MERGE_OPTS=("--ff-only")
+2022-09-12 23:00:24.843368 +0000 build-fedora1: output: + [[ master =~ ^[A-Za-z][A-Za-z0-9._-]+$ ]]
+2022-09-12 23:00:24.843390 +0000 build-fedora1: output: + [[ windows-tools-cross =~ ^[A-Za-z][A-Za-z0-9-]*$ ]]
+2022-09-12 23:00:24.843397 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:00:24.843946 +0000 build-fedora1: output: + trap exit_clean 0 1 2 3 6 15
+2022-09-12 23:00:24.843961 +0000 build-fedora1: output: + fresh_clone=false
+2022-09-12 23:00:24.843967 +0000 build-fedora1: output: + [[ '' = \1 ]]
+2022-09-12 23:00:24.843973 +0000 build-fedora1: output: + [[ -d windows-tools-cross ]]
+2022-09-12 23:00:24.843979 +0000 build-fedora1: output: + rm -f -- windows-tools-cross
+2022-09-12 23:00:24.843985 +0000 build-fedora1: output: + print_headers
+2022-09-12 23:00:24.844005 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:00:24.844014 +0000 build-fedora1: output: + GIT_INFOS='https://github.com/QubesOS/qubes-windows-tools-cross master'
+2022-09-12 23:00:24.844021 +0000 build-fedora1: output: + echo '-> Updating sources for windows-tools-cross...'
+2022-09-12 23:00:24.844029 +0000 build-fedora1: output: + echo '--> Fetching from https://github.com/QubesOS/qubes-windows-tools-cross master...'
+2022-09-12 23:00:24.844039 +0000 build-fedora1: output: + git clone -n -q -b master https://github.com/QubesOS/qubes-windows-tools-cross windows-tools-cross
+2022-09-12 23:00:24.844046 +0000 build-fedora1: output: -> Updating sources for windows-tools-cross...
+2022-09-12 23:00:24.844056 +0000 build-fedora1: output: --> Fetching from https://github.com/QubesOS/qubes-windows-tools-cross master...
+2022-09-12 23:00:25.690524 +0000 build-fedora1: output: + VERIFY_REF=HEAD
+2022-09-12 23:00:25.690567 +0000 build-fedora1: output: + fresh_clone=:
+2022-09-12 23:00:25.690575 +0000 build-fedora1: output: + export CHECK=signed-tag
+2022-09-12 23:00:25.690583 +0000 build-fedora1: output: + CHECK=signed-tag
+2022-09-12 23:00:25.690588 +0000 build-fedora1: output: + verify=true
+2022-09-12 23:00:25.690594 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:00:25.690599 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:00:25.690607 +0000 build-fedora1: output: ++ git -C windows-tools-cross rev-parse -q --verify HEAD
+2022-09-12 23:00:25.694229 +0000 build-fedora1: output: --> Verifying tags...
+2022-09-12 23:00:25.694724 +0000 build-fedora1: output: + VERIFY_REF=492c10b3728c875459ef5abdfa724e274e1d954e
+2022-09-12 23:00:25.694741 +0000 build-fedora1: output: + '[' true = false ']'
+2022-09-12 23:00:25.694750 +0000 build-fedora1: output: + [[ signed-tag == \s\i\g\n\e\d\-\t\a\g\-\o\r\-\c\o\m\m\i\t ]]
+2022-09-12 23:00:25.694757 +0000 build-fedora1: output: + echo '--> Verifying tags...'
+2022-09-12 23:00:25.695083 +0000 build-fedora1: output: ++ readlink -m /builder/keyring
+2022-09-12 23:00:25.700696 +0000 build-fedora1: output: + GNUPGHOME=/builder/keyring
+2022-09-12 23:00:25.700734 +0000 build-fedora1: output: + export GNUPGHOME
+2022-09-12 23:00:25.700741 +0000 build-fedora1: output: + '[' '!' -d /builder/keyring ']'
+2022-09-12 23:00:25.700748 +0000 build-fedora1: output: + mkdir -p /builder/keyring
+2022-09-12 23:00:25.705980 +0000 build-fedora1: output: + chmod 700 /builder/keyring
+2022-09-12 23:00:25.707679 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-09-12 23:00:25.751777 +0000 build-fedora1: output: gpg: keybox '/builder/keyring/pubring.kbx' created
+2022-09-12 23:00:25.754869 +0000 build-fedora1: output: gpg: /builder/keyring/trustdb.gpg: trustdb created
+2022-09-12 23:00:25.754912 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: public key "Qubes Master Signing Key" imported
+2022-09-12 23:00:25.856906 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: public key "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" imported
+2022-09-12 23:00:25.857291 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: public key "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" imported
+2022-09-12 23:00:25.857308 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-09-12 23:00:25.857315 +0000 build-fedora1: output: gpg:               imported: 3
+2022-09-12 23:00:25.857324 +0000 build-fedora1: output: gpg: no ultimately trusted keys found
+2022-09-12 23:00:25.859755 +0000 build-fedora1: output: + gpg --import-ownertrust
+2022-09-12 23:00:25.859779 +0000 build-fedora1: output: + echo 427F11FD0FAA4B080123F01CDDFA1A3E36879494:6:
+2022-09-12 23:00:25.860041 +0000 build-fedora1: output: gpg: inserting ownertrust of 6
+2022-09-12 23:00:25.860388 +0000 build-fedora1: output: + '[' /builder/plugins/fetch/keys/qubes-developers-keys.asc -nt /builder/keyring/pubring.gpg ']'
+2022-09-12 23:00:25.860412 +0000 build-fedora1: output: + gpg --import /builder/plugins/fetch/keys/qubes-developers-keys.asc
+2022-09-12 23:00:25.862271 +0000 build-fedora1: output: gpg: key DDFA1A3E36879494: "Qubes Master Signing Key" not changed
+2022-09-12 23:00:25.862878 +0000 build-fedora1: output: gpg: key 063938BA42CFA724: "Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>" not changed
+2022-09-12 23:00:25.863641 +0000 build-fedora1: output: gpg: key DA0434BC706E1FCF: "Simon Gaiser (Qubes OS signing key) <simon@invisiblethingslab.com>" not changed
+2022-09-12 23:00:25.863732 +0000 build-fedora1: output: gpg: Total number processed: 3
+2022-09-12 23:00:25.863858 +0000 build-fedora1: output: gpg:              unchanged: 3
+2022-09-12 23:00:25.864268 +0000 build-fedora1: output: + touch /builder/keyring/pubring.gpg
+2022-09-12 23:00:25.865606 +0000 build-fedora1: output: + gpgconf --kill gpg-agent
+2022-09-12 23:00:25.873871 +0000 build-fedora1: output: + pushd windows-tools-cross
+2022-09-12 23:00:25.873912 +0000 build-fedora1: output: + expected_hash=492c10b3728c875459ef5abdfa724e274e1d954e
+2022-09-12 23:00:25.873922 +0000 build-fedora1: output: + hash_len=40
+2022-09-12 23:00:25.873929 +0000 build-fedora1: output: + '[' 40 -ne 40 ']'
+2022-09-12 23:00:25.874021 +0000 build-fedora1: output: + [[ 492c10b3728c875459ef5abdfa724e274e1d954e =~ ^[a-f0-9]+$ ]]
+2022-09-12 23:00:25.874045 +0000 build-fedora1: output: + format='%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-09-12 23:00:25.874057 +0000 build-fedora1: output: ++ git tag --points-at=492c10b3728c875459ef5abdfa724e274e1d954e '--format=%(if:equals=tag)%(objecttype)%(then)%(objectname):%(object):%(end)'
+2022-09-12 23:00:25.874064 +0000 build-fedora1: output: ++ head -c 500
+2022-09-12 23:00:25.874260 +0000 build-fedora1: output: + tags=794bc5ff58f992a156be02a7f2cdb3f6db127887:492c10b3728c875459ef5abdfa724e274e1d954e:
+2022-09-12 23:00:25.874373 +0000 build-fedora1: output: + for tag in $tags
+2022-09-12 23:00:25.874386 +0000 build-fedora1: output: + (( 82 != hash_len * 2 + 2 ))
+2022-09-12 23:00:25.874398 +0000 build-fedora1: output: + [[ :492c10b3728c875459ef5abdfa724e274e1d954e: == \:\4\9\2\c\1\0\b\3\7\2\8\c\8\7\5\4\5\9\e\f\5\a\b\d\f\a\7\2\4\e\2\7\4\e\1\d\9\5\4\e\: ]]
+2022-09-12 23:00:25.874405 +0000 build-fedora1: output: + tag=794bc5ff58f992a156be02a7f2cdb3f6db127887
+2022-09-12 23:00:25.874413 +0000 build-fedora1: output: + verify_git_obj tag 794bc5ff58f992a156be02a7f2cdb3f6db127887
+2022-09-12 23:00:25.874421 +0000 build-fedora1: output: + local content newsig_number
+2022-09-12 23:00:25.874695 +0000 build-fedora1: output: ++ git -c gpg.program=gpg -c gpg.minTrustLevel=fully verify-tag --raw -- 794bc5ff58f992a156be02a7f2cdb3f6db127887
+2022-09-12 23:00:25.879982 +0000 build-fedora1: output: + content='[GNUPG:] NEWSIG
+2022-09-12 23:00:25.880017 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-09-12 23:00:25.880026 +0000 build-fedora1: output: [GNUPG:] SIG_ID 8iPY7PBy9kl2Ei+mGZhcfn+mQVs 2022-09-12 1663023532
+2022-09-12 23:00:25.880035 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-09-12 23:00:25.880043 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.880050 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.880064 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.880072 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-09-12 23:00:25.880085 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-09-12 1663023532 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-09-12 23:00:25.880092 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-09-12 23:00:25.882406 +0000 build-fedora1: output: ++ printf '%s\n' '[GNUPG:] NEWSIG
+2022-09-12 23:00:25.882446 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-09-12 23:00:25.882577 +0000 build-fedora1: output: [GNUPG:] SIG_ID 8iPY7PBy9kl2Ei+mGZhcfn+mQVs 2022-09-12 1663023532
+2022-09-12 23:00:25.882591 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-09-12 23:00:25.882599 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.882606 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.882614 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.882625 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-09-12 23:00:25.882708 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-09-12 1663023532 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-09-12 23:00:25.882720 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-09-12 23:00:25.882727 +0000 build-fedora1: output: ++ grep -c '^\[GNUPG:] NEWSIG'
+2022-09-12 23:00:25.884621 +0000 build-fedora1: output: + newsig_number=1
+2022-09-12 23:00:25.884644 +0000 build-fedora1: output: + '[' 1 = 1 ']'
+2022-09-12 23:00:25.884665 +0000 build-fedora1: output: + printf '%s\n' '[GNUPG:] NEWSIG
+2022-09-12 23:00:25.884674 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-09-12 23:00:25.884870 +0000 build-fedora1: output: [GNUPG:] SIG_ID 8iPY7PBy9kl2Ei+mGZhcfn+mQVs 2022-09-12 1663023532
+2022-09-12 23:00:25.884890 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 0064428F455451B3EBE78A7F063938BA42CFA724 0
+2022-09-12 23:00:25.884899 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.884906 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.884914 +0000 build-fedora1: output: [GNUPG:] KEY_CONSIDERED 427F11FD0FAA4B080123F01CDDFA1A3E36879494 0
+2022-09-12 23:00:25.884923 +0000 build-fedora1: output: [GNUPG:] GOODSIG 063938BA42CFA724 Marek Marczykowski-G..recki (Qubes OS signing key) <marmarek@invisiblethingslab.com>
+2022-09-12 23:00:25.884934 +0000 build-fedora1: output: [GNUPG:] VALIDSIG 0064428F455451B3EBE78A7F063938BA42CFA724 2022-09-12 1663023532 0 4 0 1 8 00 0064428F455451B3EBE78A7F063938BA42CFA724
+2022-09-12 23:00:25.884943 +0000 build-fedora1: output: [GNUPG:] TRUST_FULLY 0 pgp'
+2022-09-12 23:00:25.884950 +0000 build-fedora1: output: + grep '^\[GNUPG:] TRUST_\(FULLY\|ULTIMATE\) 0 pgp\>'
+2022-09-12 23:00:25.885265 +0000 build-fedora1: output: + echo '---> Good tag 794bc5ff58f992a156be02a7f2cdb3f6db127887'
+2022-09-12 23:00:25.885384 +0000 build-fedora1: output: + '[' -z x ']'
+2022-09-12 23:00:25.885396 +0000 build-fedora1: output: + popd
+2022-09-12 23:00:25.885403 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:00:25.885409 +0000 build-fedora1: output: + pushd windows-tools-cross
+2022-09-12 23:00:25.885418 +0000 build-fedora1: output: ---> Good tag 794bc5ff58f992a156be02a7f2cdb3f6db127887
+2022-09-12 23:00:25.885492 +0000 build-fedora1: output: ++ exec git rev-parse --abbrev-ref HEAD
+2022-09-12 23:00:25.886399 +0000 build-fedora1: output: + CURRENT_BRANCH=master
+2022-09-12 23:00:25.886417 +0000 build-fedora1: output: + '[' master '!=' master ']'
+2022-09-12 23:00:25.886484 +0000 build-fedora1: output: + :
+2022-09-12 23:00:25.886499 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:00:25.886505 +0000 build-fedora1: output: + red='.[1;31m'
+2022-09-12 23:00:25.886523 +0000 build-fedora1: output: + green='.[1;32m'
+2022-09-12 23:00:25.886528 +0000 build-fedora1: output: + normal='.[0;0m'
+2022-09-12 23:00:25.886857 +0000 build-fedora1: output: ++ git name-rev --name-only master
+2022-09-12 23:00:25.889047 +0000 build-fedora1: output: + '[' -n 'tags/mm_492c10b3^0' ']'
+2022-09-12 23:00:25.889141 +0000 build-fedora1: output: + echo '--> Switching branch from master branch to .[1;32mmaster.[0;0m'
+2022-09-12 23:00:25.889155 +0000 build-fedora1: output: + git merge-base --is-ancestor -- master 492c10b3728c875459ef5abdfa724e274e1d954e
+2022-09-12 23:00:25.889163 +0000 build-fedora1: output: --> Switching branch from master branch to .[1;32mmaster.[0;0m
+2022-09-12 23:00:25.889949 +0000 build-fedora1: output: + git checkout -B master 492c10b3728c875459ef5abdfa724e274e1d954e
+2022-09-12 23:00:25.893259 +0000 build-fedora1: output: Reset branch 'master'
+2022-09-12 23:00:25.893282 +0000 build-fedora1: output: Your branch is up to date with 'origin/master'.
+2022-09-12 23:00:25.893437 +0000 build-fedora1: output: + '[' -e .gitmodules ']'
+2022-09-12 23:00:25.893526 +0000 build-fedora1: output: + echo -e '--> Updating submodules'
+2022-09-12 23:00:25.893537 +0000 build-fedora1: output: + git submodule init
+2022-09-12 23:00:25.893544 +0000 build-fedora1: output: --> Updating submodules
+2022-09-12 23:00:25.923360 +0000 build-fedora1: output: Submodule 'qubes-core-agent-windows' (https://github.com/QubesOS/qubes-core-agent-windows) registered for path 'qubes-core-agent-windows'
+2022-09-12 23:00:25.924150 +0000 build-fedora1: output: Submodule 'qubes-core-qubesdb' (https://github.com/QubesOS/qubes-core-qubesdb) registered for path 'qubes-core-qubesdb'
+2022-09-12 23:00:25.924863 +0000 build-fedora1: output: Submodule 'qubes-core-vchan-xen' (https://github.com/QubesOS/qubes-core-vchan-xen) registered for path 'qubes-core-vchan-xen'
+2022-09-12 23:00:25.927264 +0000 build-fedora1: output: Submodule 'qubes-gui-agent-windows' (https://github.com/QubesOS/qubes-gui-agent-windows) registered for path 'qubes-gui-agent-windows'
+2022-09-12 23:00:25.927588 +0000 build-fedora1: output: Submodule 'qubes-gui-common' (https://github.com/QubesOS/qubes-gui-common) registered for path 'qubes-gui-common'
+2022-09-12 23:00:25.928455 +0000 build-fedora1: output: Submodule 'qubes-installer-qubes-os-windows-tools' (https://github.com/QubesOS/qubes-installer-qubes-os-windows-tools) registered for path 'qubes-installer-qubes-os-windows-tools'
+2022-09-12 23:00:25.934078 +0000 build-fedora1: output: Submodule 'qubes-vmm-xen-win-pvdrivers-xeniface' (https://github.com/QubesOS/qubes-vmm-xen-win-pvdrivers-xeniface) registered for path 'qubes-vmm-xen-win-pvdrivers-xeniface'
+2022-09-12 23:00:25.934126 +0000 build-fedora1: output: Submodule 'qubes-vmm-xen-windows-pvdrivers' (https://github.com/QubesOS/qubes-vmm-xen-windows-pvdrivers) registered for path 'qubes-vmm-xen-windows-pvdrivers'
+2022-09-12 23:00:25.934165 +0000 build-fedora1: output: Submodule 'qubes-windows-utils' (https://github.com/QubesOS/qubes-windows-utils) registered for path 'qubes-windows-utils'
+2022-09-12 23:00:25.934184 +0000 build-fedora1: output: + git submodule update --recursive
+2022-09-12 23:00:25.976688 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-core-agent-windows'...
+2022-09-12 23:00:26.754959 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-core-qubesdb'...
+2022-09-12 23:00:27.617630 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-core-vchan-xen'...
+2022-09-12 23:00:28.290883 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-gui-agent-windows'...
+2022-09-12 23:00:29.029983 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-gui-common'...
+2022-09-12 23:00:29.652273 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-installer-qubes-os-windows-tools'...
+2022-09-12 23:00:30.354857 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-vmm-xen-win-pvdrivers-xeniface'...
+2022-09-12 23:00:31.047364 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-vmm-xen-windows-pvdrivers'...
+2022-09-12 23:00:33.445549 +0000 build-fedora1: output: Cloning into '/builder/windows-tools-cross/qubes-windows-utils'...
+2022-09-12 23:00:34.213849 +0000 build-fedora1: output: Submodule path 'qubes-core-agent-windows': checked out '1f00ddafec8179ac29ad6ea9e0775216c0ac7cbf'
+2022-09-12 23:00:34.239289 +0000 build-fedora1: output: Submodule path 'qubes-core-qubesdb': checked out 'e94f2c908b04de45104c0345ad5ba6eaff013c35'
+2022-09-12 23:00:34.282179 +0000 build-fedora1: output: Submodule path 'qubes-core-vchan-xen': checked out 'ab3de83c88bdf5ceb408f808d0575fd123b40557'
+2022-09-12 23:00:34.303447 +0000 build-fedora1: output: Submodule path 'qubes-gui-agent-windows': checked out '8d9980bc5b2de3c33d682b4f11417dcee5d53079'
+2022-09-12 23:00:34.328252 +0000 build-fedora1: output: Submodule path 'qubes-gui-common': checked out 'd39f0576ae18626e73b312bd51cc7bbb9caeeac2'
+2022-09-12 23:00:34.358458 +0000 build-fedora1: output: Submodule path 'qubes-installer-qubes-os-windows-tools': checked out 'd131b40eaa71af0f6d0d5a6f1f0c47e3c8cb6827'
+2022-09-12 23:00:34.390039 +0000 build-fedora1: output: Submodule path 'qubes-vmm-xen-win-pvdrivers-xeniface': checked out '92236b2f92acebb87300bd291ae06b196ee7c6a4'
+2022-09-12 23:00:34.411736 +0000 build-fedora1: output: Submodule path 'qubes-vmm-xen-windows-pvdrivers': checked out '873e5e8598fefed73bdd4a1c028b28b88c87b40f'
+2022-09-12 23:00:34.429133 +0000 build-fedora1: output: Submodule path 'qubes-windows-utils': checked out '256c20d1100b3f6299eb5ab575c280b8879bd140'
+2022-09-12 23:00:34.437540 +0000 build-fedora1: output: + :
+2022-09-12 23:00:34.437658 +0000 build-fedora1: output: + popd
+2022-09-12 23:00:34.437916 +0000 build-fedora1: output: + exit_clean
+2022-09-12 23:00:34.437948 +0000 build-fedora1: output: + local exit_code=0
+2022-09-12 23:00:34.438032 +0000 build-fedora1: output: + '[' 0 -gt 0 ']'
+2022-09-12 23:00:34.438327 +0000 build-fedora1: output: + exit 0
+2022-09-12 23:00:34.444082 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1186 qubesbuilder.FileCopyOut+__builder__windows-tools-cross /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/sources
+2022-09-12 23:00:49.132330 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3157 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:00:49.404622 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3157 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:00:49.718099 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3157 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:00:50.003790 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3157 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-09-12 23:00:50.183306 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp3157 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/windows-tools-cross
+2022-09-12 23:00:50.842085 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp3157 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-09-12 23:00:50.993112 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp3157 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xenbus-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar''.
+2022-09-12 23:00:51.127157 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-09-12 23:00:51.127638 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xenbus-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar
+2022-09-12 23:00:51.129333 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenbus-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar'\'' --'
+2022-09-12 23:00:51.129371 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenbus-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar'\'' --'
+2022-09-12 23:00:51.129644 +0000 build-fedora1: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xenbus-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar --
+2022-09-12 23:00:51.129659 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:00:51.129669 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:51.129680 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-09-12 23:00:51.129689 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:51.129698 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:51.129707 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:00:51.129715 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:51.129725 +0000 build-fedora1: output: + FILE_NAME=xenbus-8.2.2.tar
+2022-09-12 23:00:51.129733 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:51.129741 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:51.129750 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:00:51.129759 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:51.130049 +0000 build-fedora1: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar
+2022-09-12 23:00:51.130070 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:51.130079 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:51.130088 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:00:51.130097 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:51.130105 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:51.130114 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:00:51.130128 +0000 build-fedora1: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar ']'
+2022-09-12 23:00:51.130158 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-09-12 23:00:51.130169 +0000 build-fedora1: output: + '[' -z xenbus-8.2.2.tar ']'
+2022-09-12 23:00:51.130180 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xenbus-8.2.2.tar
+2022-09-12 23:00:51.130193 +0000 build-fedora1: output: + '[' -n /builder/windows-tools-cross ']'
+2022-09-12 23:00:51.130203 +0000 build-fedora1: output: + mkdir -p /builder/windows-tools-cross
+2022-09-12 23:00:51.132246 +0000 build-fedora1: output: + cd /builder/windows-tools-cross
+2022-09-12 23:00:51.132278 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xenbus-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenbus.tar#/xenbus-8.2.2.tar
+2022-09-12 23:00:55.653459 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:00:55.653533 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:00:55.658611 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp3157 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xenbus-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1
+2022-09-12 23:00:58.639450 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512'.
+2022-09-12 23:00:58.643864 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-09-12 23:00:58.643997 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512
+2022-09-12 23:00:58.645206 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:00:58.645270 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:00:58.645318 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 --
+2022-09-12 23:00:58.645334 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-09-12 23:00:58.645350 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-09-12 23:00:58.645365 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:58.645385 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1
+2022-09-12 23:00:58.646189 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646212 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646228 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:00:58.646300 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:58.646329 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar
+2022-09-12 23:00:58.646345 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646360 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646376 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:00:58.646447 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:58.646465 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-09-12 23:00:58.646480 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646494 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646509 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:00:58.646575 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:58.646606 +0000 build-fedora1: output: + FILE_CHECKSUM=/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512
+2022-09-12 23:00:58.646622 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646636 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646711 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:00:58.646733 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:00:58.646748 +0000 build-fedora1: output: + shift
+2022-09-12 23:00:58.646789 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:00:58.646884 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar ']'
+2022-09-12 23:00:58.647025 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1 ']'
+2022-09-12 23:00:58.647218 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1
+2022-09-12 23:00:58.647374 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar
+2022-09-12 23:00:58.647515 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xenbus-8.2.2.tar
+2022-09-12 23:00:58.647655 +0000 build-fedora1: output: + FILE_NAME=xenbus-8.2.2.tar
+2022-09-12 23:00:58.647810 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 ']'
+2022-09-12 23:00:58.647950 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 ']'
+2022-09-12 23:00:58.648158 +0000 build-fedora1: output: + '[' -e /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 ']'
+2022-09-12 23:00:58.648269 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:00:58.648407 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:00:58.648550 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:00:58.648685 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:00:58.648841 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512 ']'
+2022-09-12 23:00:58.648976 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-09-12 23:00:58.649162 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-09-12 23:00:58.649296 +0000 build-fedora1: output: +++ cat /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenbus-8.2.2.tar.sha512
+2022-09-12 23:00:58.649456 +0000 build-fedora1: output: ++ printf '%s  -\n' 443c7f87c6e5145856fb4fd82d54210802a10446982b379dc288c1592486e719c33d40532bbb8c54868f7df31ae7378bfa2c0ee6fa89cc9e96d57a83dae44df2
+2022-09-12 23:00:58.719059 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/untrusted_xenbus-8.2.2.tar /home/user/builder-r4.2/artifacts/tmp/tmpr0q3skj1/xenbus-8.2.2.tar
+2022-09-12 23:01:10.039023 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1593 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:01:10.314988 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1593 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:01:10.540692 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1593 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:01:10.770106 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1593 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-09-12 23:01:11.086313 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1593 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/windows-tools-cross
+2022-09-12 23:01:11.672689 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1593 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-09-12 23:01:11.839062 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp1593 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xeniface-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar''.
+2022-09-12 23:01:11.988755 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-09-12 23:01:11.988856 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xeniface-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar
+2022-09-12 23:01:11.990468 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xeniface-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar'\'' --'
+2022-09-12 23:01:11.990504 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xeniface-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar'\'' --'
+2022-09-12 23:01:11.990519 +0000 build-fedora1: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xeniface-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar --
+2022-09-12 23:01:11.990525 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:01:11.990645 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:11.990657 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-09-12 23:01:11.990663 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:11.990669 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:11.990786 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:01:11.991002 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:11.991053 +0000 build-fedora1: output: + FILE_NAME=xeniface-8.2.2.tar
+2022-09-12 23:01:11.991548 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:11.991577 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:11.991590 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:01:11.991599 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:11.991613 +0000 build-fedora1: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar
+2022-09-12 23:01:11.991622 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:11.991630 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:11.991639 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:01:11.991647 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:11.991655 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:11.991663 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:01:11.991677 +0000 build-fedora1: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar ']'
+2022-09-12 23:01:11.991691 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-09-12 23:01:11.991701 +0000 build-fedora1: output: + '[' -z xeniface-8.2.2.tar ']'
+2022-09-12 23:01:11.991712 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xeniface-8.2.2.tar
+2022-09-12 23:01:11.991722 +0000 build-fedora1: output: + '[' -n /builder/windows-tools-cross ']'
+2022-09-12 23:01:11.991732 +0000 build-fedora1: output: + mkdir -p /builder/windows-tools-cross
+2022-09-12 23:01:11.991742 +0000 build-fedora1: output: + cd /builder/windows-tools-cross
+2022-09-12 23:01:11.991762 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xeniface-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xeniface.tar#/xeniface-8.2.2.tar
+2022-09-12 23:01:15.617576 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:01:15.617663 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:15.623519 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1593 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xeniface-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66
+2022-09-12 23:01:18.701777 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512'.
+2022-09-12 23:01:18.704479 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-09-12 23:01:18.704790 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512
+2022-09-12 23:01:18.706383 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:01:18.707071 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:01:18.707099 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 --
+2022-09-12 23:01:18.707106 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-09-12 23:01:18.707113 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-09-12 23:01:18.707118 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:18.707126 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66
+2022-09-12 23:01:18.707131 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707137 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707142 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:01:18.707160 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:18.707187 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar
+2022-09-12 23:01:18.707193 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707198 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707203 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:01:18.707208 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:18.707214 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-09-12 23:01:18.707219 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707224 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707230 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:01:18.707235 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:18.707244 +0000 build-fedora1: output: + FILE_CHECKSUM=/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512
+2022-09-12 23:01:18.707262 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707267 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707272 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:01:18.707278 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:18.707283 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:18.707288 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:01:18.707296 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar ']'
+2022-09-12 23:01:18.707303 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66 ']'
+2022-09-12 23:01:18.707311 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66
+2022-09-12 23:01:18.708215 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar
+2022-09-12 23:01:18.709063 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xeniface-8.2.2.tar
+2022-09-12 23:01:18.709075 +0000 build-fedora1: output: + FILE_NAME=xeniface-8.2.2.tar
+2022-09-12 23:01:18.709085 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:18.709094 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:18.709400 +0000 build-fedora1: output: + '[' -e /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:18.709408 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:18.709413 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:01:18.709419 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:18.709424 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:18.709433 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:18.709439 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-09-12 23:01:18.709445 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-09-12 23:01:18.710118 +0000 build-fedora1: output: +++ cat /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xeniface-8.2.2.tar.sha512
+2022-09-12 23:01:18.711016 +0000 build-fedora1: output: ++ printf '%s  -\n' 044d171eca80ac88d32f37c64b613a8ff005eaecf4cc5445f2f90a1bdf2296835979c121093f376efaee9a390a7235f9ddde18df0ec567ea24733e1a932cd736
+2022-09-12 23:01:18.820409 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/untrusted_xeniface-8.2.2.tar /home/user/builder-r4.2/artifacts/tmp/tmpy2mo8o66/xeniface-8.2.2.tar
+2022-09-12 23:01:30.316913 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp471 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:01:30.504099 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp471 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:01:30.745162 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp471 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:01:31.003064 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp471 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-09-12 23:01:31.293577 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp471 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/windows-tools-cross
+2022-09-12 23:01:32.134038 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp471 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-09-12 23:01:32.283017 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp471 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xenvbd-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar''.
+2022-09-12 23:01:32.446449 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-09-12 23:01:32.446556 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xenvbd-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar
+2022-09-12 23:01:32.450296 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenvbd-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar'\'' --'
+2022-09-12 23:01:32.450436 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenvbd-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar'\'' --'
+2022-09-12 23:01:32.450478 +0000 build-fedora1: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xenvbd-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar --
+2022-09-12 23:01:32.450494 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:01:32.450509 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:32.450526 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-09-12 23:01:32.450588 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:32.450870 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:32.450889 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:01:32.450904 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:32.450919 +0000 build-fedora1: output: + FILE_NAME=xenvbd-8.2.2.tar
+2022-09-12 23:01:32.450954 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:32.450967 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:32.450981 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:01:32.450994 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:32.451016 +0000 build-fedora1: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar
+2022-09-12 23:01:32.451029 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:32.451041 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:32.451055 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:01:32.451068 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:32.451081 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:32.451094 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:01:32.451116 +0000 build-fedora1: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar ']'
+2022-09-12 23:01:32.451157 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-09-12 23:01:32.451173 +0000 build-fedora1: output: + '[' -z xenvbd-8.2.2.tar ']'
+2022-09-12 23:01:32.451190 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xenvbd-8.2.2.tar
+2022-09-12 23:01:32.451207 +0000 build-fedora1: output: + '[' -n /builder/windows-tools-cross ']'
+2022-09-12 23:01:32.451223 +0000 build-fedora1: output: + mkdir -p /builder/windows-tools-cross
+2022-09-12 23:01:32.453475 +0000 build-fedora1: output: + cd /builder/windows-tools-cross
+2022-09-12 23:01:32.453508 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xenvbd-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvbd.tar#/xenvbd-8.2.2.tar
+2022-09-12 23:01:36.955744 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:01:36.955852 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:36.959068 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp471 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xenvbd-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a
+2022-09-12 23:01:40.051590 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512'.
+2022-09-12 23:01:40.053015 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-09-12 23:01:40.053252 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512
+2022-09-12 23:01:40.054364 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:01:40.054497 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:01:40.054557 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 --
+2022-09-12 23:01:40.054576 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-09-12 23:01:40.054593 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-09-12 23:01:40.054609 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:40.054630 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a
+2022-09-12 23:01:40.054646 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054660 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054676 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:01:40.054692 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:40.054717 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar
+2022-09-12 23:01:40.054732 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054747 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054762 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:01:40.054778 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:40.054795 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-09-12 23:01:40.054809 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054824 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054839 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:01:40.054854 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:40.054880 +0000 build-fedora1: output: + FILE_CHECKSUM=/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512
+2022-09-12 23:01:40.054917 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054932 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054947 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:01:40.054962 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:40.054977 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:40.054992 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:01:40.055017 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar ']'
+2022-09-12 23:01:40.055038 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a ']'
+2022-09-12 23:01:40.055123 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a
+2022-09-12 23:01:40.055182 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar
+2022-09-12 23:01:40.055203 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xenvbd-8.2.2.tar
+2022-09-12 23:01:40.055221 +0000 build-fedora1: output: + FILE_NAME=xenvbd-8.2.2.tar
+2022-09-12 23:01:40.055383 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:40.055416 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:40.055442 +0000 build-fedora1: output: + '[' -e /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:40.055458 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:40.055474 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:01:40.055490 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:40.055505 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:40.055531 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:40.055547 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-09-12 23:01:40.055565 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-09-12 23:01:40.055775 +0000 build-fedora1: output: +++ cat /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvbd-8.2.2.tar.sha512
+2022-09-12 23:01:40.056251 +0000 build-fedora1: output: ++ printf '%s  -\n' 1f68c7d604ee384845436e88b28a278db329877fb6fd6e33c12d256caabe9a7826dc3f447f1d83b251e75fae3b2cfadbf1748dc03804870482d4093149ef6d59
+2022-09-12 23:01:40.110708 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/untrusted_xenvbd-8.2.2.tar /home/user/builder-r4.2/artifacts/tmp/tmpy0n68b7a/xenvbd-8.2.2.tar
+2022-09-12 23:01:52.194149 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp883 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:01:52.387285 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp883 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:01:52.598815 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp883 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:01:52.886598 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp883 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-09-12 23:01:53.155984 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp883 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/windows-tools-cross
+2022-09-12 23:01:53.790356 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp883 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-09-12 23:01:53.950278 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp883 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xennet-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar''.
+2022-09-12 23:01:54.077305 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-09-12 23:01:54.078011 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xennet-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar
+2022-09-12 23:01:54.080405 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xennet-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar'\'' --'
+2022-09-12 23:01:54.080550 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xennet-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar'\'' --'
+2022-09-12 23:01:54.080605 +0000 build-fedora1: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xennet-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar --
+2022-09-12 23:01:54.080625 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:01:54.081327 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:54.081371 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-09-12 23:01:54.081389 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:54.082621 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:54.082654 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:01:54.082672 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:54.082690 +0000 build-fedora1: output: + FILE_NAME=xennet-8.2.2.tar
+2022-09-12 23:01:54.082706 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:54.082784 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:54.082803 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:01:54.082819 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:54.082844 +0000 build-fedora1: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar
+2022-09-12 23:01:54.082859 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:54.082874 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:54.082958 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:01:54.082973 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:54.082988 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:54.083004 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:01:54.083029 +0000 build-fedora1: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar ']'
+2022-09-12 23:01:54.083054 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-09-12 23:01:54.083080 +0000 build-fedora1: output: + '[' -z xennet-8.2.2.tar ']'
+2022-09-12 23:01:54.083100 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xennet-8.2.2.tar
+2022-09-12 23:01:54.083357 +0000 build-fedora1: output: + '[' -n /builder/windows-tools-cross ']'
+2022-09-12 23:01:54.083387 +0000 build-fedora1: output: + mkdir -p /builder/windows-tools-cross
+2022-09-12 23:01:54.084696 +0000 build-fedora1: output: + cd /builder/windows-tools-cross
+2022-09-12 23:01:54.084942 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xennet-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xennet.tar#/xennet-8.2.2.tar
+2022-09-12 23:01:56.488409 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:01:56.488510 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:56.491901 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp883 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xennet-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmperi122ip
+2022-09-12 23:01:59.449796 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmperi122ip --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512'.
+2022-09-12 23:01:59.452116 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-09-12 23:01:59.452296 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmperi122ip --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512
+2022-09-12 23:01:59.453162 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmperi122ip'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:01:59.453226 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmperi122ip'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:01:59.453275 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmperi122ip --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 --
+2022-09-12 23:01:59.453291 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-09-12 23:01:59.453360 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-09-12 23:01:59.453381 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:59.453403 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmperi122ip
+2022-09-12 23:01:59.453418 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453433 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453449 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:01:59.453464 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:59.453545 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar
+2022-09-12 23:01:59.453563 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453577 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453593 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:01:59.453608 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:59.453625 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-09-12 23:01:59.453640 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453661 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453677 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:01:59.453693 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:59.453718 +0000 build-fedora1: output: + FILE_CHECKSUM=/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512
+2022-09-12 23:01:59.453754 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453770 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453785 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:01:59.453801 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:01:59.453816 +0000 build-fedora1: output: + shift
+2022-09-12 23:01:59.453832 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:01:59.453856 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar ']'
+2022-09-12 23:01:59.453877 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmperi122ip ']'
+2022-09-12 23:01:59.453898 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmperi122ip
+2022-09-12 23:01:59.453922 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar
+2022-09-12 23:01:59.454234 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xennet-8.2.2.tar
+2022-09-12 23:01:59.454260 +0000 build-fedora1: output: + FILE_NAME=xennet-8.2.2.tar
+2022-09-12 23:01:59.454286 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:59.454312 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:59.454337 +0000 build-fedora1: output: + '[' -e /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:59.454353 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:59.454368 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:01:59.454384 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:59.454399 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:01:59.454425 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512 ']'
+2022-09-12 23:01:59.454441 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-09-12 23:01:59.454460 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-09-12 23:01:59.454708 +0000 build-fedora1: output: +++ cat /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xennet-8.2.2.tar.sha512
+2022-09-12 23:01:59.455179 +0000 build-fedora1: output: ++ printf '%s  -\n' 6b9bce38733376fd7b4a3783e81052b279aa77b96cc3f34bc7ed8433eae23a1bcea4dda56e5e3aad290cea352679ef9ea4c2cf7bc0b1fa5d866a1f4b1975700f
+2022-09-12 23:01:59.480494 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmperi122ip/untrusted_xennet-8.2.2.tar /home/user/builder-r4.2/artifacts/tmp/tmperi122ip/xennet-8.2.2.tar
+2022-09-12 23:02:11.358617 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp696 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:02:11.557518 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp696 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:02:11.756445 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp696 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:02:12.021997 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp696 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-09-12 23:02:12.294032 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp696 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/windows-tools-cross
+2022-09-12 23:02:12.897988 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp696 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-09-12 23:02:13.085193 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp696 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name xenvif-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar''.
+2022-09-12 23:02:13.252333 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-09-12 23:02:13.255506 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name xenvif-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar
+2022-09-12 23:02:13.260273 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenvif-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar'\'' --'
+2022-09-12 23:02:13.260347 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''xenvif-8.2.2.tar'\'' --file-url '\''https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar'\'' --'
+2022-09-12 23:02:13.260384 +0000 build-fedora1: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name xenvif-8.2.2.tar --file-url https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar --
+2022-09-12 23:02:13.260675 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:02:13.260716 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:13.261032 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-09-12 23:02:13.261178 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:13.261199 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:13.261245 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:02:13.261342 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:13.261446 +0000 build-fedora1: output: + FILE_NAME=xenvif-8.2.2.tar
+2022-09-12 23:02:13.261572 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:13.261588 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:13.261777 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:02:13.262150 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:13.262169 +0000 build-fedora1: output: + FILE_URL=https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar
+2022-09-12 23:02:13.262176 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:13.262181 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:13.262186 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:02:13.262192 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:13.262197 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:13.262202 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:02:13.262221 +0000 build-fedora1: output: + '[' -z https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar ']'
+2022-09-12 23:02:13.262230 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-09-12 23:02:13.262236 +0000 build-fedora1: output: + '[' -z xenvif-8.2.2.tar ']'
+2022-09-12 23:02:13.262243 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xenvif-8.2.2.tar
+2022-09-12 23:02:13.262249 +0000 build-fedora1: output: + '[' -n /builder/windows-tools-cross ']'
+2022-09-12 23:02:13.262255 +0000 build-fedora1: output: + mkdir -p /builder/windows-tools-cross
+2022-09-12 23:02:13.265224 +0000 build-fedora1: output: + cd /builder/windows-tools-cross
+2022-09-12 23:02:13.267691 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_xenvif-8.2.2.tar -- https://xenbits.xenproject.org/pvdrivers/win/8.2.2/xenvif.tar#/xenvif-8.2.2.tar
+2022-09-12 23:02:15.962587 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:02:15.962649 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:02:15.965792 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp696 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_xenvif-8.2.2.tar /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp
+2022-09-12 23:02:19.168264 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512'.
+2022-09-12 23:02:19.169969 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-09-12 23:02:19.170234 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512
+2022-09-12 23:02:19.170695 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:02:19.170861 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512'\'' --'
+2022-09-12 23:02:19.170989 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 --
+2022-09-12 23:02:19.171009 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-09-12 23:02:19.171027 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-09-12 23:02:19.171133 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:19.171320 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp
+2022-09-12 23:02:19.171407 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.171476 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.171502 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:02:19.171580 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:19.171742 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar
+2022-09-12 23:02:19.171822 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.171849 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.171930 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:02:19.172005 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:19.172132 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-09-12 23:02:19.172306 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.172327 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.172396 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:02:19.172422 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:19.172513 +0000 build-fedora1: output: + FILE_CHECKSUM=/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512
+2022-09-12 23:02:19.172665 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.172685 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.172763 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:02:19.172840 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:19.172986 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:19.173006 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:02:19.173147 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar ']'
+2022-09-12 23:02:19.173319 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp ']'
+2022-09-12 23:02:19.173344 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp
+2022-09-12 23:02:19.173422 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar
+2022-09-12 23:02:19.174115 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_xenvif-8.2.2.tar
+2022-09-12 23:02:19.174158 +0000 build-fedora1: output: + FILE_NAME=xenvif-8.2.2.tar
+2022-09-12 23:02:19.174184 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 ']'
+2022-09-12 23:02:19.174208 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 ']'
+2022-09-12 23:02:19.174359 +0000 build-fedora1: output: + '[' -e /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 ']'
+2022-09-12 23:02:19.174431 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:02:19.174451 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:02:19.174466 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:02:19.174539 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:02:19.174619 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512 ']'
+2022-09-12 23:02:19.174647 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-09-12 23:02:19.174726 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-09-12 23:02:19.175782 +0000 build-fedora1: output: +++ cat /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/xenvif-8.2.2.tar.sha512
+2022-09-12 23:02:19.176839 +0000 build-fedora1: output: ++ printf '%s  -\n' 268fe9189004a68cda0fb01ee1f88e19b11ed7df8d9bebc6eedff9686f9b23f5659f256163fbe654995b623f758ae4b7c2bc8afed40d063d7bc32e1f029795b7
+2022-09-12 23:02:19.207382 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/untrusted_xenvif-8.2.2.tar /home/user/builder-r4.2/artifacts/tmp/tmpmup24hbp/xenvif-8.2.2.tar
+2022-09-12 23:02:30.696571 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1921 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:02:30.903824 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1921 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:02:31.126993 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1921 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:02:31.386993 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1921 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-09-12 23:02:31.619235 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp1921 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/windows-tools-cross
+2022-09-12 23:02:32.451549 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp1921 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-09-12 23:02:32.626083 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp1921 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name wix311-binaries.zip --file-url https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip''.
+2022-09-12 23:02:32.775302 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-09-12 23:02:32.775382 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name wix311-binaries.zip --file-url https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip
+2022-09-12 23:02:32.777955 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''wix311-binaries.zip'\'' --file-url '\''https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip'\'' --'
+2022-09-12 23:02:32.778036 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''wix311-binaries.zip'\'' --file-url '\''https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip'\'' --'
+2022-09-12 23:02:32.778358 +0000 build-fedora1: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name wix311-binaries.zip --file-url https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip --
+2022-09-12 23:02:32.778403 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:02:32.778421 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:32.778440 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-09-12 23:02:32.778455 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:32.778738 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:32.778791 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:02:32.778811 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:32.778829 +0000 build-fedora1: output: + FILE_NAME=wix311-binaries.zip
+2022-09-12 23:02:32.778843 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:32.778857 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:32.779254 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:02:32.779289 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:32.779318 +0000 build-fedora1: output: + FILE_URL=https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip
+2022-09-12 23:02:32.779335 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:32.779593 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:32.779636 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:02:32.779654 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:32.779669 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:32.779684 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:02:32.779962 +0000 build-fedora1: output: + '[' -z https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip ']'
+2022-09-12 23:02:32.780011 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-09-12 23:02:32.780029 +0000 build-fedora1: output: + '[' -z wix311-binaries.zip ']'
+2022-09-12 23:02:32.780048 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_wix311-binaries.zip
+2022-09-12 23:02:32.780065 +0000 build-fedora1: output: + '[' -n /builder/windows-tools-cross ']'
+2022-09-12 23:02:32.780082 +0000 build-fedora1: output: + mkdir -p /builder/windows-tools-cross
+2022-09-12 23:02:32.780581 +0000 build-fedora1: output: + cd /builder/windows-tools-cross
+2022-09-12 23:02:32.780649 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_wix311-binaries.zip -- https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311-binaries.zip
+2022-09-12 23:02:36.167366 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:02:36.168642 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:02:36.175647 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp1921 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_wix311-binaries.zip /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9
+2022-09-12 23:02:39.344446 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512'.
+2022-09-12 23:02:39.348124 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-09-12 23:02:39.348434 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512
+2022-09-12 23:02:39.349136 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512'\'' --'
+2022-09-12 23:02:39.349220 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512'\'' --'
+2022-09-12 23:02:39.349271 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512 --
+2022-09-12 23:02:39.349741 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-09-12 23:02:39.349765 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-09-12 23:02:39.349781 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:39.349803 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9
+2022-09-12 23:02:39.349819 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.349834 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.349850 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:02:39.349865 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:39.349891 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip
+2022-09-12 23:02:39.349906 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.349921 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.349937 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:02:39.349952 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:39.349969 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-09-12 23:02:39.349984 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.350020 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.350037 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:02:39.350052 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:39.350076 +0000 build-fedora1: output: + FILE_CHECKSUM=/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512
+2022-09-12 23:02:39.350091 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.350105 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.350119 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:02:39.350154 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:39.350169 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:39.350183 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:02:39.350206 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip ']'
+2022-09-12 23:02:39.350226 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9 ']'
+2022-09-12 23:02:39.350246 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9
+2022-09-12 23:02:39.351593 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip
+2022-09-12 23:02:39.352199 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_wix311-binaries.zip
+2022-09-12 23:02:39.352256 +0000 build-fedora1: output: + FILE_NAME=wix311-binaries.zip
+2022-09-12 23:02:39.352381 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512 ']'
+2022-09-12 23:02:39.352466 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512 ']'
+2022-09-12 23:02:39.352499 +0000 build-fedora1: output: + '[' -e /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512 ']'
+2022-09-12 23:02:39.352515 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:02:39.352530 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:02:39.352545 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:02:39.352560 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:02:39.352590 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512 ']'
+2022-09-12 23:02:39.352606 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-09-12 23:02:39.352728 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-09-12 23:02:39.353015 +0000 build-fedora1: output: +++ cat /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/wix311-binaries.zip.sha512
+2022-09-12 23:02:39.353662 +0000 build-fedora1: output: ++ printf '%s  -\n' a8c3c2243489fc79e7a18b321ed03133354d43620dd265f087d32ba508f7baf769d32d12b1ccbc22f924573e205ebda7fd8d8ca5e35d5d4a7181af4997657a20
+2022-09-12 23:02:39.427626 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/untrusted_wix311-binaries.zip /home/user/builder-r4.2/artifacts/tmp/tmph08jj2z9/wix311-binaries.zip
+2022-09-12 23:02:51.442387 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2549 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:02:51.624345 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2549 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:02:51.859443 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2549 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:02:52.136193 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2549 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-09-12 23:02:52.394597 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp2549 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/windows-tools-cross
+2022-09-12 23:02:53.065685 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp2549 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-09-12 23:02:53.245866 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp2549 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name dotNetFx40_Full_x86_x64.exe --file-url https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe''.
+2022-09-12 23:02:53.386156 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-09-12 23:02:53.387040 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name dotNetFx40_Full_x86_x64.exe --file-url https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:02:53.390228 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''dotNetFx40_Full_x86_x64.exe'\'' --file-url '\''https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe'\'' --'
+2022-09-12 23:02:53.390263 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''dotNetFx40_Full_x86_x64.exe'\'' --file-url '\''https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe'\'' --'
+2022-09-12 23:02:53.390305 +0000 build-fedora1: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name dotNetFx40_Full_x86_x64.exe --file-url https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe --
+2022-09-12 23:02:53.390891 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:02:53.390945 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:53.390976 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-09-12 23:02:53.391286 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:53.391337 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:53.391356 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:02:53.391372 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:53.391449 +0000 build-fedora1: output: + FILE_NAME=dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:02:53.391528 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:53.391592 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:53.391614 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:02:53.391629 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:53.391768 +0000 build-fedora1: output: + FILE_URL=https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:02:53.391843 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:53.391918 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:53.391987 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:02:53.392003 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:02:53.392022 +0000 build-fedora1: output: + shift
+2022-09-12 23:02:53.392102 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:02:53.392263 +0000 build-fedora1: output: + '[' -z https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe ']'
+2022-09-12 23:02:53.392515 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-09-12 23:02:53.392565 +0000 build-fedora1: output: + '[' -z dotNetFx40_Full_x86_x64.exe ']'
+2022-09-12 23:02:53.392668 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:02:53.392872 +0000 build-fedora1: output: + '[' -n /builder/windows-tools-cross ']'
+2022-09-12 23:02:53.392924 +0000 build-fedora1: output: + mkdir -p /builder/windows-tools-cross
+2022-09-12 23:02:53.393016 +0000 build-fedora1: output: + cd /builder/windows-tools-cross
+2022-09-12 23:02:53.393158 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_dotNetFx40_Full_x86_x64.exe -- https://web.archive.org/web/20100818223107/http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:03:43.791173 +0000 build-fedora1: output: + '[' '' == 1 ']'
+2022-09-12 23:03:43.791277 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:03:43.797930 +0000 build-fedora1: copy-out (cmd): /usr/lib/qubes/qrexec-client-vm disp2549 qubesbuilder.FileCopyOut+__builder__windows-tools-cross__untrusted_dotNetFx40_Full_x86_x64.exe /usr/lib/qubes/qfile-unpacker 1000 /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041
+2022-09-12 23:03:47.170121 +0000 build-fedora1: Executing 'bash -c /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512'.
+2022-09-12 23:03:47.171844 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE UNTRUSTED_FILE FILE_CHECKSUM CHECKSUM_CMD UNTRUSTED_SIGNATURE_FILE SIGNATURE_URL OUTPUT_DIR
+2022-09-12 23:03:47.172003 +0000 build-fedora1: output: ++ getopt -o hf:c:m:s:p:o: --long help,untrusted-file:,checksum-file:,checksum-cmd:,untrusted-signature-file:,pubkey-file:,output-dir: -n /home/user/builder-r4.2/qubesbuilder/plugins/fetch/scripts/verify-file -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512
+2022-09-12 23:03:47.172570 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpakfe5041'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512'\'' --'
+2022-09-12 23:03:47.172684 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/home/user/builder-r4.2/artifacts/tmp/tmpakfe5041'\'' --untrusted-file '\''/home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe'\'' --checksum-cmd '\''sha512sum'\'' --checksum-file '\''/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512'\'' --'
+2022-09-12 23:03:47.172796 +0000 build-fedora1: output: ++ set -- --output-dir /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041 --untrusted-file /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe --checksum-cmd sha512sum --checksum-file /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 --
+2022-09-12 23:03:47.172873 +0000 build-fedora1: output: + PUBKEY_FILE=()
+2022-09-12 23:03:47.172940 +0000 build-fedora1: output: + [[ 9 -gt 0 ]]
+2022-09-12 23:03:47.173039 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:03:47.173065 +0000 build-fedora1: output: + OUTPUT_DIR=/home/user/builder-r4.2/artifacts/tmp/tmpakfe5041
+2022-09-12 23:03:47.173200 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.173395 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.173417 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:03:47.173432 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:03:47.173514 +0000 build-fedora1: output: + UNTRUSTED_FILE=/home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:03:47.173587 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.173664 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.173745 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:03:47.173841 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:03:47.173918 +0000 build-fedora1: output: + CHECKSUM_CMD=sha512sum
+2022-09-12 23:03:47.173986 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.174117 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.174471 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:03:47.174492 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:03:47.174570 +0000 build-fedora1: output: + FILE_CHECKSUM=/home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512
+2022-09-12 23:03:47.174637 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.174653 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.174718 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:03:47.174741 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:03:47.174804 +0000 build-fedora1: output: + shift
+2022-09-12 23:03:47.174822 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:03:47.174899 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe ']'
+2022-09-12 23:03:47.174977 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041 ']'
+2022-09-12 23:03:47.175007 +0000 build-fedora1: output: + mkdir -p /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041
+2022-09-12 23:03:47.175123 +0000 build-fedora1: output: ++ basename /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:03:47.175282 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:03:47.175305 +0000 build-fedora1: output: + FILE_NAME=dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:03:47.175387 +0000 build-fedora1: output: + '[' -z /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 ']'
+2022-09-12 23:03:47.175492 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 ']'
+2022-09-12 23:03:47.175581 +0000 build-fedora1: output: + '[' -e /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 ']'
+2022-09-12 23:03:47.175662 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:03:47.175736 +0000 build-fedora1: output: + '[' -z '' ']'
+2022-09-12 23:03:47.175835 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:03:47.175914 +0000 build-fedora1: output: + '[' -n '' ']'
+2022-09-12 23:03:47.176025 +0000 build-fedora1: output: + '[' -n /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512 ']'
+2022-09-12 23:03:47.176159 +0000 build-fedora1: output: + '[' -z sha512sum ']'
+2022-09-12 23:03:47.176241 +0000 build-fedora1: output: + sha512sum --status -c /dev/fd/63
+2022-09-12 23:03:47.176390 +0000 build-fedora1: output: +++ cat /home/user/builder-r4.2/artifacts/sources/windows-tools-cross/dotNetFx40_Full_x86_x64.exe.sha512
+2022-09-12 23:03:47.178167 +0000 build-fedora1: output: ++ printf '%s  -\n' 241ba3f82f37818407bc00909c160b653b45a1a3d156e043b87ba18a7819294716705c952c7b46516c4afd86e6f99bad23e7235b951a371ae6728107f19e5f23
+2022-09-12 23:03:47.270646 +0000 build-fedora1: output: + mv /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/untrusted_dotNetFx40_Full_x86_x64.exe /home/user/builder-r4.2/artifacts/tmp/tmpakfe5041/dotNetFx40_Full_x86_x64.exe
+2022-09-12 23:03:58.875868 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp8637 bash -c 'rm -rf /builder/incoming/fetch /builder/plugins/fetch'
+2022-09-12 23:03:59.124817 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8637 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/qubesbuilder/plugins/fetch
+2022-09-12 23:03:59.422081 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp8637 bash -c 'mkdir -p /builder/plugins && mv /builder/incoming/fetch /builder/plugins'
+2022-09-12 23:03:59.638220 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp8637 bash -c 'rm -rf /builder/incoming/windows-tools-cross /builder/windows-tools-cross'
+2022-09-12 23:03:59.981072 +0000 build-fedora1: copy-in (cmd): /usr/lib/qubes/qrexec-client-vm disp8637 qubesbuilder.FileCopyIn /usr/lib/qubes/qfile-agent /home/user/builder-r4.2/artifacts/sources/windows-tools-cross
+2022-09-12 23:04:00.575059 +0000 build-fedora1: copy-in (cmd): /usr/bin/qvm-run-vm disp8637 bash -c 'mkdir -p /builder && mv /builder/incoming/windows-tools-cross /builder'
+2022-09-12 23:04:00.729828 +0000 build-fedora1: Executing '/usr/bin/qvm-run-vm disp8637 env VERBOSE='1' DEBUG='1' bash -c '/builder/plugins/fetch/scripts/download-file --output-dir /builder/windows-tools-cross --file-name devcon.tar.gz --file-url https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz''.
+2022-09-12 23:04:00.890961 +0000 build-fedora1: output: + unset OPTS GETOPT_COMPATIBLE FILE_URL FILE_CHECKSUM CHECKSUM_CMD SIGNATURE_URL PUBKEY_FILE OUTPUT_DIR FETCH_CMD
+2022-09-12 23:04:00.891070 +0000 build-fedora1: output: ++ getopt -o hf:u:s:o:x --long help,file-name:,file-url:,signature-url:,output-dir:,uncompress -n /builder/plugins/fetch/scripts/download-file -- --output-dir /builder/windows-tools-cross --file-name devcon.tar.gz --file-url https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz
+2022-09-12 23:04:00.893173 +0000 build-fedora1: output: + OPTS=' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''devcon.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz'\'' --'
+2022-09-12 23:04:00.893252 +0000 build-fedora1: output: + eval set -- ' --output-dir '\''/builder/windows-tools-cross'\'' --file-name '\''devcon.tar.gz'\'' --file-url '\''https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz'\'' --'
+2022-09-12 23:04:00.893534 +0000 build-fedora1: output: ++ set -- --output-dir /builder/windows-tools-cross --file-name devcon.tar.gz --file-url https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz --
+2022-09-12 23:04:00.893566 +0000 build-fedora1: output: + [[ 7 -gt 0 ]]
+2022-09-12 23:04:00.893591 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:04:00.893611 +0000 build-fedora1: output: + OUTPUT_DIR=/builder/windows-tools-cross
+2022-09-12 23:04:00.893625 +0000 build-fedora1: output: + shift
+2022-09-12 23:04:00.893639 +0000 build-fedora1: output: + shift
+2022-09-12 23:04:00.893805 +0000 build-fedora1: output: + [[ 5 -gt 0 ]]
+2022-09-12 23:04:00.893874 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:04:00.893884 +0000 build-fedora1: output: + FILE_NAME=devcon.tar.gz
+2022-09-12 23:04:00.893891 +0000 build-fedora1: output: + shift
+2022-09-12 23:04:00.893896 +0000 build-fedora1: output: + shift
+2022-09-12 23:04:00.893901 +0000 build-fedora1: output: + [[ 3 -gt 0 ]]
+2022-09-12 23:04:00.893911 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:04:00.893956 +0000 build-fedora1: output: + FILE_URL=https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz
+2022-09-12 23:04:00.893966 +0000 build-fedora1: output: + shift
+2022-09-12 23:04:00.893993 +0000 build-fedora1: output: + shift
+2022-09-12 23:04:00.894087 +0000 build-fedora1: output: + [[ 1 -gt 0 ]]
+2022-09-12 23:04:00.894142 +0000 build-fedora1: output: + case "$1" in
+2022-09-12 23:04:00.894191 +0000 build-fedora1: output: + shift
+2022-09-12 23:04:00.894246 +0000 build-fedora1: output: + [[ 0 -gt 0 ]]
+2022-09-12 23:04:00.894345 +0000 build-fedora1: output: + '[' -z https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz ']'
+2022-09-12 23:04:00.894393 +0000 build-fedora1: output: + FETCH_CMD=(curl --proto '=https' --proto-redir '=https' --tlsv1.2 --http1.1 -sSfL -o)
+2022-09-12 23:04:00.894471 +0000 build-fedora1: output: + '[' -z devcon.tar.gz ']'
+2022-09-12 23:04:00.894513 +0000 build-fedora1: output: + UNTRUSTED_FILE_NAME=untrusted_devcon.tar.gz
+2022-09-12 23:04:00.894616 +0000 build-fedora1: output: + '[' -n /builder/windows-tools-cross ']'
+2022-09-12 23:04:00.894646 +0000 build-fedora1: output: + mkdir -p /builder/windows-tools-cross
+2022-09-12 23:04:00.895830 +0000 build-fedora1: output: + cd /builder/windows-tools-cross
+2022-09-12 23:04:00.895902 +0000 build-fedora1: output: + curl --proto =https --proto-redir =https --tlsv1.2 --http1.1 -sSfL -o untrusted_devcon.tar.gz -- https://ftp.qubes-os.org/distfiles/devcon-9f03207ae1e8df83325f067de84494ae55ab5e97.tar.gz#/devcon.tar.gz
+2022-09-12 23:04:00.967001 +0000 build-fedora1: output: curl: (6) Could not resolve host: ftp.qubes-os.org
+2022-09-12 23:04:03.562075 +0000 > closing log
